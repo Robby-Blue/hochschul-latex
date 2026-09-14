@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\begin{document}
+\section{Zahlenfolgen}
+\subsection{Summen}
+Mit dem Summenzeichen $\Sigma$ kann einfach notiert werden, dass eine bestimmte Anzahl an Summanden einer bestimmten Reihe addiert werden sollen.
+\[
+ \sum_{k=m}^n a_k = a_m + a_{m+1} + \dots + a_n
+\]
+
+\subsection{Produkte}
+Das gleiche, nur mit Multiplikation anstelle von Addition, kann mit dem Produktzeichen $\Pi$ passieren.
+\[
+ \prod_{k=m}^n a_k = a_m * a_{m+1} * \dots * a_n
+\]
+
+\subsection{Anwendungen}
+Die Fakultät $n!$ beschreibt wie viele Möglichkeiten es gibt $n$ Objekte zu sortieren. Hier gilt
+\[
+ n! = \prod_{k=1}^n k
+\]
+
+Wird betrachtet wie viele Möglichkeiten es gibt $k$ Elemente von $n$ Elementen auszuwählen, wobei nur betrachtet wird, welche Elemente ausgewählt wurden, nicht in welcher Reihenfolge, so wird der Binomialkoeffizient genutzt.
+\[
+ \binom{n}{k} = \frac{n!}{k! * (n-k)!}
+\] 
+
+\end{document}

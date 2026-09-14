@@ -1,0 +1,11 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Vorkurs Mathematik",
+      subtitle="Die wichtigsten Grundlagen für das mathematische Verständnis des Studiums"
+    )
+  ) {
+    use_doc(path="zahlen")
+    use_doc(path="zahlenfolgen")
+  }
+}

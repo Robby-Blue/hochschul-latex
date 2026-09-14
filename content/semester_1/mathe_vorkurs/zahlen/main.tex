@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/math}
+\begin{document}
+\section{Zahlen}
+\subsection{Zahlenmengen}
+Eine Zahlenmenge beschreibt eine Menge, dessen Elemente alle Zahlen mit bestimmten Konditionen sind.
+\begin{description}
+ \item[natürliche Zahlen \tN] Die Menge aller ganzen und positiven Zahlen; die Zahlen mit denen \zb eine Anzahl an Objekten gezählt werden kann.
+\[
+ \N = \{1, 2, 3, \dots\}
+\]
+Die Menge der natürlichen Zahlen beinhaltet die Null nicht. Wird eine Menge benötigt, die dies aber doch tut, kann \tNz genutzt werden.
+ \item[ganze Zahlen \tZ] Die Menge aller ganzen Zahlen.
+\[
+ \Z = \{\dots, -2, -1, 0, 1, 2, \dots\}
+\]
+ \item[rationale Zahlen \tQ] Die Menge aller Zahlen, die als ein Bruch dargestellt werden können.
+ \item[irrationale Zahlen \tI] Die Menge der Zahlen, die nicht durch einen Bruch dargestellt werden können.
+\[
+ \Z = \{\sqrt{2}, \sqrt[3]{2}, \sqrt[4]{2}, \pi, \e, \dots\}
+\]
+ \item[reelle Zahlen \tR] Alle Zahlen ohne einem imaginären Anteil; alle Zahlen die in \tQ oder \tI sind.
+ \item[komplexe Zahlen \tC] Alle Zahlen mit einem reellen und einem imaginären Anteil.
+\end{description} 
+Wird \tI ignoriert, so ist jede Menge eine Teilmenge der nächsten.
+\[
+ \N \subseteq \Nz \subseteq \Q \subseteq \R \subseteq \C
+\]
+
+\subsection{Rechenregeln}
+\begin{description}
+ \item[Kommutativgesetz] Bei der Addition und der Multiplikation ist die Reihenfolge der Werte nicht relevant.
+\[
+ a+b=b+a \dtext{und} a*b=b*a
+\]
+ \item[Assoziativgesetz] Bei der Addition und der Multiplikation ist die Reihenfolge der Berechnung nicht relevant.
+\begin{alignat*}{3}
+ &a+b+c &&= (a+b)+c &&= a+(b+c) \dtext{und} \\
+ &a*b*c &&= (a*b)*c &&= a*(b*c)
+\end{alignat*}
+ \item[Distributivbgesetz] Es kann ausgeklammert werden, indem der Faktor mit jedem Summanden innerhalb der Klammer multipliziert wird.
+\[
+ a*(b+c) = (a*b)+(a*c)
+\]
+\end{description}
+
+\subsection{Begriffe}
+\begin{description}
+ \item[neutrales Element] Ein Element, welches wenn es zusammen mit einem Operator auf eine Zahl angewand wird keine Auswirkung hat. Bei der Addition ist das neutrale Element $0$, weil $a+0=a$. Bei der Multiplikation ist das neutrale Element $1$, weil $a*1=a$.
+ \item[inverses Element] Ein Element, welches wenn es zusammen mit einem Operator auf eine Zahl angewand wird das neutrale Element des gleichen Operators als Ergebnis hat. Für ein $a$ ist das neutrale Element bei der Addition $-a$, weil $a+(-a)=0$. Bei der Multiplikation ist das neutrale Element $\tfrac{1}{a}$, weil $a*\tfrac{1}{a}=1$.
+\end{description}
+
+\end{document}

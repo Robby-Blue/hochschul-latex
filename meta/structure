@@ -1,0 +1,11 @@
+def main() {
+  document(
+    globals=globals(author="Zoe"),
+    titlepage=titlepage(
+      title="Studium Verwaltungsinformatik",
+      subtitle="Eine kurze Zusammenfassung des Inhalts der Studiums Verwaltungsinformatik",
+    )
+  ) {
+    use_doc(path="content/semester_1")
+  }
+}

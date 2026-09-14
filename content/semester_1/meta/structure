@@ -1,0 +1,10 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Semester 1",
+      subtitle="Das erste Semester"
+    )
+  ) {
+    use_doc(path="vorkurs_mathematik")
+  }
+}
