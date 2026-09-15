@@ -1,5 +1,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{xspace}
+
 % Formatting
 \newcommand{\dtext}[1]{%
  \quad \text{#1} \quad
@@ -7,6 +9,13 @@
 \newcommand{\ddtext}[1]{%
  \qquad \text{#1} \qquad
 }
+
+\newenvironment{mathdescribe}{%
+ \noindent\csname align*\endcsname
+}{%
+ \csname endalign*\endcsname%
+}
+\newcommand{\mathitem}[1]{&\text{\textbf{#1}}&&}
 
 % Formatting: Constants
 \newcommand{\e}{%
@@ -17,26 +26,34 @@
 \DeclareMathSymbol{*}{\mathbin}{symbols}{"01}
 
 % Shorthands: Sets
+\newcommand{\tL}{%
+ \(\mL\)\xspace%
+}
+
 \newcommand{\tN}{%
- \(\N\)%
+ \(\N\)\xspace%
 }
 \newcommand{\tNz}{%
- \(\Nz\)%
+ \(\Nz\)\xspace%
 }
 \newcommand{\tZ}{%
- \(\Z\)%
+ \(\Z\)\xspace%
 }
 \newcommand{\tQ}{%
- \(\Q\)%
+ \(\Q\)\xspace%
 }
 \newcommand{\tI}{%
- \(\I\)%
+ \(\I\)\xspace%
 }
 \newcommand{\tR}{%
- \(\R\)%
+ \(\R\)\xspace%
 }
 \newcommand{\tC}{%
- \(\C\)%
+ \(\C\)\xspace%
+}
+
+\newcommand{\mL}{%
+ \mathbb{L}%
 }
 
 \newcommand{\N}{%

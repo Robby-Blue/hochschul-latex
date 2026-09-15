@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\begin{document}
+\section{Potenzen} 
+Eine Potenz $b^a$ stellt eine wiederholte multiplikation dar. Dabei wird die Basis $b$ insgesamt $a$-fach mit sich selbst Multipliziert; die Zahl $a$ ist der Exponent.
+\[
+ b^a = b*b* \dots{} *b
+\]
+
+\subsection{Wurzeln als Umkehrfunktionen}
+Das Gegenteil einer Potenz mit dem Expontent $a$ ist einer $a$-te Wurzel. So ist
+\[
+ \sqrt[a]{x} = b
+ \Leftrightarrow
+ b^a=x
+\]
+Ist kein $a$ angegeben, so ist davon auszugehen, dass die relevanteste Wurzelart anzuwenden ist, die Quadratwurzel.
+\[
+ \sqrt{x} = \sqrt[2]{x}
+\]
+
+\subsection{Rechengesetze}
+Manche Exponenten sind trivial.
+\[
+ b^0 = 1 \dtext{und} b^1=b
+\]
+Exponenten müssen nicht in \tN sein; sie können auch ein Bruch sein oder negativ sein. Diese sind aber im Endergebnis eher weniger erwünscht. Sie sollten eher mit den Regeln in Potenzen und Brüche mit Exponenten die in \tN liegen umgewandelt werden. 
+\[
+ b^{-a} = \frac{1}{b^a}
+ \dtext{und}
+ b^\frac{1}{a} = \sqrt[a]{b}
+\]
+Ansonsten
+\begin{align*}
+ b^m * b^n &= b^{m+a} \\
+ (b^m)^n &= b^{m*n} \\
+ m^a * n^a &= (m*n)^a
+\end{align*}
+Mit wiederholter Anwendung der obigen Regeln können die meisten Aufgaben mit Potenzen gelöst werden, oder auch weitere Regeln aufgestellt werden. Die meisten dieser sind trivial.
+\[
+ b^\frac{m}{n} = \sqrt[n]{b^m}
+\]
+
+\end{document}

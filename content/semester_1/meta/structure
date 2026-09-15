@@ -5,6 +5,6 @@ def main() {
       subtitle="Das erste Semester"
     )
   ) {
-    use_doc(path="vorkurs_mathematik")
+    use_doc(path="mathe_vorkurs")
   }
 }
