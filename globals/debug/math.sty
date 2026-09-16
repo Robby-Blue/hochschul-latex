@@ -3,6 +3,9 @@
 \usepackage{xspace}
 
 % Formatting
+\newcommand{\stext}[1]{%
+ \ \text{#1} \
+}
 \newcommand{\dtext}[1]{%
  \quad \text{#1} \quad
 }
@@ -16,6 +19,10 @@
  \csname endalign*\endcsname%
 }
 \newcommand{\mathitem}[1]{&\text{\textbf{#1}}&&}
+
+\newcommand{\dvert}{%
+ \,\vert\,
+}
 
 % Formatting: Constants
 \newcommand{\e}{%

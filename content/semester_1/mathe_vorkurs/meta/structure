@@ -5,11 +5,13 @@ def main() {
       subtitle="Die wichtigsten Grundlagen für das mathematische Verständnis des Studiums"
     )
   ) {
-    use_doc(path="zahlen")
-    use_doc(path="zahlenfolgen")
-    use_doc(path="potenzen")
-    use_doc(path="binomische_formel")
-    use_doc(path="logarithmen")
-    use_doc(path="gleichungen")
+    use_sec(path="zahlen")
+    use_sec(path="zahlenfolgen")
+    use_sec(path="potenzen")
+    use_sec(path="binomische_formel")
+    use_sec(path="logarithmen")
+    use_sec(path="gleichungen")
+    use_sec(path="ungleichungen")
+    use_sec(path="lgs")
   }
 }
