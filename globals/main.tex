@@ -2,21 +2,38 @@
 \usepackage{debug/de}
 \usepackage{debug/math}
 \usepackage{debug/boxes}
+%\usepackage{release/de}
+%\usepackage{release/math}
+%\usepackage{release/boxes}
 \begin{document}
 \section{Globals}
-\subsection{Abkürzungen}
-\zb
+\subsection{Deutsch}
+\zb, \etc, \idr, \textquote{text}
 
 \subsection{Mathe}
 \subsubsection{Konstanten}
 \e
 
 \subsubsection{Mengen}
-Die Zahlenmengen \tN, \tNz, \tZ, \tQ, \tR und \tC. Die Lösungsmenge \tL.
+Die Zahlenmengen \tN, \tNz, \tZ, \tQ, \tI, \tR und \tC. Die Lösungsmenge \tL.
 \[
- 0 \in \Nz
+ 0 \in \N, \Nz, \Z, \Q, \I, \R, \C
 \]
 
-\subsubsection{Boxes}
+\subsection{Geometrie}
+\[
+ 90\dgr
+\]
+
+\subsubsection{Formattierung}
+\[
+ 1 \stext{und} 2, \dtext{und} \e \dvert 3 \ddtext{und} 4 * 5
+\]
+\begin{mathdescribe}
+ \mathitem{Text 1} 1 \\
+ \mathitem{Text 2} 1
+\end{mathdescribe}
+
+\subsection{Boxes}
 \ztodo{Hello World}
 \end{document}

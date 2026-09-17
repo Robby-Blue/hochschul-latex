@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/math}
+\begin{document}
+\section{Prozentrechnung} 
+Eine Prozentzahl $p\%$ ist am Hilfreichsten in der Rechnung, wenn sie in eine Dezimalzahl $d$ umgewandelt wurde. Eine Dezimalzahl ist am hilfreichsten in einem Antwortssatz, wenn sie in die dazugehörige Prozentzahl umgewandelt wurde.
+\[
+ d = \frac{p}{100} \Leftrightarrow p = d * 100
+\]
+
+\subsection{Prozentzahlen als Anteile}
+Gibt es einen Gesamtbestand $G$ und es wird nach dem Anteil $A$ gesucht der $p\%$ von $G$ groß ist, so ist dies
+\[
+ A = G * \frac{p}{100} = G * d
+\]
+Wächst der Bestand $G$ \emph{um} $p\%$, so wächst es \emph{auf} $(100+p)\%$. Der Endbestand $G_E$ ist somit
+\[
+ G_E = G + G * \frac{p}{100} = G * \left(1+\frac{p}{100}\right) = G * (1+d)
+\]
+
+\subsection{Absolute Anteile als Prozentzahl}
+Ist die Frage wie viel $A$ von $G$ in Prozent sind, so kann die obige Formel umgedreht werden.
+\[
+ p = \frac{A}{G} * 100
+\]
+Ist ein Bestand von $G_1$ auf $G_2$ bereits Gewachsen kann bestimmt werden um wie viele Prozent dieser Gewachsen ist indem das Wachstum als $A$ genommen wird und der Anfangsbestand als $G$ genommen wird.
+\[
+ p = \frac{G_2-G_1}{G_1} * 100
+\]
+
+\subsection{Zinseszins (Wiederholtes Wachstum)}
+Manchmal wiederholt sich Wachstum; \zb wenn Zinsen auf Zinsen gezahlt werden. Wird sich die obige Formeln für das prozentuelle Wachstum angeguckt und über dessen wiederholte Anwendung nachgedacht, so ist zu erkennen, dass wiederholte Multiplikation benötigt wird; eine Potenz.
+
+Gibt es einen Anfangsbestand $G$ der $n$ mal um jeweils $p\%$ wächst, so ist der Endbestant $G_n$
+\[
+ G_n = G * \left(1+\frac{p}{100}\right)^n
+\]
+
+\end{document}

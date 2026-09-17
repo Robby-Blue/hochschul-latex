@@ -13,7 +13,7 @@
  \qquad \text{#1} \qquad
 }
 
-\newenvironment{mathdescribe}{%
+\newenvironment{mathdescription}{%
  \noindent\csname align*\endcsname
 }{%
  \csname endalign*\endcsname%
@@ -31,6 +31,11 @@
 
 % Shorthands
 \DeclareMathSymbol{*}{\mathbin}{symbols}{"01}
+
+% Formatting: Geometry
+\newcommand{\dgr}{%
+ ^\circ
+}
 
 % Shorthands: Sets
 \newcommand{\tL}{%

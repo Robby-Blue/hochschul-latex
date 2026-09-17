@@ -5,13 +5,16 @@ def main() {
       subtitle="Die wichtigsten Grundlagen für das mathematische Verständnis des Studiums"
     )
   ) {
-    use_sec(path="zahlen")
-    use_sec(path="zahlenfolgen")
-    use_sec(path="potenzen")
-    use_sec(path="binomische_formel")
-    use_sec(path="logarithmen")
-    use_sec(path="gleichungen")
-    use_sec(path="ungleichungen")
-    use_sec(path="lgs")
+    use_sec("zahlen")
+    use_sec("zahlenfolgen")
+    use_sec("potenzen")
+    use_sec("binomische_formel")
+    use_sec("logarithmen")
+    use_sec("gleichungen")
+    use_sec("ungleichungen")
+    use_sec("lgs")
+    use_sec("dreisatz")
+    use_sec("prozent")
+    use_sec("geometrie")
   }
 }

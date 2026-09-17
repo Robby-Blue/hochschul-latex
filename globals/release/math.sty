@@ -1,8 +1,12 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xspace}
+\usepackage{multicol}
 
 % Formatting
+\newcommand{\stext}[1]{%
+ \ \text{#1} \
+}
 \newcommand{\dtext}[1]{%
  \quad \text{#1} \quad
 }
@@ -11,11 +15,19 @@
 }
 
 \newenvironment{mathdescribe}{%
- \multicols\noindent\csname align*\endcsname
+ \begin{multicols}{2}
+ \noindent$\displaystyle
+  \begin{aligned}
 }{%
- \csname endalign*\endcsname\endmulticols%
+  \end{aligned}
+ $
+ \end{multicols}%
 }
 \newcommand{\mathitem}[1]{&\text{\textbf{#1}}&&}
+
+\newcommand{\dvert}{%
+ \,\vert\,
+}
 
 % Formatting: Constants
 \newcommand{\e}{%
@@ -24,6 +36,11 @@
 
 % Shorthands
 \DeclareMathSymbol{*}{\mathbin}{symbols}{"01}
+
+% Formatting: Geometry
+\newcommand{\dgr}{%
+ ^\circ
+}
 
 % Shorthands: Sets
 \newcommand{\tL}{%

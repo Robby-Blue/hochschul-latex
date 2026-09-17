@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/math}
+\begin{document}
+\section{Ebene Geometrie} 
+Die Ebene Geometrie ist die vereinfachte Form der Analytischen Geometrie, in einer zweidimensionalen Ebene.
+
+\subsection{Punkte}
+Ein Punkt ist ein Paar an zwei reellen Zahlen, eine $x$-Koordinate und eine $y$-Koordinate.
+\[
+ P = (x;y)
+\]
+Der Abstand zwischen zwei Punkten $P_1 = (x_1;y_1)$ und $P_2 = (x_2;y_2)$ basiert auf den Satz vom Pythagoras
+\[
+ d = \sqrt{{\Delta x}^2 + {\Delta y}^2} = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}
+\]
+
+\subsection{Geraden}
+Eine Gerade ist eine unendlich lange Linie in der Ebene. Ein endliches Teil einer Gerade ist ein Segment. Im Zweidimensionalen kann diese durch eine einfache lineare Funktion beschrieben werden.
+\[
+ y = mx+n \dtext{mit} m = \frac{\Delta x}{\Delta y}
+\]
+Hier ist die Steigung $m=\Delta x / \Delta y=\tan{\alpha}$. $n$ kann durch eine Punktprobe mit $m$ gefunden werden oder als $n = y_1-mx_1 = y_2-mx_2$.
+
+Gibt es zwei Geraden mit den Steigungen $m_1$ und $m_2$, so sind diese parallel wenn $m_1=m_2$ und senkrecht wenn $m_1*m_2=-1$.
+
+\subsection{Dreiecke}
+Drei Punkte einer Ebene können verbunden werden um ein Dreieck zu bilden, solange sie nicht alle auf einer Gerade liegen.
+
+Die Drei Punkte werden \idr $A$, $B$, $C$ genannt. 
+An jedem der Punkte liegt ein Innenwinkel, \idr benannt nach dem dazugehörigen griechischen Buchstaben $\alpha$, $\beta$, $\gamma$. Zwischen den Punkten liegen Segmente, benannt nach den kleinbuchstaben der gegenüberliegenden Punkte $a$, $b$, $c$. Für alle Dreiecke gibt
+\begin{mathdescription}
+ \mathitem{Innenwinkel} \alpha + \beta + \gamma = 180\dgr \\
+ \mathitem{Umfang} U = a+b+c \\
+ \mathitem{Flächeninhalt} A = \frac{1}{2} b * h
+\end{mathdescription}
+Es gibt drei relevante Arten an Dreiecken
+\begin{description}
+ \item[Gleichseitig] Alle Seiten sind gleich lang
+ \item[Gleichschenklig] Zwei Seiten sind gleich lang
+ \item[Rechtwinklig] Es gibt einen $90\dgr$ Winkel. In einem Rechtwinklig gilt immer
+ \begin{mathdescription}
+ \mathitem{Pythagoras} a^2+b^2=c^2 \\
+ \mathitem{Sinus} \sin() = \frac{\text{Gegenkathete}}{\text{Hypothenuse}} \\
+ \mathitem{Kosinus} \cos() = \frac{\text{Ankathete}}{\text{Hypothenuse}} \\
+ \mathitem{Tangens} \tan() = \frac{\text{Gegenkathete}}{\text{Ankathete}}
+\end{mathdescription}
+\end{description}
+
+\subsection{Vierecke}
+Vier Punkte, $A$ is $D$, machen ein Viereck. Wenn alle Winkel $90\dgr$ groß sind, ist es ein Rechteck. Wenn alle Seiten gleich lang sind, ist es ein Quadrat.
+\[
+ U = 2a + 2b \dtext{und} A = a*b
+\]
+
+\subsection{Kreise}
+Ein Mittelpunkt und ein Radius $r$ beschreiben einen Kreis.
+\[
+ d=2r \ddtext{und} U = 2 \pi r \dtext{und} \pi r^2
+\]
+Wird sich ein Punkt $P$ im Winkel $\gamma$ von einem Einheitskreis (Mittelpunkt $M=(0;0), r=1$) angeguckt, so ist der Punkt bei
+\[
+ P = (\cos{\gamma};\sin{\gamma})
+\]
+
+\subsection{Winkel}
+Winkel können im Gradmaß und im Bogenmaß gemessen werden; eine Umdrehung sind $360\dgr$ in Gradmaß und $2\pi$ in Bogenmaß. Somit wird mit einer Multiplikation von oder Division von $180\dgr / \pi$ umgewandelt.
+\[
+ \alpha_B = \alpha_G * \frac{\pi}{180\dgr}
+ \dtext{und}
+ \alpha_G = \alpha_B * \frac{180\dgr}{\pi}
+\]
+\end{document}
