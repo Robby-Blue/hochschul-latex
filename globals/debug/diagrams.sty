@@ -1,0 +1,23 @@
+\usepackage{tikz}
+
+% Light Mode Colors
+\definecolor{fg}{rgb} {0.0,0.0,0.0}
+\definecolor{hl}{rgb} {0.0,0.0,1.0}
+\definecolor{hl2}{rgb} {1.0,0.0,0.0}
+\definecolor{bg}{rgb} {1.0,1.0,1.0}
+
+\newcommand{\ztikz}[1]{%
+ \begin{center}%  
+  \begin{tikzpicture}%
+   #1
+  \end{tikzpicture}%
+ \end{center}%
+}
+
+\newcommand{\coordsys}{%
+ \coordsysc{2};
+}
+\newcommand{\coordsysc}[1]{%
+ \draw[fg, ->, thick] (-#1, 0) -- (#1, 0) node[above left] {$x$};%
+ \draw[fg, ->, thick] (0, -#1) -- (0, #1) node[below right] {$y$};%
+}

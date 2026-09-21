@@ -6,6 +6,7 @@ def main() {
     )
   ) {
     use_sec("zahlen")
+    use_sec("brüche")
     use_sec("zahlenfolgen")
     use_sec("potenzen")
     use_sec("binomische_formel")
