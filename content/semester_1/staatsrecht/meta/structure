@@ -1,0 +1,11 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Staatsrecht",
+      subtitle="",
+      id="VIF-101"
+    )
+  ) {
+    use_doc("grundlagen")
+  }
+}

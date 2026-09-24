@@ -2,7 +2,8 @@ def main() {
   document(
     titlepage=titlepage(
       title="Vorkurs Mathematik",
-      subtitle="Die wichtigsten Grundlagen für das mathematische Verständnis des Studiums"
+      subtitle="Die wichtigsten Grundlagen für das mathematische Verständnis des Studiums",
+      id=""
     )
   ) {
     use_sec("zahlen")

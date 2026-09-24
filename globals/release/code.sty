@@ -1,0 +1,28 @@
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{minted, skins, breakable}
+\usemintedstyle{github-dark}
+\definecolor{mintedbg}{HTML}{0d1117}
+
+\newtcblisting{sourcecode}[1]{
+  enhanced, breakable,
+  listing engine=minted,
+  listing only,
+  minted language=#1,
+  minted style=one-dark,
+  colback=mintedbg, colframe=mintedbg, boxrule=0pt,
+  arc=0cm,
+  top=0.3cm, left=0.3cm, right=0.3cm, bottom=0.3cm,
+  before skip=0.25cm, after skip=0.25cm
+}
+\newtcblisting{slsourcecode}[1]{
+  enhanced, breakable,
+  listing engine=minted,
+  listing only,
+  minted language=#1,
+  minted style=one-dark,
+  colback=mintedbg, colframe=mintedbg, boxrule=0pt,
+  arc=0cm,
+  top=0.1cm, left=0.1cm, right=0.1cm, bottom=0.1cm,
+  before skip=0.25cm, after skip=0.25cm
+}

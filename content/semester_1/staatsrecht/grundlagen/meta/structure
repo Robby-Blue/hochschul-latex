@@ -1,0 +1,6 @@
+def main() {
+  document() {
+    use_sec("gesetze")
+    use_sec("staaten")
+  }
+}

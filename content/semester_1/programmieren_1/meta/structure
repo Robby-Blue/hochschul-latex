@@ -1,0 +1,11 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Programmieren 1",
+      subtitle="",
+      id="VIF-135"
+    )
+  ) {
+    use_doc("grundlagen")
+  }
+}

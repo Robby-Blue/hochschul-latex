@@ -1,14 +1,27 @@
 \documentclass{article}
+\usepackage{debug/code}
+
 \usepackage{debug/de}
 \usepackage{debug/math}
 \usepackage{debug/boxes}
+\usepackage{debug/diagrams}
+\usepackage{debug/anki}
+\usepackage{debug/laws}
 %\usepackage{release/de}
 %\usepackage{release/math}
 %\usepackage{release/boxes}
+%\usepackage{release/diagrams}
+%\usepackage{release/anki}
+%\usepackage{release/laws}
 \begin{document}
 \section{Globals}
 \subsection{Deutsch}
 \zb, \etc, \idr, \textquote{text}
+
+\subsection{Gesetze}
+\art{1} \para{1} \absa{1} \satz{1} \nr{1} \lit{a} \gesetz{BGB}
+
+\GG
 
 \subsection{Mathe}
 \subsubsection{Konstanten}
@@ -29,11 +42,45 @@ Die Zahlenmengen \tN, \tNz, \tZ, \tQ, \tI, \tR und \tC. Die Lösungsmenge \tL.
 \[
  1 \stext{und} 2, \dtext{und} \e \dvert 3 \ddtext{und} 4 * 5
 \]
-\begin{mathdescribe}
+\begin{mathdescription}
  \mathitem{Text 1} 1 \\
  \mathitem{Text 2} 1
-\end{mathdescribe}
+\end{mathdescription}
+
+\section{Code}
+\begin{sourcecode}{python}
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n - 1) + fib(n - 2)
+\end{sourcecode}
+\begin{slsourcecode}{java}
+public static void main(String[] args)
+\end{slsourcecode}
 
 \subsection{Boxes}
 \ztodo{Hello World}
+
+\subsection{Diagramme}
+\subsubsection{Farben}
+\tikz{
+ \draw[fg] (0, 0) -- (1, 1);
+ \draw[bg] (0, 0.1) -- (1, 1.1);
+ \draw[hl] (0, 0.2) -- (1, 1.2);
+ \draw[hl2] (0, 0.3) -- (1, 1.3);
+}
+\subsubsection{Koordinaten System}
+\tikz{
+ \coordsys
+}
+\subsubsection{Koordinaten System (3)}
+\tikz{
+ \coordsysc{3}
+}
+
+\section{Anki}
+\ankishow
+\ankiprefix{prefix}
+\ankitopic{topic}
+\ankinote{id}{front}{back}
 \end{document}

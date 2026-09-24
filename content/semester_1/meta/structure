@@ -6,5 +6,7 @@ def main() {
     )
   ) {
     use_doc(path="mathe_vorkurs")
+    use_doc(path="staatsrecht")
+    use_doc(path="programmieren_1")
   }
 }

@@ -1,0 +1,41 @@
+\def\ankiprefixvar{}
+\def\ankitopicvar{}
+
+\newwrite\ankifile
+\immediate\openout\ankifile=anki.txt
+
+\write\ankifile{- Deck}
+\write\ankifile{-- Name}
+\write\ankifile{Verwaltungsinformatik}
+\write\ankifile{-- Deck ID}
+\write\ankifile{1823360132}
+
+\newcommand{\ankishow}{}
+
+\newcommand{\ankiprefix}[1]{
+ \def\ankiprefixvar{#1}
+}
+
+\newcommand{\ankitopic}[1]{
+ \def\ankitopicvar{#1}
+}
+
+\newcommand{\ankinote}[3]{%
+  \ifnum\currentgrouptype=6
+    \noalign{\pwriteankinote{#1}{#2}{#3}}%
+  \else
+    \pwriteankinote{#1}{#2}{#3}
+  \fi
+}
+
+\newcommand{\pwriteankinote}[3]{%
+ \immediate\write\ankifile{- New Card}
+ \immediate\write\ankifile{-- ID}
+ \immediate\write\ankifile{\ankiprefixvar:\unexpanded{#1}}
+ \immediate\write\ankifile{-- Topic}
+ \immediate\write\ankifile{\ankitopicvar}
+ \immediate\write\ankifile{-- Front}
+ \immediate\write\ankifile{#2}
+ \immediate\write\ankifile{-- Back}
+ \immediate\write\ankifile{#3}
+}
