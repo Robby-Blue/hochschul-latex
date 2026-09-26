@@ -1,0 +1,5 @@
+def main() {
+  document() {
+    use_sec("zahlensysteme")
+  }
+}

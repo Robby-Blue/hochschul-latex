@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/tables}
+\usepackage{/globals/boxes}
+\usepackage{/globals/de}
+\begin{document}
+\section{Zahlensysteme} 
+Ein Zahlensystem ist ein System mit dem ein Zahlen als eine Kombination an endlichen Symbolen (Ziffern) dargestellt werden können.
+
+\subsection{Arten}
+Zahlensysteme können in Additionsysteme und Stellenwertsysteme unterteilt werden.
+\begin{description}
+ \item[Additionssysteme] Hier werden die Werte der Ziffern unabhängig ihrere Position addiert. Dazu zählen Strichlisten oder auch in Teilen die Römischen Zahlen. Additionssysteme sind für uns nicht sonderlich relevant.
+ \item[Stellenwertsysteme] Diese werden dadurch gekennzeichnet, dass der Wert einer Ziffer von ihrere Position (Stelle) abhängig ist. Die gleichen Symbole in einer anderen Reihenfolge haben unterschiedliche Werte.
+\end{description}
+Im weiteren sind fast ausschließlioch Stellenwertsysteme gemeint.
+
+\subsection{Stellenwertsysteme}
+Stellenwertsysteme können desweiteren darin unterschieden werden, welche Basis sie nutzen; wie viele unterschiedliche Ziffern sie haben.
+\begin{ztable}{lrl}{Name & Basis $B$ & Ziffern}
+ Dezimal & 10 & 0 bis 9 \\
+ Binär & 2 & 0 und 1 \\
+ Oktal & 8 & 0 bis 7 \\
+ Hexadezimal & 16 & 0 bis 9 und A bis B \\
+\end{ztable}
+Wenn die Basis eines Zahl dies nicht aus dem Kontext offensichtlich ist kann diese (im Dezimalsystem) als Index der Zahl aufgeschrieben werden.
+\[
+ \text{Zahl}_\text{Basis}
+\]
+\begin{zexample}
+Liegt die Zahl \textquote{123} im Dezimalsystem vor, kann diese als $123_{10}$ aufgeschrieben werden. Liegt die Binärzahl $101$ vor, so kann dies als $101_2$ klargestellt werden.
+\end{zexample}
+Die Stelle an Position $i$ (von rechts nach links gelesen, $i=0$ an der rechtesten Stelle) einer Zahl der Basis $B$ hat einen Stellenwert von $B^i$.
+\begin{ztable}{lXXXX}{$i$ & \multicolumn{2}{l}{Dezimalsystem} & \multicolumn{2}{l}{Binärsystem}}
+ & Stellenwert & Name & Stellenwert & Name \\
+ \cmidrule{2-3} \cmidrule{4-5}
+ 0 & $10^0=1$ & Einserstelle & $2^0=1$ & Einserstelle  \\
+ 1 & $10^1=10$ & Zehnerstelle & $2^1=2$ & Zweierstellen\\
+ 2 & $10^2=100$ & Hunderterstelle & $2^2=4$ & Viererstelle \\
+ 3 & $10^3=1000$ & Tausenderstelle & $2^3=8$ & Achterstelle \\
+\end{ztable}
+
+\subsection{Basis $B$ in Basis 10 umwandeln}
+Soll eine Zahl die in der Basis $B$ ist in das Dezimalsystem umgewandelt werden, so kann dies als eine Summe der Werte aller Ziffern basierend auf ihrer Stelle angesehen werden. Hier ist $i$ die Stelle (von rechts nach links gelesen, $i=0$ an der rechtesten Stelle), $b_i$ die Ziffer der Stelle $i$, und $B$ die Basis. So hat die Stelle $i$ einen Stellenwert von $B^i$ und einen gesamten Wert von $b_i * B^i$.
+\[
+ n_{10} = \sum_{i=0}^{k-1} b_i * B^i
+\]
+\begin{zexample}
+Soll $110_2$ in eine Dezimalzahl umgewandelt werden, so wird gerechnet
+\begin{align*}
+   &0*2^0 + 1*2^1 + 1*2^2 \\
+ =\ &0 + 2 + 4 \\
+ =\ &6_{10}
+\end{align*}
+Also ist $110_2 = 6_{10}$
+\end{zexample}
+Die Idee dieses Rechnung kann veranschaulicht werden indem sie auf die bereits so bekannten Dezimalzahlen angewendet wird.
+\begin{zexample}
+Wird die obige Rechnung genutzt um den Wert von $123_{10}$ zu berechnen 
+\begin{align*}
+   &3*10^0 + 2*10^1 + 1*10^2 \\
+ =\ &3*1+2*10+1*100 \\
+ =\ &3 + 20 + 100 \\
+ =\ &123_{10}
+\end{align*}
+Letztendlich wird hier nur angegeben, dass die Zehnerstelle einen Stellenwert von 10 hat, uns dass wenn in der Zehnerstelle eine zwei steht dies eine zwanzig ist.
+\end{zexample}
+
+\subsection{Basis 10 in Basis $B$ umwandeln}
+Um eine Zahl aus dem Dezimalsystem in eine andere Basis $B$ zu verwandeln wird das Divisionsverfahren verwendet.
+
+Hierbei wird die Zahl durch die Basis dividiert, so dass es einen Quotionen und einen Rest gibt. Wenn der Quotient nicht null ist, wird dieser als neue Zahl genutzt um diesen Schritt zu wiederholen. Ist der Quotient null, so ist das Verfahren fertig. Die Reste können von unten nach oben gelesen und von links nach rechts aufgeschrieben werden.
+\begin{zexample}
+Wird $123$ in das Oktalsystem umgewandelt.
+\begin{ztable}{rcccrcl}{Zahl & & Basis & & Quotient & & Rest}
+ 123 & : & 8 & = & 15 & R & 3 \\
+  15 & : & 8 & = &  1 & R & 7 \\
+   1 & : & 8 & = &  0 & R & 1 \\
+\end{ztable}
+Somit ist $123_{10} = 173_8$
+\end{zexample}
+
+\subsection{Basis $B_1$ in Basis $B_2$ umwandeln}
+Der einfachste und repetitivste weg eine Zahl der Basis $B_1$ in die Basis $B_2$ umzuwandeln ist es die Zahl auf die oben beschrieben Art und Weise von der Basis $B_1$ auf in das Dezimalsystem umzuwandeln und dieses Ergebnis dann wie oben beschrieben aus dem Dezimalsystem in die Basis $B_2$ umzurechnen.
+
+Es kann Abkürzungen geben, wenn die eine Basis eine Potenz der anderen ist.
+\ztodo{Ausführen}
+\end{document}

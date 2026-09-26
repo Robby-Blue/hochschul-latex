@@ -6,6 +6,6 @@ def main() {
       id="VIF-101"
     )
   ) {
-    use_doc("grundlagen")
+    use_doc(path="grundlagen")
   }
 }

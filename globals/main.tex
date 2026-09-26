@@ -1,18 +1,21 @@
 \documentclass{article}
+\usepackage{lipsum}
+
 \usepackage{debug/code}
+\usepackage{debug/anki}
 
 \usepackage{debug/de}
 \usepackage{debug/math}
 \usepackage{debug/boxes}
 \usepackage{debug/diagrams}
-\usepackage{debug/anki}
 \usepackage{debug/laws}
+\usepackage{debug/tables}
 %\usepackage{release/de}
 %\usepackage{release/math}
 %\usepackage{release/boxes}
 %\usepackage{release/diagrams}
-%\usepackage{release/anki}
 %\usepackage{release/laws}
+%\usepackage{release/tables}
 \begin{document}
 \section{Globals}
 \subsection{Deutsch}
@@ -60,6 +63,27 @@ public static void main(String[] args)
 
 \subsection{Boxes}
 \ztodo{Hello World}
+
+\begin{zexample}
+ Hello World
+\end{zexample}
+
+\subsection{Tables}
+\subsubsection{With a header}
+\begin{ztable}{cXc}{a & b & c}
+ d & \lipsum[2][1-2] & e \\
+ f & \lipsum[10][1-2] & g \\
+\end{ztable}
+
+\subsubsection{Without a header}
+\begin{ztableheadless}{cXc}
+ a & \lipsum[2][1-2] & b \\
+ c & \lipsum[10][1-2] & d \\
+\end{ztableheadless}
+\lipsum[1][1-2]
+\begin{ztableheadless}{cXX}
+ a & \lipsum[10][1-2] & \lipsum[11][1-2] \\
+\end{ztableheadless}
 
 \subsection{Diagramme}
 \subsubsection{Farben}

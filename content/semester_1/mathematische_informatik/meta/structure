@@ -1,0 +1,11 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Mathematische Grundlagen der Informatik",
+      subtitle="",
+      id="VIF-141-02"
+    )
+  ) {
+    use_doc(path="zahlen")
+  }
+}
