@@ -1,9 +1,9 @@
 def main() {
   document(
     titlepage=titlepage(
-      title="Zahlen",
+      title="Hardware",
     )
   ) {
-    use_sec("zahlensysteme")
+    use_sec("computer")
   }
 }

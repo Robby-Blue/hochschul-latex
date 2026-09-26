@@ -3,6 +3,10 @@
 \usepackage{/globals/tables}
 \usepackage{/globals/boxes}
 \usepackage{/globals/de}
+\usepackage{/globals/anki}
+\ankiprefix{bases}
+\ankitopic{Zahlensysteme}
+\ankishow
 \begin{document}
 \section{Zahlensysteme} 
 Ein Zahlensystem ist ein System mit dem ein Zahlen als eine Kombination an endlichen Symbolen (Ziffern) dargestellt werden können.
@@ -65,6 +69,7 @@ Wird die obige Rechnung genutzt um den Wert von $123_{10}$ zu berechnen
 \end{align*}
 Letztendlich wird hier nur angegeben, dass die Zehnerstelle einen Stellenwert von 10 hat, uns dass wenn in der Zehnerstelle eine zwei steht dies eine zwanzig ist.
 \end{zexample}
+\ankinote{b-to-10}{Zu Dezimal}{Werte multiplikation mit Stellenwert (Basis Exponent)}
 
 \subsection{Basis 10 in Basis $B$ umwandeln}
 Um eine Zahl aus dem Dezimalsystem in eine andere Basis $B$ zu verwandeln wird das Divisionsverfahren verwendet.
@@ -79,9 +84,11 @@ Wird $123$ in das Oktalsystem umgewandelt.
 \end{ztable}
 Somit ist $123_{10} = 173_8$
 \end{zexample}
+\ankinote{10-to-b}{Von Dezimal}{Division B, wiederholen bis Teiler=0, Reste (unte nach oben) als Ziffern}
 
 \subsection{Basis $B_1$ in Basis $B_2$ umwandeln}
 Der einfachste und repetitivste weg eine Zahl der Basis $B_1$ in die Basis $B_2$ umzuwandeln ist es die Zahl auf die oben beschrieben Art und Weise von der Basis $B_1$ auf in das Dezimalsystem umzuwandeln und dieses Ergebnis dann wie oben beschrieben aus dem Dezimalsystem in die Basis $B_2$ umzurechnen.
+\ankinote{b-b}{B zu B}{Zu 10, aus 10 zu B}
 
 Es kann Abkürzungen geben, wenn die eine Basis eine Potenz der anderen ist.
 \ztodo{Ausführen}

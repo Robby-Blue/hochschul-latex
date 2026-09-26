@@ -2,12 +2,15 @@ def main() {
   document(
     titlepage=titlepage(
       title="Semester 1",
-      subtitle="Das erste Semester"
+      subtitle="Das erste Semester",
+      from="September 2026",
+      to="Februar 2027"
     )
   ) {
     use_doc(path="mathe_vorkurs")
     use_doc(path="staatsrecht")
     use_doc(path="programmieren_1")
     use_doc(path="mathematische_informatik")
+    use_doc(path="informatik")
   }
 }

@@ -17,15 +17,24 @@
  \newpage
 }
 \newcommand{\zclayersubsection}[1]{
- \section{#1}
+ \part*{#1}
+ \zccsubtitlepagefrom{} bis \zccsubtitlepageto{}
+ \addcontentsline{toc}{part}{#1}
+ \newpage
 }
 \newcommand{\zclayersubsubsection}[1]{
- \subsection{#1}
+ \section{#1}
+ \zccsubsubtitlepageid{}
+ \zccsubsubtitlepagesubtitle{}
+ \newpage
 }
 \newcommand{\zclayersubsubsubsection}[1]{
- \subsubsection{#1}
+ \subsection{#1}
 }
 \newcommand{\zclayersubsubsubsubsection}[1]{
+ \subsubsection{#1}
+}
+\newcommand{\zclayersubsubsubsubsubsection}[1]{
  \subsubsection*{#1}
 }
 
@@ -33,7 +42,8 @@
  \begin{titlepage}
    \begin{center}
      \vspace*{1cm}
-     {#1 \par}
+     {#1 \\
+     (\zcctitlepagefrom{} bis \zcctitlepageto{}) \par}
      \vspace{2.3cm}
      {\zccglobalauthor \par}
      \vspace{2.3cm}
@@ -54,6 +64,9 @@
 \newcommand{\zcsublayersubsubsubsection}[1]{
  \subsubsection{#1}
 }
+\newcommand{\zcsublayersubsubsubsubsection}[1]{
+ \subsubsection*{#1}
+}
 
 \newcommand{\zcsubsublayersection}[1]{
  \section{#1}
@@ -64,6 +77,9 @@
 \newcommand{\zcsubsublayersubsubsection}[1]{
  \subsubsection{#1}
 }
+\newcommand{\zcsubsublayersubsubsubsection}[1]{
+ \subsubsection*{#1}
+}
 
 \newcommand{\zcsubsubsublayersection}[1]{
  \section{#1}
@@ -73,4 +89,14 @@
 }
 \newcommand{\zcsubsubsublayersubsubsection}[1]{
  \subsubsection{#1}
+}
+\newcommand{\zcsubsubsublayersubsubsubsection}[1]{
+ \subsubsection*{#1}
+}
+
+\newcommand{\zcsubsubsubsublayersection}[1]{
+ \subsubsection*{#1}
+}
+\newcommand{\zcsubsubsubsublayersubsection}[1]{
+ \subsubsection*{#1}
 }

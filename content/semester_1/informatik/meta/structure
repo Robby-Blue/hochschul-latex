@@ -1,0 +1,11 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Einführung Informatik",
+      subtitle="",
+      id="VIF-141-01"
+    )
+  ) {
+    use_doc(path="hardware")
+  }
+}

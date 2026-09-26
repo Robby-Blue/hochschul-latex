@@ -4,7 +4,8 @@ def main() {
     titlepage=titlepage(
       title="Studium Verwaltungsinformatik",
       subtitle="Eine kurze Zusammenfassung des Inhalts der Studiums Verwaltungsinformatik",
-    )
+    ),
+    auto_add_docs=false
   ) {
     use_doc(path="content/semester_1")
   }

@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/anki}
+\ankiprefix{computer}
+\ankitopic{Computer}
+\ankishow
+\begin{document}
+\section{Computer}
+Ein Computer wird in der Informatik als Mittel zum Zweck verwendet, um zusammen mit darauf laufender Software automatisiert Informationen zu verarbeiten.
+
+\subsection{Die Von-Neumann-Architektur}
+John von Neumann begründete die heutig genutzte Computerarchitektur. 
+
+Hier gibt es eine zentrale Recheneinheit (\emph{Central Processing Unit} / \emph{CPU}), bestehend aus einem Steuerwerk (\emph{Control Unit}) und einem Rechenwerk (\emph{Arithmetic Logic Unit} / \emph{ALU}). Das Steuerwerk interpretiert die Programmanweisungen und verbindet dementsprechend die Datenquellen. Das Rechenwerk führt die interpretierten Befehle basierend auf den verschalteten Daten aus.
+
+Die CPU ist über ein Verbindungssystem (\emph{Bussystem}) mit dem Speicher (\emph{Memory}) und der Ein- und Ausgabe (\emph{In- and Output}) verbunden. Der Speicher speichert die Programme und alle benötigten Daten. Die Ein- und Ausgabe verbindet den Computer zur AnwenderIn und zu anderen Systemen.
+
+\ankinote{von-neumann-arch}{Von Neumann Architektur}{CPU, Bus, Speicher, IO}
+\ankinote{von-neumann-arch-cpu}{Von Neumann CPU}{Steuerwerk und Rechenwerk (ALU)}
+\ankinote{von-neumann-arch-bus}{Von Neumann Bus}{Verbindet CPU mit Rest}
+\ankinote{von-neumann-arch-speicher}{Von Neumann Speicher}{Speichert Programm und Daten}
+\ankinote{von-neumann-arch-io}{Von Neumann IO}{Ein- und Ausgabe; alles IO}
+\subsection{Aufbau}
+\begin{description}
+ \item[Zentraleinheit] Der überbegriff für den Prozessor, den RAM, alle Bussysteme und die Ein- und Ausgabesysteme.
+ \item[Prozessorchip] Der Prozessorchip ist letztendlich die oben beschriebene CPU. Der Chip enthält heutzutage mehrere unabhängige Prozessorkerne.
+ \item[Speicher] Der Speicher kann weiter unterteilt werden.
+ \begin{description}
+  \item[RAM] Die Random Access Memory kann temporär Daten speichern, die schnell geschrieben und gelesen werden können. Der RAM wird \idr für Programme und Programmdaten genutzt. Ohne Strom gehen die hier gespeicherten Daten verloren.
+  \item[Massenspeicher] Auf Magnetbändern, DVDs, Festplatten (\emph{HDD}s), \emph{SSD}s, USB-Sticks \etc können unmengen an Daten, oftmals mehrere Terabyte langzeitig gespeichert werden.
+  \item[ROM] Die Read-Only Memory ist permanent, kann aber nur gelesen werden. Hier wird das BIOS und die Firmware gespeichert.
+  \item[Cache] Caches sind nehr nah am Prozessor, so dass sie besonders schnell gelesen werden können. Hier werden die gerade wichtigen Programmanweisungen und Daten zwischengespeichert. 
+ \end{description}
+ Hier gilt die Antiproportionalität dass Speichermedien mit einer höheren Speicherkapazität langsamer sind.
+ \item[Busse] Busse sind die oben beschriebenen Bussysteme nach von Neumann. Es gibt unterschiedliche Busse.
+ \item[Schnittstellen] Die Verbindung zu anderen Systemen, normalerweise anderen Ein- und Ausgabegeräten.
+ \item[Peripherie] Jeder weitere Anschluss die nichtzwingend an die Zentraleinheit angeschlossen werden können; alle Ein- und Ausgabegeräte wie Tastaturen, Mäuse, Mikrofone, CD-Laufwerke, Bildschirme, \etc.
+\end{description}
+
+\ankinote{hardware-zentraleinheit}{Hardware Zentraleinheit}{Prozessor, RAM, Bus, IO}
+\ankinote{hardware-prozessor}{Prozessor}{CPU}
+\ankinote{hardware-speicher-arten}{Speicher Arten}{RAM, Massenspeicher, ROM, Cache}
+\ankinote{hardware-speicher-relation}{Speicher Relation}{Kapazität und Geschwindigkeit antiproportional}
+\subsection{Software}
+Die Software die auf dem Computer läuft kann in drei Arten unterteilt werden.
+\begin{description}
+ \item[Anwendungssoftware] Die Software mit der AnwenderInnen direkt interagieren; Webbrowser, Chattingprogramme, Textbearbeitungsprogramme, \etc.
+ \item[Systemsoftware]~ 
+ \begin{description}
+  \item[Betriebssystem] Das der Anwendungssoftware unterliegende Betriebssystem, welche Softwareschnittstellen zu Treibern, dem Dateisystem, zu den Ein- und Ausgabegeräten, \etc bereitstellt.
+  \item[Systemnahe Software] Oftmals Hintergrundsprozesse für Server; Webserver, Datenbanken, \etc.
+ \end{description}
+\end{description}
+\ankinote{software}{Software Arten}{Anwendung, System (Betriebssystem, Systemnah)}
+\ankinote{software}{Systemnah}{Server, Datenbanken}
+
+\end{document}

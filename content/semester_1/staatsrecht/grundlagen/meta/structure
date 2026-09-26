@@ -1,5 +1,9 @@
 def main() {
-  document() {
+  document(
+    titlepage=titlepage(
+      title="Grundlagen",
+    )
+  ) {
     use_sec("gesetze")
     use_sec("staaten")
   }
