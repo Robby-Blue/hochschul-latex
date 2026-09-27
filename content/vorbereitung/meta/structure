@@ -1,0 +1,12 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Vorbereitung",
+      subtitle="Die Vorbereitung auf das Studium",
+      from="14. September 2026",
+      to="17. September 2026"
+    )
+  ) {
+    use_doc(path="mathe_vorkurs")
+  }
+}

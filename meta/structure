@@ -7,6 +7,7 @@ def main() {
     ),
     auto_add_docs=false
   ) {
+    use_doc(path="content/vorbereitung")
     use_doc(path="content/semester_1")
   }
 }

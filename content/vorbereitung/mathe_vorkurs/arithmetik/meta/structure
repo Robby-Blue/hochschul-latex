@@ -1,0 +1,12 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Arithmetik",
+    )
+  ) {
+    use_sec("zahlen")
+    use_sec("brüche")
+    use_sec("dreisatz")
+    use_sec("prozent")
+  }
+}

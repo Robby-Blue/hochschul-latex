@@ -1,0 +1,13 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Vorkurs Mathematik",
+      subtitle="Die wichtigsten Grundlagen für das mathematische Verständnis des Studiums",
+      id=""
+    )
+  ) {
+    use_doc(path="arithmetik")
+    use_doc(path="algebra")
+    use_sec("geometrie")
+  }
+}

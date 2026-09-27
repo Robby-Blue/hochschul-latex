@@ -15,12 +15,16 @@
 }
 
 \newcommand{\ankinote}[3]{%
- \if\relax\detokenize\expandafter{\prefix}\relax
+ \if\relax\detokenize\expandafter{\prefix}\relax%
   \errmessage{Set an Anki prefix}
- \fi
+ \fi%
  \ifshownotes%
+  \ifcsname ankicardid#1\endcsname%
+   \errmessage{Reused anki id: #1}
+  \fi%
+  \expandafter\def\csname ankicardid#1\endcsname{true}%
   \noindent \pwriteankinote{\prefix:#1}{\topic{} #2}{#3} \newline
- \fi
+ \fi%
 }
 
 \newcommand{\pwriteankinote}[3]{%
