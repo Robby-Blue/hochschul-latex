@@ -11,5 +11,6 @@ def main() {
     use_doc(path="programmieren_1")
     use_doc(path="mathematische_informatik")
     use_doc(path="informatik")
+    use_doc(path="wirtschaftsinformatik")
   }
 }

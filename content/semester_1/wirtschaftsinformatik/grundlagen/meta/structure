@@ -1,0 +1,11 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Grundlagen",
+    )
+  ) {
+    use_sec("wi")
+    use_sec("chancen")
+    use_sec("innovation_adoption")
+  }
+}

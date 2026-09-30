@@ -1,0 +1,12 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Wirtschaftsinformatik",
+      subtitle="",
+      id="VIF-131"
+    )
+  ) {
+    use_doc(path="grundlagen")
+    use_doc(path="computer")
+  }
+}

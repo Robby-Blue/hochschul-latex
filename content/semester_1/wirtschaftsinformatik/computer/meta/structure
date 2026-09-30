@@ -1,0 +1,11 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Computer",
+    )
+  ) {
+    use_sec("hardware")
+    use_sec("os")
+    use_sec("software")
+  }
+}
