@@ -6,5 +6,6 @@ def main() {
   ) {
     use_sec("gesetze")
     use_sec("staaten")
+    use_sec("grundgesetz")
   }
 }

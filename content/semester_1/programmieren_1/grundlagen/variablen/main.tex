@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankishow
+\ankiprefix{vars}
+\ankitopic{Variablen}
+\begin{document}
+\section{Variablen} 
+Die Daten mit denen ein Programm arbeitet werden in \emph{Variablen} gespeichert. Eine Variable hat einen Namen, mit dem ihr ein Wert gegeben und ausgelesen werden kann. Zudem hat eine Variable immer einen bestimmten Datentypen, der bestimmt welche Werte die Variable annehmen kann und welche Operationen mit ihr gemacht berechnet werden können.
+
+Variablen sind nur in dem Block in dem sie deklariert wurden verfügbar.
+
+\subsection{Deklaration und Initialisation}
+Eine Variable muss \emph{deklariert} werden; heißt es muss sozusagen eine Anweisung ausgeführt werden um sie zu erstellen. Hierfür wird der Datentype gefolgt von dem gewünschten Namen aufgeschrieben.
+\begin{slsourcecode}{java}
+Datentyp variablenName;
+\end{slsourcecode}
+Diese Variable existiert nun, hat aber noch keinen Wert. Der Variable kann ein Wert zugewiesen werden indem der gewählte Name gefolgt von einem Gleichzeichen und dem gewünschten Wert aufgeschrieben wird. Dieser Schritt ist die \emph{initialisation} der Variable.
+\begin{slsourcecode}{java}
+variablenName = wert;
+\end{slsourcecode}
+Beide Schritte können auch gleichzeitig passieren.
+\begin{slsourcecode}{java}
+Datentyp variablenName = wert;
+\end{slsourcecode}
+Bei Bedarf können auch mehrere Variablen in einer Anweisung deklariert, oder deklariert und initialisiert werden. Dass mehrere Variablen deklariert werden und nur manche initialisiert werden ist nicht zulässig.
+\begin{slsourcecode}{java}
+Datentyp1 variablenName1, variablenName2;
+Datentyp1 variablenName3 = wert1, variablenName4 = wert2;
+\end{slsourcecode}
+
+\ankinote{erstellen}{Erstellen Namen}{Deklarieren}
+\ankinote{wert}{Wert Geben Namen}{Initialisieren}
+\ankinote{mehrere}{Mehrere Deklarieren}{Alle oder keinen initialisieren}
+
+\subsection{Namen}
+Variablen sollten sinnvolle und aussagekräftige Namen haben.
+
+Der Konvention nach wird hier das camelCase verwendet: der Variablenname fängt klein an, neue Wörter werden mit großbuchstaben begonnen.
+
+\subsection{Konstanten}
+Eine Variable dessen Wert unveränderbar sein soll kann mit dem \ilsourcecode{final} keyword vor dem Datentypen markiert werden. Diese werden im SCREAMING\_SNAKE\_CASE benannt.
+\begin{slsourcecode}{java}
+final Datentyp VARIABLEN_NAME = wert;
+\end{slsourcecode}
+Beim versuch den Wert dieser Variable zu verändern kommt es zu einer Fehlermeldung.
+\ankinote{final-case}{final Case}{screaming snake case}
+\end{document}

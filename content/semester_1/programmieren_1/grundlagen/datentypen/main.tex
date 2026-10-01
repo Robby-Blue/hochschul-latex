@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/code}
+\usepackage{/globals/tables}
+\usepackage{/globals/anki}
+\ankishow
+\ankiprefix{datatypes}
+\ankitopic{Datentypen}
+\begin{document}
+\section{Datentypen} 
+Welche Werte eine Variable annehmen kann, was mit diesen gemacht werden kann und was diese repräsentieren wird durch den \emph{Datentypen} angegeben.
+
+\subsection{Ganze Zahlen}
+Ganze Zahlen können in vier unterschiedlichen Datentypen gespeichert werden; \ilsourcecode{byte}, \ilsourcecode{short}, \ilsourcecode{int} und \ilsourcecode{long}. Diese unterscheiden sich darin, wie viele Bytes sie an Arbeitsspeicher einnehmen und dementsprechend auch wie groß die darin gespeicherten Zahlen sein können.
+\begin{ztable}{lll}{Datentype & Größe & Wertebereich}
+ byte & 1 Byte (8 Bit) & $-2^7$ bis $2^7-1$ \\
+ short & 2 Byte (16 Bit) & $-2^{15}$ bis $2^{15}-1$ \\
+ int & 4 Byte (32 Bit) & $-2^{31}$ bis $2^{31}-1$ \\
+ long & 8 Byte (64 Bit) & $-2^{63}$ bis $2^{63}-1$ \\
+\end{ztable}
+Mit unterstrichen können visuelle Seperatoren dargestellt werden, so wie Punkte im Deutschen oder Kommas im Englischen genutzt werden. Zudem kann mit einem \ilsourcecode{e} die wissenschaftliche Notation genutzt werden. Dieses beide gilt auch für Gleitkommezahlen.
+\begin{slsourcecode}{java}
+int a = 1_000_000;
+int a = 1e6; // 1 * 10^6
+\end{slsourcecode}
+Standardmäßig werden \ilsourcecode{int}s genutzt. Dass eine Zahl ein \ilsourcecode{long} ist kann mit dem \ilsourcecode{L} suffix angemerkt werden.
+\begin{slsourcecode}{java}
+int a = 2_147_483_647;
+long b = 2_147_483_648L;
+\end{slsourcecode}
+Wird du der größtmöglich speicherbaren Zahl eins addiert, so kommt es zu einem Überlauf; sie wird zur kleinstmöglichen Zahl. Gegenteilig ist die kleinstmögliche Zahl minus eins die größtmöglich Zahl.
+\begin{slsourcecode}{java}
+int a = 2_147_483_647;
+System.out.println(a + 1); // -2147483648
+\end{slsourcecode}
+
+\ankinote{sizes-bits}{Zahlen Größen Bits}{byte = 1 Byte, 8 Bit, danach doppelnd}
+\ankinote{sizes-vals}{Zahlen Wertebereiche}{byte = \(2^8\), danach doppelnd}
+\subsection{Dezimalzahlen}
+Dezimalzahlen werden als \ilsourcecode{float}s und \ilsourcecode{double}s dargestellt, jeweils 4 Bytes und 8 Bytes in der größe.
+
+Sie werden mit einem Punkt als Komma aufgeschrieben, so wie Dezimalzahlen auch im Englischen geschrieben werden. Mit einem \ilsourcecode{f} kann gekennzeichnet werden dass eine Zahl ein \ilsourcecode{float} ist.
+
+Gleitkommazahlen funktionieren indem ein Bit das Vorzeichen und jeweils ein paar Bits für die Mantisse und den Exponenten genutzt werden. Dann ist
+\[
+ \text{Wert} = \text{Vorzeichen} * \text{Mantisse} * 2^{\text{Exponent}}
+\]
+Hier ist das Vorzeichen $1$ oder $-1$ und die Mantisse zwischen $1$ und $2$. So können Dezimalzahlen unterschiedlichster Größenordnungen.
+
+\ankinote{float}{Float Bestandteile}{Vorzeichen, Mantisse, Exponent}
+
+\subsection{Wahrheitswerte}
+Ein boolean kann entweder Wahr (\ilsourcecode{true}) oder Falsch (\ilsourcecode{false}) speichern.
+
+\subsection{Zeichen}
+Ein Charakter, ein \ilsourcecode{char}, kann in zwei Bytes Buchstaben und andere Symbole speichern. Dabei werden einfache Anführungszeichen genutzt.
+\begin{slsourcecode}{java}
+char c = 'a';
+\end{slsourcecode}
+Ein Backslash (\textbackslash) zeigt eine Escape-Sequenz an; zusammen mit einem nachfolgenden Zeichen können so Sonderzeichen geschrieben werden.
+\begin{ztable}{lll}{Squenz & Sonderzeichen}
+ \textbackslash n & Neue Zeile \\
+ \textbackslash t & Tabulator \\
+ \textbackslash ' & Einfaches Anführungszeichen \\
+ \textbackslash " & Doppeltes Anführungszeichen \\
+ \textbackslash \textbackslash & Backslash \\
+ \textbackslash u<4 Byte Hex Zahl> & Unicode Charakter \\
+\end{ztable}
+
+\ankinote{char-u}{Char Unicode}{escape u<4 Byte Hex Zahl>}
+
+\subsection{Text}
+Ein \ilsourcecode{String} ist eine Zeichenkette und kann so ganze Text darstellen.
+\begin{slsourcecode}{java}
+String s = "Hello World!";
+\end{slsourcecode}
+\end{document}

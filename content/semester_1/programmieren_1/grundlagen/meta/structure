@@ -5,5 +5,7 @@ def main() {
     )
   ) {
     use_sec("helloworld")
+    use_sec("variablen")
+    use_sec("datentypen")
   }
 }

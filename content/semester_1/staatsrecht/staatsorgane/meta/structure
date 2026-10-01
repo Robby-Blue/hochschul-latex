@@ -1,0 +1,10 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Staatsorgane",
+    )
+  ) {
+    use_sec("preambel")
+    use_sec("bundestag")
+  }
+}
