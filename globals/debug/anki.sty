@@ -22,7 +22,11 @@
   \ifcsname ankicardid#1\endcsname%
    \errmessage{Reused anki id: #1}
   \fi%
+  \ifcsname ankicardfront#2\endcsname%
+   \errmessage{Reused anki front: #2}
+  \fi%
   \expandafter\def\csname ankicardid#1\endcsname{true}%
+  \expandafter\def\csname ankicardfront#2\endcsname{true}%
   \noindent \pwriteankinote{\prefix:#1}{\topic{} #2}{#3} \newline
  \fi%
 }
