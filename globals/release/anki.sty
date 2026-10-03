@@ -35,7 +35,7 @@
  \immediate\write\ankifile{-- Topic}
  \immediate\write\ankifile{\ankitopicvar}
  \immediate\write\ankifile{-- Front}
- \immediate\write\ankifile{#2}
+ \immediate\write\ankifile{\unexpanded{#2}}
  \immediate\write\ankifile{-- Back}
- \immediate\write\ankifile{#3}
+ \immediate\write\ankifile{\unexpanded{#3}}
 }
