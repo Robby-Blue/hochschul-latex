@@ -1,11 +1,12 @@
 def main() {
   document(
     titlepage=titlepage(
-      title="Zahlen",
+      title="Hardware",
     )
   ) {
+    use_sec("hardware")
+    use_sec("software")
     use_sec("zahlensysteme")
-    use_sec("zahlensysteme_kommazahlen")
-    use_sec("horner")
+    use_sec("texte")
   }
 }

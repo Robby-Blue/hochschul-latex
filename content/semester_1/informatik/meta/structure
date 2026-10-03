@@ -6,6 +6,7 @@ def main() {
       id="VIF-141-01"
     )
   ) {
-    use_doc(path="hardware")
+    use_sec("informatik")
+    use_doc(path="grundlagen")
   }
 }

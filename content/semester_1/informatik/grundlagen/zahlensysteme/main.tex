@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{/globals/math}
+\usepackage{/globals/compsci}
+\usepackage{/globals/boxes}
+\usepackage{/globals/anki}
+\ankiprefix{bases-inf}
+\ankitopic{Zahlensysteme}
+\ankishow
+\begin{document}
+\section{Zahlensysteme} 
+Zahlensysteme wurden bereits in \hyperref[sec:mathe_zahlensysteme]{Mathematische Grundlagen der Informatik} beschrieben.
+
+In Stellenwertssystemen hängt der Wert einer Ziffer nicht nur von der Ziffer selbst sondern auch von der Stelle der Ziffer ab.
+
+Hier sind besonders relevant das Binärsystem, auch genannt das Dualsystem, das zwei Ziffern (0 und 1) hat und durch eine 2 als Index oder ein \bb als Suffix gekennzeichnet wird, das Hexadezimalsystem mit 16 Ziffern (0-9, A-F), gekennzeichnet durch den Index 16 oder ein \bh. 
+\ankinote{suffix}{Inf Suffixe}{Binär b, Hexadezimal h}
+
+\subsection{Negative Binärzahlen}
+Mit einem Zweierkomplement können negative Zahlen dargestellt werden. Diese darstellungsform funktioniert wie das normale Binärsystem, nur dass der Wert der ersten Stelle negativ ist. Somit kann der erste Bit als Vorzeichenbit angesehen werden, verändert natürlich aber auch anderweitig den Wert der Zahl.
+
+Eine Zahl kann negiert werden indem alle Bits invertiert werden und dann eins addiert wird.
+\ankinote{2s-comp-name}{Negative Zahlen}{Zweierkomplement}
+\ankinote{2s-comp}{Zweierkomplement}{Bits Invertieren, +1}
+\begin{zexample}%
+\[
+\begin{array}{r|rrrr}
+  \text{Wert} & -8 & 4 & 2 & 1 \\
+  \hline
+  2_{10}  = & 0 & 0 & 1 & 0 \\
+  -2_{10} = & 1 & 1 & 1 & 0
+\end{array}
+\]
+\end{zexample}
+
+\subsection{Addition}
+Die schriftliche Addition nutzt das gleiche Verfahren, unabhängig der Basis. Der einzige unterschied ist nur, das es schon bei einer kleineren Zahl zu einem Übertrag kommt.
+\begin{zexample}%
+\[
+\begin{array}{@{}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{}}
+    & & & \scriptstyle 1 & \scriptstyle 1 & \scriptstyle 1 & \\
+    & 0 & 0 & 0 & 1 & 1 & 1 \\
+  + & 0 & 1 & 1 & 0 & 1 & 1 \\
+  \hline
+  = & 0 & 1 & 0 & 0 & 1 & 0
+\end{array}
+\]
+\end{zexample}
+Subtraktion ist die Addition einer negativen Zahl. 
+
+\subsection{Multiplikation}
+Auch bei der Multiplikation kann einfach die schriftliche Multiplikation genutzt werden. Für jede Ziffer der einen Zahl wird die andere Zahl mal den Wert der Ziffer und um die Stelle der Ziffer verschoben aufgeschrieben. All diese Zahlen werden zusammenaddiert.
+
+\begin{zexample}%
+\[
+\begin{array}{@{}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{}}
+  \multicolumn{7}{c}{$101 * 11$} \\
+  \hline
+    & 0 & 0 & 1 & 1 & 0 & 0 \\
+  + & 0 & 0 & 0 & 0 & 0 & 0 \\
+  + & 0 & 0 & 0 & 0 & 1 & 1 \\
+  \hline
+  = & 0 & 1 & 1 & 1 & 1 & 1
+\end{array}
+\]
+\end{zexample}
+
+\subsection{Binary Coded Decimals}
+Es ist auch möglich, und manchmal auch hilfreich, die einzelnen Ziffern der Dezimalzahl als Binärzahlen darzustellen. Dafür werden 4 Binärziffern pro Dezimalziffer benötigt.
+\begin{zexample}%
+Es wird $123_{10}$ als BCD dargestellt.
+\[
+ 1_{10} = 0001_2 \dtext{und}
+ 2_{10} = 0010_2 \dtext{und}
+ 3_{10} = 0011_2
+\]
+Also ist $123_{10} = 0001\ 0010\ 0011$ als Binary Coded Decimals.
+\ankinote{bcd-name}{BCD Name}{Binary Coded Decimals}
+\ankinote{bcd}{BCD}{4 Bits pro Ziffer, einzeln}
+\end{zexample}
+\end{document}

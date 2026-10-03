@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/tables}
+\usepackage{/globals/boxes}
+\usepackage{/globals/anki}
+\ankiprefix{bases-decimal}
+\ankitopic{Zahlensysteme Kommazahlen}
+\ankishow
+\begin{document}
+\section{Zahlensysteme mit Dezimalzahlen}
+Der Umgang mit Zahlen mit Nachkommastellen ist dem Umgang mit Zahlen ohne Nachkommastellen sehr ählich.
+
+Bei Dezimalzahlen muss aber aufgepasst werden; oftmals gibt es keine endliche Ziffernfolge die die Zahl richtig darstellt, viele Zahlen die im einen Zahlensystem terminieren sind im anderen Zahlensystem periodisch.
+
+\subsection{Basis $B$ in Basis 10 umwandeln}
+Es gilt, ähnlich den ganzen Zahlen. Der einzige Unterschied liegt darin, dass hier auch die Nachkommastellen, mit negativen Exponenten, mitgerechnet werden.
+\[
+ n_{10} = \sum_{i=-m}^{k-1} b_i * B^i
+\]
+\ankinote{zu-10}{Zu 10}{Summe, mit negativen Exponenten nach dem Komma}
+
+\subsection{Basis 10 in Basis $B$ umwandeln}
+Die Vorkommastellen werden genau wie bei den ganzen Zahlen mit dem Divisionsrestverfahren berechnet. Nachkommastellen werden mit dem Divisionsrestverfahrens gegenteiligen Multiplikationsverfahren berechnet.
+
+Die Nachkommastellen werden mit der Zielbasis multipliziert und die Vorkommastelle (der \emph{Überlauf}) aufgeschrieben. Die Nachkommastelle des Produktes wird genutzt um das Verfahren zu wiederholen, bis das Produkt eine ganze Zahl ist. Die Überläufe sind die Ziffern des Ergebnisses, von oben nach unten von links nach rechts aufgeschrieben. \ankinote{zu-b}{Zu B}{Nachkommastellen multiplizieren, Überlauf als Ziffer. Bis Nachkomma vom Produkt 0}
+\begin{zexample}
+Werden sich nur die Nachkommestellen angesehen um mit Multiplikationsverfahren $0,125_{10}$ in das Binärsystem umzuwandeln.
+\begin{ztable}{rcccrcl}{Zahl & & Basis & & Produkt & & Überlauf}
+ 0,625 & $\times$ & 2 & = & 1,25 & Ü & 1 \\
+ 0,25\  & $\times$ & 2 & = & 0,5 & Ü & 0 \\
+ 0,5\ \  & $\times$ & 2 & = & 1,0 & Ü & 1 \\
+\end{ztable}
+Somit ist $0,125_{10} = 0,101_2$
+\end{zexample}
+Hat eine Zahl sowohl einen Vorkommateil als auch einen Nachkommateil so können das Divisionrestverfahren und das
+\end{document}

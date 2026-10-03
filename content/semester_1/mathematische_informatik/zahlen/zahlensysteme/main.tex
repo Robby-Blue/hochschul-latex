@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{hyperref}
 \usepackage{/globals/math}
 \usepackage{/globals/tables}
 \usepackage{/globals/boxes}
@@ -8,7 +9,8 @@
 \ankitopic{Zahlensysteme}
 \ankishow
 \begin{document}
-\section{Zahlensysteme} 
+\label{sec:mathe_zahlensysteme}
+\section{Zahlensysteme Grundlagen} 
 Ein Zahlensystem ist ein System mit dem ein Zahlen als eine Kombination an endlichen Symbolen (Ziffern) dargestellt werden können.
 
 \subsection{Arten}
@@ -25,7 +27,7 @@ Stellenwertsysteme können desweiteren darin unterschieden werden, welche Basis 
  Dezimal & 10 & 0 bis 9 \\
  Binär & 2 & 0 und 1 \\
  Oktal & 8 & 0 bis 7 \\
- Hexadezimal & 16 & 0 bis 9 und A bis B \\
+ Hexadezimal & 16 & 0 bis 9 und A bis F \\
 \end{ztable}
 Wenn die Basis eines Zahl dies nicht aus dem Kontext offensichtlich ist kann diese (im Dezimalsystem) als Index der Zahl aufgeschrieben werden.
 \[
@@ -72,7 +74,7 @@ Letztendlich wird hier nur angegeben, dass die Zehnerstelle einen Stellenwert vo
 \ankinote{b-to-10}{Zu Dezimal}{Werte multiplikation mit Stellenwert (Basis Exponent)}
 
 \subsection{Basis 10 in Basis $B$ umwandeln}
-Um eine Zahl aus dem Dezimalsystem in eine andere Basis $B$ zu verwandeln wird das Divisionsverfahren verwendet.
+Um eine Zahl aus dem Dezimalsystem in eine andere Basis $B$ zu verwandeln wird das Divisionrestsverfahren verwendet.
 
 Hierbei wird die Zahl durch die Basis dividiert, so dass es einen Quotionen und einen Rest gibt. Wenn der Quotient nicht null ist, wird dieser als neue Zahl genutzt um diesen Schritt zu wiederholen. Ist der Quotient null, so ist das Verfahren fertig. Die Reste können von unten nach oben gelesen und von links nach rechts aufgeschrieben werden.
 \begin{zexample}
@@ -84,7 +86,7 @@ Wird $123$ in das Oktalsystem umgewandelt.
 \end{ztable}
 Somit ist $123_{10} = 173_8$
 \end{zexample}
-\ankinote{10-to-b}{Von Dezimal}{Division B, wiederholen bis Teiler=0, Reste (unte nach oben) als Ziffern}
+\ankinote{10-to-b}{Von Dezimal}{Division B, wiederholen bis Quotient=0, Reste (unte nach oben) als Ziffern}
 
 \subsection{Basis $B_1$ in Basis $B_2$ umwandeln}
 Der einfachste und repetitivste weg eine Zahl der Basis $B_1$ in die Basis $B_2$ umzuwandeln ist es die Zahl auf die oben beschrieben Art und Weise von der Basis $B_1$ auf in das Dezimalsystem umzuwandeln und dieses Ergebnis dann wie oben beschrieben aus dem Dezimalsystem in die Basis $B_2$ umzurechnen.

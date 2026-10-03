@@ -1,9 +1,0 @@
-def main() {
-  document(
-    titlepage=titlepage(
-      title="Hardware",
-    )
-  ) {
-    use_sec("computer")
-  }
-}

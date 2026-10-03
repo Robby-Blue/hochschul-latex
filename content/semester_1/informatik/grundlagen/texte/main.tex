@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/compsci}
+\usepackage{/globals/anki}
+\ankiprefix{text}
+\ankitopic{Text}
+\ankishow
+\begin{document}
+\section{Texte} 
+Auch Texte, Charaktere, werden im Computer binär dargestellt. Hier wird ein Standard festgelegt, welche Bitsequenz welchen Charakter darstellt.
+
+Die zwei relevantesten dieser Standards sind ASCII, mit immer 8 Bits pro Zeichen, aber auch nur 128 Zeichen, und Unicode, mit mehreren zehntausenden an Zeichen, aber mit bis zu 4 Bytes pro Zeichen.
+\ankinote{encs}{Encodings}{ASCII (1 Byte), Unicode (bis 4 Bytes)}
+
+Dass ein Text, also eine Zeichensequenz, zuende ist wird durch einen 00\bh-Byte gezeigt.
+\ankinote{ende}{Ende}{00h-Byte}
+\end{document}
