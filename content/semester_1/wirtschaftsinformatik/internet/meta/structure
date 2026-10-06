@@ -1,0 +1,10 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Das Internet",
+    )
+  ) {
+    use_sec("netzwerke")
+    use_sec("cloud")
+  }
+}

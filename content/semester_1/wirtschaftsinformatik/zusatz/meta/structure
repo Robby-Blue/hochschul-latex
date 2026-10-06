@@ -1,0 +1,9 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Zusatz",
+    )
+  ) {
+    use_sec("beratung")
+  }
+}

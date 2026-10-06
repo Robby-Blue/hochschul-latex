@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/anki}
+\ankiprefix{verteiltes-rechnen}
+\ankitopic{Verteiltes Rechnen}
+\ankishow
+\begin{document}
+\section{Verteiltes Rechnen}
+Werden ausstehende Berechnungen sinnhaft auf mehrere dritte Computer verteilt so können Ressourcen besser genutzt werden, auf Daten parallel zugegriffen werden und Zuverlässigkeit durch Redundanz sichergestellt werden.
+
+\subsection{Grid Computing}
+Grid Computing beschreibt ein dezentrales Netwerk unterschiedliche Computer die die gleichen Berechnungen machen.
+
+Beispiele beinhalten Kryptoblockchains, @home Projekte, wie seti@home und folding@home, die Great Internet Mersenne Prime Search (GIMPS), \usw.
+\ankinote{grid}{Grid Computing}{Dezentrales Netwerk, gleiche Berechnung}
+\ankinote{grid-examples}{Grid Computing Beispiele}{Krypto, folding@home, seti@home, GIMPS}
+
+\subsection{Cloud Computing}
+Beim Cloud Computing gibt es einen zentralen Anbieter dem die Hardware gehört von dem sich das Recht auf dieser die eigene Software laufen zu lassen gemietet wird.
+
+Beispiele beinhalten AWS (Amazon Web Services), die Google Cloud, Microsoft Azure, \usw.
+\ankinote{cloud}{Cloud Computing}{Zentraler Anbieter vermietet Rechenzentrum}
+\ankinote{cloud-examples}{Cloud Computing Beispiele}{AWS, Google Cloud, Azure}
+
+\subsection{Wertschöpfung}
+Bei Clouddiensten kann weiter darin unterschieden werden wie tief die Wertschöpfungskette geht.
+\begin{description}
+ \item[Infrastructure as a Service] Es wird Zugriff zu Serverhardware bis hin zur Virtualisierung vermietet; letztendlich ein VPS. Beispiele sind VPS-Firmen wie Hetzner.
+ \item[Platform as a Service] Über die Hardware hinaus kommt das Betriebssystem und eine Laufzeitumgebung (Runtime) vorinstalliert, nur die Anwendung und die Daten selbst fehlen noch. Dies ist \zb eine Platform wie Vercel.
+ \item[Software as a Service] Es kommt auch eine bestimmte Anwendung vorinstalliert; genau diese wird als Service verkauft. So funktioniert beispielsweise Shopify.
+\end{description}
+\ankinote{wert}{Wertschöpfung}{IaaS, PaaS, SaaS}
+\ankinote{wert-i}{IaaS}{Infrastructure; Server; VPS wie Hetzner}
+\ankinote{wert-p}{PaaS}{Platform; Mit Laufzeitumgebung; Vercel}
+\ankinote{wert-s}{SaaS}{Software; Wie Shopify}
+
+\end{document}

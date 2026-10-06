@@ -4,6 +4,8 @@ def main() {
       title="Computer",
     )
   ) {
+    use_sec("computer")
+    use_sec("rechner_in_firmen")
     use_sec("hardware")
     use_sec("os")
     use_sec("software")

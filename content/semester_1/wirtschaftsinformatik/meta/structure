@@ -8,5 +8,7 @@ def main() {
   ) {
     use_doc(path="grundlagen")
     use_doc(path="computer")
+    use_doc(path="internet")
+    use_doc(path="zusatz")
   }
 }
