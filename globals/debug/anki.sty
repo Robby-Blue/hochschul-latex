@@ -14,7 +14,7 @@
  \def\topic{#1}
 }
 
-\newcommand{\ankinote}[3]{%
+\NewDocumentCommand{\ankinote}{m m v}{%
  \if\relax\detokenize\expandafter{\prefix}\relax%
   \errmessage{Set an Anki prefix}
  \fi%
@@ -27,7 +27,7 @@
   \fi%
   \expandafter\def\csname ankicardid#1\endcsname{true}%
   \expandafter\def\csname ankicardfront#2\endcsname{true}%
-  \noindent \pwriteankinote{\prefix:#1}{\topic{} #2}{#3} \newline
+  \noindent \pwriteankinote{\prefix:#1}{\topic{} #2}{\unexpanded{#3}} \newline
  \fi%
 }
 

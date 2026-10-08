@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankishow
+\ankiprefix{operatoren}
+\ankitopic{Operatoren}
+\begin{document}
+\section{Operatoren} 
+Operatoren führen eine bestimmte Operation an ein oder zwei Operanten aus.
+\begin{sourcecode}{java}
+int zahl = 1;
+System.out.println(1+2); // 3
+\end{sourcecode}
+Operatoren können auf zwei hauptsächlichen Arten und Weisen kategorisiert werden.
+\begin{description}
+ \item[Anzahl Operanten]~
+ \begin{description}
+  \item[ein Operant] unär
+  \item[zwei Operanten] binär
+ \end{description}
+ \item[Position]~\begin{description}
+  \item[vor dem Operanten] präfix
+  \item[zwischen zwei Operanten] infix 
+  \item[nach dem Operanten] postfix
+ \end{description} 
+\end{description}
+\ankinote{kat-arten}{Kategoriearten}{Anzahl Operanten, Position}
+\ankinote{pos}{Position}{präfix, infix, postfix}
+\ankinote{zahl}{Anzahl}{unär, binär}
+
+\subsection{Arithmetische Operatoren}
+Die meisten arithmetischen Operationen haben einen Operator; die Addition (\texttt{+}), die Subtraktion (\texttt{-}), die Multiplikation (\texttt{*}), die Division (\texttt{/}) und der Rest (\texttt{\%}).
+\begin{sourcecode}{java}
+int a = 5;
+int b = 3;
+System.out.println(a+b); // 8
+System.out.println(a-b); // 2
+System.out.println(a*b); // 15
+System.out.println(a/b); // 1
+System.out.println(a%b); // 2
+
+int c = 4;
+System.out.println(a+b*c); // 17
+\end{sourcecode}
+Hier wird nach den Punkt vor Strich Regeln gerechnet.
+\ankinote{arith}{Arithmetische}{Punkt vor Strich}
+
+Daneben gibt es noch die post- und prä- -inkrement ind -dekrement Operatoren, welche eine Variable um eines inkrementieren oder dekrementieren, bevor oder nachdem sie den Wert der Variable zurückgeben.
+
+\subsection{Relationale Operatoren}
+Werte können miteinander Verglichen werden, ob zwei Werte gleich, ungleich, oder im Falle von Zahlen, großer oder kleiner als einander sind.
+\begin{sourcecode}{java}
+int a = 5;
+int b = 3;
+System.out.println(a==b); // false
+System.out.println(a!=b); // true
+System.out.println(a>b);  // true
+System.out.println(a>=b); // true
+System.out.println(a<b);  // false
+System.out.println(a<=b); // false
+\end{sourcecode}
+\ankinote{rel}{Relational}{<=, >=}
+Dies vergleicht aber nach Referenz, deshalb können Referenztypen wie Strings, auch wenn sie den gleichen Wert haben, als nicht gleich angesehen werden. Hier wird dann \ilsourcecode{.equals()} genutzt.
+\begin{sourcecode}{java}
+String a = new String("Hallo");
+String b = new String("Hallo");
+System.out.println(a);           // Hallo
+System.out.println(b);           // Hallo
+System.out.println(a == b);      // false
+System.out.println(a.equals(b)); // true
+\end{sourcecode}
+
+\subsection{Logische Operatoren}
+Logik kann mit logischen Operatoren ausgedrückt werden. Relevant ist der nicht-Operator (\texttt{!}), der und-Operator (\texttt{\&\&}), der oder-Operator (\texttt{||}) und das exklusive Oder (\texttt{\^}).
+\begin{sourcecode}{java}
+int a = true;
+int b = false;
+System.out.println(!a);   // false
+System.out.println(a&&b); // false
+System.out.println(a||b); // true
+System.out.println(a^b);  // true 
+\end{sourcecode}
+\ankinote{xor}{xor}{^}
+
+\subsection{Textoperatoren}
+Zwei Texte können zusammengefügt werden.
+\begin{sourcecode}{java}
+int a = "A";
+int b = "B";
+System.out.println(a+b); // AB
+\end{sourcecode}
+
+\subsection{Datentypen}
+Die Datentypen der Operanten sind relevant. So werden zwei Integer miteinander dividiert, ist das Ergebnis ein Integer. Ist eine der Operanten eine float oder ein Double, so ist auch das Ergebnis eine Gleitkommazahl. Die Datentypen entscheiden auch ob das Plus zwei Zahlen addiert oder Text verändert.
+\ankinote{datentypen}{Datentypen}{wenn eine Kommazahl -> Kommazahl, wenn ein String -> Stringaddition}
+\end{document}

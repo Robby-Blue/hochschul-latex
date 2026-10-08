@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankishow
+\ankiprefix{wertzuweisungen}
+\ankitopic{Wertzuweisungen}
+\begin{document}
+\section{Wertzuweisungen}
+Wird ein Variablenname, gefolgt von einem Gleichheitszeichen, gefolgt von einem Ausdruck als Anweisung gegeben, so kann einer Variable ein Wert zugewiesen werden.
+\begin{slsourcecode}{java}
+variablenName = ausdruck;
+\end{slsourcecode}
+
+\subsection{Zuweisungskompatibilität}
+Die Variable und der Ausdruck müssen miteinander Kompatibel sein. Dies ist der Fall wenn der Variablentyp der Ausdruckstyp ist, oder den Ausdruckstyp komplett darstellen kann. Im Sinne diese Semesters ist das der Fall wenn der Variablentyp ein Zahlentyp eines größeren Wertebereiches ist.
+\ankinote{komp}{Problem}{Zuweisungskompatibilität; Var >= Wert}
+
+\subsection{Konsoleneingaben lesen}
+Mit einem Scanner können Konsoleneingaben eingelesen werden. Für die meisten primitiven Typen wird \texttt{next<Datentype>()} genutzt, für Strings kann eine Zeile mit \texttt{nextLine()} eingelesen werden.
+\begin{sourcecode}{java}
+int zahl = new Scanner(System.in).nextInt();
+long zahl2 = new Scanner(System.in).nextLong();
+float zahl3 = new Scanner(System.in).nextFloat();
+double zahl4 = new Scanner(System.in).nextDouble();
+String text = new Scanner(System.in).nextLine();
+\end{sourcecode}
+
+\subsection{Verbundoperatoren}
+Verbundoperatoren verbinden Operatoren und Wertzuweisungen, sie sind eine einfache Kurzform von der Anwendung eines Operators auf eine Variable und der Wertzuweisung derselben Variablen mit dem Wert.
+\begin{slsourcecode}{java}
+variablenName += Ausdruck; // variablenName = variablenName + Ausdruck;
+\end{slsourcecode}
+\ankinote{verbundname}{Operatoren}{Verbundoperatoren}
+
+\end{document}
