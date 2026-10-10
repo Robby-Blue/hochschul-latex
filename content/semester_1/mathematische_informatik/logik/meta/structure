@@ -1,0 +1,10 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Logik",
+    )
+  ) {
+    use_sec("logik")
+    use_sec("aussagenlogik")
+  }
+}

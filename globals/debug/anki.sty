@@ -14,7 +14,7 @@
  \def\topic{#1}
 }
 
-\NewDocumentCommand{\ankinote}{m m v}{%
+\NewDocumentCommand{\ankinote}{m v v}{%
  \if\relax\detokenize\expandafter{\prefix}\relax%
   \errmessage{Set an Anki prefix}
  \fi%
