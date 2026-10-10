@@ -21,3 +21,121 @@
  \draw[fg, ->, thick] (-#1, 0) -- (#1, 0) node[above left] {$x$};%
  \draw[fg, ->, thick] (0, -#1) -- (0, #1) node[below right] {$y$};%
 }
+
+% Schaltnetze Symbole
+% Unausgefüllter Punkt
+\def\invdot(#1){
+ \draw[fg, fill=bg] (#1) circle (0.1);
+}
+\def\invo(#1){
+ \begin{scope}[shift={(#1)}]
+  \draw[fg, fill=bg] (-0.2,0) circle (0.1);
+ \end{scope}
+}
+\def\invi(#1){
+ \begin{scope}[shift={(#1)}]
+  \draw[fg, fill=bg] (0.2,0) circle (0.1);
+ \end{scope}
+}
+% nMOS, pMOS
+\def\nmos(#1,#2){
+ \draw[fg] (#1,#2-0.5) -- (#1-0.35,#2-0.5);
+ \draw[fg] (#1,#2+0.5) -- (#1-0.35,#2+0.5);
+ \draw[fg] (#1-0.35,#2+0.5) -- (#1-0.35,#2-0.5);
+ \draw[fg] (#1-0.55,#2+0.5) -- (#1-0.55,#2-0.5);
+ \draw[fg] (#1-0.55,#2) -- (#1-1,#2);
+}
+\def\pmos(#1,#2){
+ \nmos(#1,#2)
+ \invdot(#1-0.65,#2)
+}
+
+% Verbindung
+\def\conn(#1)(#2){
+ \coordinate (conn@a) at (#1);
+ \coordinate (conn@b) at (#2);
+ \path (conn@a) -- coordinate[midway] (conn@m) (conn@b);
+ \draw[fg] (conn@a) -| (conn@m) |- (conn@b);
+}
+% Verbindung, fester Start
+\def\conns(#1)(#2){
+ \draw[fg] (#1) |- (#2);
+}
+% Schnittpunktpunkt
+\def\inters(#1){
+ \fill[fg] (#1) circle (0.075);
+}
+\def\zlabel(#1)#2#3{
+ \node[fg] at (#1) [#2]{#3};
+}
+
+% Single input gate
+\def\sgate(#1)#2#3{
+ \begin{scope}[shift={(#1)}]
+  \conn(0, 0)(-0.3, 0);
+  \draw[fg] (-0.3, -0.3) rectangle (-1,0.3);
+  \zlabel(-0.65,0){}{#2}
+  \conn(-1, 0)(-1.3, 0);
+  \coordinate (#3output) at (0,0);
+  \coordinate (#3input) at (-1.3,0);
+ \end{scope}
+}
+% Double input gate
+\def\dgate(#1)#2#3{
+ \begin{scope}[shift={(#1)}]
+  \conn(0, 0)(-0.3, 0);
+  \draw[fg] (-0.3, -0.3) rectangle (-1,0.3);
+  \zlabel(-0.65,0){}{#2}
+  \conn(-1, 0.1)(-1.3, 0.1);
+  \conn(-1, -0.1)(-1.3, -0.1);
+  \coordinate (#3output) at (0,0);
+  \coordinate (#3input1) at (-1.3,0.1);
+  \coordinate (#3input2) at (-1.3,-0.1);
+ \end{scope}
+}
+
+\def\notg(#1)#2{
+ \begin{scope}[shift={(#1)}]
+  \sgate(0,0){$1$}{#2}
+  \invdot(-0.2,0)
+ \end{scope}
+}
+\def\andg(#1)#2{
+ \begin{scope}[shift={(#1)}]
+  \dgate(0,0){$\&$}{#2}
+ \end{scope}
+}
+\def\org(#1)#2{
+ \begin{scope}[shift={(#1)}]
+  \dgate(0,0){$\ge 1$}{#2}
+ \end{scope}
+}
+\def\xorg(#1)#2{
+ \begin{scope}[shift={(#1)}]
+  \dgate(0,0){$= 1$}{#2}
+ \end{scope}
+}
+\def\nandg(#1)#2{
+ \begin{scope}[shift={(#1)}]
+  \andg(0,0){2}
+  \invdot(-0.2,0)
+ \end{scope}
+}
+\def\norg(#1)#2{
+ \begin{scope}[shift={(#1)}]
+  \org(0,0){2}
+  \invdot(-0.2,0)
+ \end{scope}
+}
+
+% Offset
+\def\off(#1)(#2)#3{%
+  \path (#1) ++(#2) coordinate (off@tmp);%
+  #3(off@tmp)%
+}
+% Offset define
+\def\offdef(#1)(#2)#3{%
+ \begin{scope}[shift={(#1)}]
+  \coordinate (#3) at (#2);
+ \end{scope}
+}

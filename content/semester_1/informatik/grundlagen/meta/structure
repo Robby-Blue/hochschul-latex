@@ -8,5 +8,8 @@ def main() {
     use_sec("software")
     use_sec("zahlensysteme")
     use_sec("texte")
+    use_sec("transistoren")
+    use_sec("gatter")
+    use_sec("schaltungen")
   }
 }

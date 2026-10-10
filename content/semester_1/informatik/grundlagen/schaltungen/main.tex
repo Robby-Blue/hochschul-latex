@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/math}
+\usepackage{/globals/boxes}
+\usepackage{/globals/diagrams}
+\usepackage{/globals/tables}
+\usepackage{/globals/anki}
+\ankiprefix{schaltnetze}
+\ankitopic{Schaltnetze}
+\ankishow
+\begin{document}
+\section{Schaltnetze}
+Schaltnetze sind logische Schaltungen die aus mehreren einfach Gattern bestehen. Sie haben eine Anzahl $n$ Eingänge und $m$ Ausgänge.
+
+Es gibt unterschiedliche Arten an Schaltnetzen, wie Dekoder ($n$ Eingänge, $2^n$ Ausgänge), Enkoder ($n^2$ Eingänge, $n$ Ausgänge), Multiplexer ($n$ Eingänge, $1$ Ausgang), Addierer, \usw.
+\ankinote{arten}{Arten}{Dekoder (n, 2^n), Enkoder (2^n, n), Multiplexer (n, 1), Addierer}
+
+\subsection{Schaltnetze Entwerfen}
+Anhand einer gegebenen Wahrheitstabelle kann eine logische Formel gefunden in der DNF oder der KNF werden. Diese kann vereinfacht werden und als Schaltnetz aufgezeichnet werden.
+\begin{description}
+ \item[DNF] Eine disjunktive
+Normalform (DNF) wird aufgestellt indem sich alle Zeilen dessen Ergebniss eine $1$ ist  angeguckt werden, dessen Eingangsvariablen mithilfe von \emph{NOT}s und \emph{AND}s so als Formel verknüpft werden, dass eine $1$ rauskommt (indem vor alle nullen ein NOT geschrieben wird). All diese Formel werden mit \emph{ODER}n verknüpft.
+ \item[KNF] Die konjunktive Normalform (KNF) ist der DNF sehr ähnlich. Hier werden alle Zeilen mit einer $0$ aus Ausgabe betrachtet, bestimmt wie diese durch \emph{NOT}s und \emph{OR}s zustande kommen kann (indem vor all einsen ein NOT geschrieben wird), und diese durch \emph{UND}s verbunden.
+\end{description}
+\begin{zexample}
+Es wird eine Schaltung aufgebaut die ein XOR-Gatter darstellt, aber selbst keines benutzt. Zuerst wird sich die Wahrheitstabelle angeguckt
+\begin{ztable}{cc|c}{$A$ & $B$ & $Z$}
+ $0$ & $0$ & $0$ \\
+ $0$ & $1$ & $1$ \\
+ $1$ & $0$ & $1$ \\
+ $1$ & $1$ & $0$ \\
+\end{ztable}
+Nun kann sowohl ein DNF und ein KNF genutzt werden. Für das KNF sind erste und die vierte Zeile relevant. Für diese gelten jeweils
+\[
+ Z = A \lor B
+ \dtext{und}
+ Z = \neg A \lor \neg B
+\]
+Werden diese beiden durch ein OR verbunden, so ist die gesamte Formel
+\[
+ Z = (A \lor B) \land (\neg A \lor \neg B)
+\]
+Wird dies aufgezeichnet, so muss ein zentrales AND gezeichnet werden, dessen zwei Eingaben die Ausgaben der beiden OR in den Klammern sind.
+\ztikz{
+ \andg(0,0){Z}
+ \zlabel(0,0){right}{Z}
+ \off(Zinput1)(-0.25, 0.5)\org{O1}
+ \off(Zinput2)(-0.25, -0.5)\org{O2}
+ \conn(O1output)(Zinput1)
+ \conn(O2output)(Zinput2)
+%
+ \offdef(O1input1)(-1,0){A}
+ \offdef(O1input2)(-1,0){B}
+ \conn(O1input1)(A)
+ \conn(O1input2)(B)
+ \zlabel(A){left}{$A$}
+ \zlabel(B){left}{$B$}
+%
+ \offdef(O1input1)(-0.25,0){O1inters1}
+ \offdef(O1input2)(-0.5,0){O1inters2}
+ \conns(O1inters1)(O2input1)
+ \conns(O1inters2)(O2input2)
+ \inters(O1inters1)
+ \inters(O1inters2)
+%
+ \invi(O2input1)
+ \invi(O2input2)
+}
+\end{zexample}
+\ankinote{aufstellen}{Aufstellen}{Wahrheitstabelle, DNF oder KNF, Netz}
+\ankinote{dnf}{DNF Name}{Disjuntive Normalform}
+\ankinote{dnf-b}{DNF Bauen}{Zeilen mit 1 finden, 1 darstellen durch UNDs, verbinden mit ODERs}
+\ankinote{knf}{KNF Name}{Konjuntive Normalform}
+\ankinote{knf-b}{KNF Bauen}{Zeilen mit 0 finden, 0 darstellen durch ORs, verbinden mit UNDs}
+
+\end{document}

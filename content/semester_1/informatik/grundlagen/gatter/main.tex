@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/diagrams}
+\usepackage{/globals/anki}
+\ankiprefix{gatter}
+\ankitopic{Gatter}
+\ankishow
+\begin{document}
+\section{Gatter}
+Gatter sind die einfachsten logischen Funktionen die aus Transistoren gebaut werden können. Sie können zu Schaltnetzen zusammengesetzt werden.
+
+\subsection{Darstellung}
+Im Sinne dieses Moduls werden die deutschen Symbole genutzt. Es gibt für jede logische Operation ein Gatter.
+\begin{description}
+ \item[AND-Gatter] Mit einem $\&$-Symbol nimmt es zwei Eingaben an und gibt aus ob beide wahr sind.
+Das Gatter stellt somit $z = a \land b$ dar.
+\ztikz{
+ \andg(0,0){A}
+ \zlabel(Ainput1){left}{$a$}
+ \zlabel(Ainput2){left}{$b$}
+ \zlabel(Aoutput){right}{$z$}
+}
+ \item[OR-Gatter] Mit einem $\ge 1$-Symbol nimmt es zwei Eingaben an und gibt aus ob mindestens eine der beiden wahr ist.
+Das Gatter stellt somit $z = a \lor b$ dar.
+\ztikz{
+ \org(0,0){A}
+ \zlabel(Ainput1){left}{$a$}
+ \zlabel(Ainput2){left}{$b$}
+ \zlabel(Aoutput){right}{$z$}
+}
+ \item[NOT-Gatter] Mit einem $1$-Symbol und einem Invertierpunkt nimmt es eine Eingabe an und gibt dessen Gegenteil aus.
+Das Gatter stellt somit $z = \neg a$ dar.
+\ztikz{
+ \notg(0,0){A}
+ \zlabel(Ainput){left}{$a$}
+ \zlabel(Aoutput){right}{$z$}
+}
+ \item[XOR-Gatter] Mit einem $=1$-Symbol nimmt es zwei Eingaben an und gibt aus ob genau eine der beiden, aber nicht beide, wahr sind.
+Das Gatter stellt somit $z = a \oplus b$ dar.
+\ztikz{
+ \xorg(0,0){A}
+ \zlabel(Ainput1){left}{$a$}
+ \zlabel(Ainput2){left}{$b$}
+ \zlabel(Aoutput){right}{$z$}
+}
+ \item[NAND-Gatter] Mit einem $\&$-Symbol und einem Invertierpunkt nimmt es zwei Eingaben an und gibt aus ob nicht beide wahr sind.
+Das Gatter stellt somit $z = \neg (a \land b)$ dar.
+\ztikz{
+ \nandg(0,0){A}
+ \zlabel(Ainput1){left}{$a$}
+ \zlabel(Ainput2){left}{$b$}
+ \zlabel(Aoutput){right}{$z$}
+}
+ \item[NOR-Gatter] Mit einem $\ge 1$-Symbol und einem Invertierpunkt nimmt es zwei Eingaben an und gibt aus ob keine der beiden wahr ist.
+Das Gatter stellt somit $z = \neg (a \lor b)$ dar.
+\ztikz{
+ \norg(0,0){A}
+ \zlabel(Ainput1){left}{$a$}
+ \zlabel(Ainput2){left}{$b$}
+ \zlabel(Aoutput){right}{$z$}
+}
+\end{description}
+Es kann jeder Zeit an eine Eingabe oder eine Ausgabe ein unausgefüllter Punkt hinzugefügt werden um darzustellen dass dessen Wert dort invertiert wurde. So können Schaltungen mit vielen NOT-Gatten massiv vereinfacht werden.
+\ankinote{and}{and}{\(\&\)}
+\ankinote{or}{or}{\(\ge 1\)}
+\ankinote{not}{not}{1 p}
+\ankinote{xor}{xor}{\(=1\)}
+\ankinote{nicht}{nicht Input}{Unausgefüllter Punkt}
+
+\end{document}

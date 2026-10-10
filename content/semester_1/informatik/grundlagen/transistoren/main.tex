@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/diagrams}
+\usepackage{/globals/anki}
+\ankiprefix{transistoren}
+\ankitopic{Transistoren}
+\ankishow
+\begin{document}
+\section{Transistoren} 
+Computerhardware besteht aus Transistoren; elektrischen Schaltern die entweder an oder aus sein können.
+
+Transistoren haben eine Quelle (Source), ein Gatter (Gate) und eine Senke (Drain). Ob die Quelle mit der Senke verbunden ist hängt davon ab ob Spannung am Gatter anliegt; bei nMOS Transistoren fließt Strom wenn Spannung anliegt, bei pMOS Transistoren fließt kein Strom wenn Spannung anliegt. Dass ein Transistor ein pMOS Transistor ist wird durch einen unausgefüllten Kreis dargestellt.
+\ankinote{bestandteile}{Bestandteile}{Quelle (Source), Gatter (Gate), Senke (Drain)}
+\ankinote{funktion}{Funktionsweise}{Quelle und Senke verbunden, abhängig von Gatter}
+\ankinote{nmos}{nMOS}{Strom wenn Spannung}
+\ankinote{pmos}{pMOS}{Strom wenn keine Spannung, Kreis}
+
+\subsection{Eine Not-Schaltung}
+Aus zwei Transistoren kann eine Not-Schaltung gebaut werden.
+\ztikz{
+ \pmos(0,1)
+ \nmos(0,-1)
+ \conn(-1, 1)(-1, -1)
+ \conn(-1, 0)(-2, 0)
+ \conn(0, 2)(0, 1.5)
+ \conn(0, -2)(0, -1.5)
+ \conn(0, 0.5)(0, -0.5)
+ \conn(0, 0)(1, 0)
+ \conn(-0.5, 2)(0.5, 2)
+ \zlabel(0, 2){above}{$+5 \text{V}$}
+ \inters(0, 2)
+ \conn(-0.3, -2)(0.3, -2)
+ \conn(-0.2, -2.1)(0.2, -2.1)
+ \conn(-0.1, -2.2)(0.1, -2.2)
+ \zlabel(0, -2.2){below}{Masse}
+ \zlabel(-2, 0){left}{$x$}
+ \zlabel(1, 0){right}{$\overline{x}$}
+}
+Wenn an $x$ Spannung anliegt, so wird der obige pMOS blockiert und es besteht keine Verbindung zwischen dem Strom und dem Ausgang, aber der Ausgang und die Masse ist verbunden. Liegt bei $x$ kein Strom an, so ist die Verbindung zur Masse blockiert aber die Verbindung zum obigen Strom frei.
+
+So können durch Verbindungen von Transistoren auch andere Gatter gabaut werden.
+
+
+\end{document}
