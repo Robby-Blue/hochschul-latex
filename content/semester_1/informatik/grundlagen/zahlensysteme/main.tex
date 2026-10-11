@@ -37,12 +37,12 @@ Eine Zahl kann negiert werden indem alle Bits invertiert werden und dann eins ad
 Die schriftliche Addition nutzt das gleiche Verfahren, unabhängig der Basis. Der einzige unterschied ist nur, das es schon bei einer kleineren Zahl zu einem Übertrag kommt.
 \begin{zexample}%
 \[
-\begin{array}{@{}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{}}
-    & & & \scriptstyle 1 & \scriptstyle 1 & \scriptstyle 1 & \\
-    & 0 & 0 & 0 & 1 & 1 & 1 \\
-  + & 0 & 1 & 1 & 0 & 1 & 1 \\
+\begin{array}{@{}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{\,}c@{}}
+    & & & \scriptstyle 1  & \scriptstyle 1 & \scriptstyle 1 & \scriptstyle 1 & \\
+    & 0 & 1 & 0 & 0 & 1 & 1 & 1 \\
+  + & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
   \hline
-  = & 0 & 1 & 0 & 0 & 1 & 0
+  = & 0 & 1 & 1 & 0 & 0 & 1 & 0
 \end{array}
 \]
 \end{zexample}
@@ -60,7 +60,7 @@ Auch bei der Multiplikation kann einfach die schriftliche Multiplikation genutzt
   + & 0 & 0 & 0 & 0 & 0 & 0 \\
   + & 0 & 0 & 0 & 0 & 1 & 1 \\
   \hline
-  = & 0 & 1 & 1 & 1 & 1 & 1
+  = & 0 & 0 & 1 & 1 & 1 & 1
 \end{array}
 \]
 \end{zexample}

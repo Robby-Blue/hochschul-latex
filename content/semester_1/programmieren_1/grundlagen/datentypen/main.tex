@@ -18,10 +18,9 @@ Ganze Zahlen können in vier unterschiedlichen Datentypen gespeichert werden; \i
  int & 4 Byte (32 Bit) & $-2^{31}$ bis $2^{31}-1$ \\
  long & 8 Byte (64 Bit) & $-2^{63}$ bis $2^{63}-1$ \\
 \end{ztable}
-Mit unterstrichen können visuelle Seperatoren dargestellt werden, so wie Punkte im Deutschen oder Kommas im Englischen genutzt werden. Zudem kann mit einem \ilsourcecode{e} die wissenschaftliche Notation genutzt werden. Dieses beide gilt auch für Gleitkommezahlen.
+Mit unterstrichen können visuelle Seperatoren dargestellt werden, so wie Punkte im Deutschen oder Kommas im Englischen genutzt werden.
 \begin{slsourcecode}{java}
 int a = 1_000_000;
-int a = 1e6; // 1 * 10^6
 \end{slsourcecode}
 Standardmäßig werden \ilsourcecode{int}s genutzt. Dass eine Zahl ein \ilsourcecode{long} ist kann mit dem \ilsourcecode{L} suffix angemerkt werden.
 \begin{slsourcecode}{java}
@@ -46,6 +45,11 @@ Gleitkommazahlen funktionieren indem ein Bit das Vorzeichen und jeweils ein paar
  \text{Wert} = \text{Vorzeichen} * \text{Mantisse} * 2^{\text{Exponent}}
 \]
 Hier ist das Vorzeichen $1$ oder $-1$ und die Mantisse zwischen $1$ und $2$. So können Dezimalzahlen unterschiedlichster Größenordnungen.
+
+In den Literalen von Gleitkommazahlen kann mit einem \ilsourcecode{e} die wissenschaftliche Notation genutzt werden.
+\begin{slsourcecode}{java}
+double a = 1e6; // 1 * 10^6
+\end{slsourcecode}
 
 \ankinote{float}{Float Bestandteile}{Vorzeichen, Mantisse, Exponent}
 

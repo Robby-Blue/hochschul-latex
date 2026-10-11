@@ -20,7 +20,7 @@
  \def\ankitopicvar{#1}
 }
 
-\newcommand{\ankinote}[3]{%
+\NewDocumentCommand{\ankinote}{m v v}{%
   \ifnum\currentgrouptype=6
     \noalign{\pwriteankinote{#1}{#2}{#3}}%
   \else
