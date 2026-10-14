@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{/globals/anki}
+\ankiprefix{datenbanken}
+\ankitopic{Datenbanken}
+\ankishow
+\begin{document}
+\section{Datenbanken}
+Datenbanken bestehen aus Tabellen, Dateien genannt. Jede Tabelle hat Spalten (Datenfelder/Attribute) und Zeilen (Datensätze), so dass in jeder Zelle ein Attribut eines bestimmten Datensatzes gespeichert ist.
+\ankinote{aufbau}{Aufbau}{Tabellen, Spalten, Zeilen}
+\ankinote{spalten}{Spalten}{Datenfelder/Attribute}
+\ankinote{zeilen}{Zeilen}{Datensätze}
+
+Datensätze können mit Primärschlüsseln eindeutig identifiziert werden. Datensätze können mit Sekundärschlüsseln auf andere Datensätzen aus anderen Tabellen zeigen.
+\ankinote{schlüssel}{Schlüssel}{Primärschlüssel Datensatz eindeutige identifikation, Sekundärschlüssel zeigt auf anderen Datensatz}
+
+\subsection{DBMS}
+Datenbankmanagementsysteme sitzen vor der Datenbank um bei Bedarf die Daten für andere Programm auszulesen oder einzuschreiben. Sie können auf drei Ebenen aufgeteilt werden.
+\begin{description}
+ \item[Abfrage] Mit der Query Language werden Anfragen an das DBMS gesendet.
+ \item[Schemabeschreibung] Die der Data Definition Language wird das Schema beschrieben, welche Tabellen, mit welchen Attributen existieren soll.
+ \item[Speicherbeschreibung] Mit der Data Storage Description Language wird die physische Speicherung der Daten beschrieben.
+\end{description}
+\ankinote{ebenen}{Ebenen}{Abfrage, Schemabeschreibung, Speicherbeschreibung}
+\ankinote{abfrage}{Abfrage}{Query Language, Anfragen}
+\ankinote{schema}{Schemabeschreibung}{Date Definition Language, Schema beschrieben}
+\ankinote{speicher}{Speicherbeschreibung}{Data Storage Description Language, physische Speicherung}
+
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{/globals/anki}
+\ankiprefix{er}
+\ankitopic{ER-Modell}
+\ankishow
+\usepackage{/globals/boxes}
+\begin{document}
+\section{Entity-Relationship-Modell} 
+Bevor eine Datenbank erstellt werden kann ist es sinnvoll dessen Inhalt als Entity-Relationship-Modell darzustellen.
+\ankinote{name}{Name}{Entity-Relationship-Modell}
+
+\subsection{Darstellung}
+Hier werden Objekte (Entities) als Rechtecke dargestellt. Objekte haben mehrere Attribute, dargestellt als mit dem Objekt durch eine Linie verbundene Kreise oder Ovale, unterstrichene Attribute sind Primärschlüssel. Jedes Objekt braucht einen Primärschlüssel.
+\ankinote{objekt}{Objekt}{Entity (Rechteck)}
+\ankinote{attribut}{Attribut}{Oval, mit Linie mit Objekt verbunden}
+\ankinote{primär}{Primärschlüssel}{Unterstrichenes Attribut}
+
+Relationen beschreiben das Verhältnis zwischen zwei Entities, in der Regel als Verben. Ihre Relationsart wird über die Linie, neben die Objekte geschrieben.
+
+\subsection{Relationsarten}
+\begin{description}
+ \item[$1:1$] Eine 1 zu 1 Relation liegt vor wenn in beide Richtungen nur eine Entität zur anderen passen kann.
+ \item[$1:N$] Eine 1 zu N Relation liegt vor wenn Entität A mehrere B haben kann, jede Entität B aber nur ein A haben kann. 
+ \item[$M:N$] Eine M zu N Relation liegt vor wenn in beide Richtungen die Entitäten mehrere Instanzen der anderen passen. 
+\end{description}
+\ankinote{rel-arten}{Relationsarten}{1:1, 1:N, M:N}
+\ztodo{tikz, beispiele}
+
+\end{document}

@@ -6,5 +6,7 @@ def main() {
   ) {
     use_sec("netzwerke")
     use_sec("cloud")
+    use_sec("tcpip")
+    use_sec("sicherheit")
   }
 }

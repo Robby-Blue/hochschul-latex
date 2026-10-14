@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{/globals/anki}
+\ankiprefix{tcpip}
+\ankitopic{TCP/IP}
+\ankishow
+\begin{document}
+\section{TCP/IP} 
+Im Internet werden Daten in der Regel über das TCP/IP-Protokoll ausgetauscht.
+
+\subsection{Datenübertragung}
+Daten werden bei der Übertragung in kleinere Pakete aufgeteilt. Jedes Paket wird an eine bestimmte IP-Adresse und einen Port gesand. Dabei wird es von Router zu Router weitergeleitet, bis es am Ziel ankommt.
+\ankinote{übertragung}{Übertragung}{von Router zu Router, nach IP-Adresse}
+
+Wenn ein Router kann den schnellsten Weg bereits kennt, kann dieser genutzt werden. Ansonsten können alle Wege probiert werden und beim Rückweg wird der schnellste Weg als Metadatei im Paket gespeichert.
+
+\subsection{TCP}
+Beim TCP, dem \emph{Transmission Control Protocol}, wird der Empfang von gesanten Paketen durch ein weiteres Paket, gesand vom Empfänger, bestätigt. Kommt innerhalb von einer bestimmten Zeit keine Bestätigung beim Sender an, kann das verloren gegangene Paket erneut gesand werden.
+\ankinote{tcp}{TCP}{Transmission Control Protocol; Bestätigungspaket, neusenden}
+
+\subsection{IP-Adressen}
+Geräte in Netwerken haben IP-Adressen; diese werden genutzt um Geräte eindeutig zu identifizieren. Zurzeit gibt es zwei Standards an IP-Adressen.
+\begin{description}
+ \item[IPv4] Bestehend aus vier Blöcken, je ein Byte, gibt es ungefähr vier Milliarden IPv4 Adressen. Diese vier Blöcke werden in Dezimal dargestellt, getrennt durch Punkte.
+ \item[IPv6] Bestehend aus acht Blöcken, je zwei Bytes, gibt es mehr IPv6 Adressen als wir in naher Zukunft sinnvoll gebrauchen könnten. Sie werden in Hexadezimal dargestellt, mit Doppelpunkten als Blocktrenner.
+\end{description}
+\ankinote{ipv4}{IPv4}{4 Blöcke, je 1 Byte, 4 milliarden}
+\ankinote{ipv6}{IPv6}{8 Blöcke, je 2 Bytes}
+
+\subsection{DNS}
+Über das \emph{Domain Name System} werden menschlich lesbare und merkbare Domains in IP-Adressen umgewandelt.
+\ankinote{dns}{DNS}{Domain Name System; Domain zu IP-Adresse}
+
+\end{document}

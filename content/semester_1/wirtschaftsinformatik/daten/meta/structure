@@ -1,0 +1,12 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Daten",
+    )
+  ) {
+    use_sec("daten")
+    use_sec("datenintegraton")
+    use_sec("datenbank")
+    use_sec("er-model")
+  }
+}
