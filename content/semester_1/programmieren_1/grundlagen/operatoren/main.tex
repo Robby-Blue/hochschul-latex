@@ -92,5 +92,11 @@ System.out.println(a+b); // AB
 
 \subsection{Datentypen}
 Die Datentypen der Operanten sind relevant. So werden zwei Integer miteinander dividiert, ist das Ergebnis ein Integer. Ist eine der Operanten eine float oder ein Double, so ist auch das Ergebnis eine Gleitkommazahl. Die Datentypen entscheiden auch ob das Plus zwei Zahlen addiert oder Text verändert.
-\ankinote{datentypen}{Datentypen}{wenn eine Kommazahl -> Kommazahl, wenn ein String -> Stringaddition}
+\ankinote{datentypen}{Datentypen Implizit}{wenn eine Kommazahl -> Kommazahl, wenn ein String -> Stringaddition}
+Dies ist eine implizite Typumwandlung, bei welcher in einen größeren Datentypen umgewandelt wird. Es kann auch gezielt explizit der Datentyp umgewandelt werden, indem der Zieldatentyp in Klammern vor den umzuwandelnden Wert geschrieben wird.
+\begin{sourcecode}{java}
+double d = 1.5;
+System.out.println((int) d); // 1
+\end{sourcecode}
+\ankinote{datentypen-epxl}{Datentypen Explizit}{(Datentype) Wert}
 \end{document}

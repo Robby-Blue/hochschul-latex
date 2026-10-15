@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankishow
+\ankiprefix{verzweigungen}
+\ankitopic{Verzweigungen}
+\begin{document}
+\section{Verzweigungen}
+Soll mehr passieren als das nur die gleichen Befehle in der gleichen Reihenfolge ausgeführt werden, so werden verzweigungen genutzt.
+
+\subsection{\texttt{if}}
+Soll eine Anweisung oder eine Gruppe an Anweisungen nur ausgeführt werden wenn eine bestimmte Bedingung eingetreten ist, so wird ein \ilsourcecode{if} genutzt.
+\begin{sourcecode}{java}
+if (bedingung) {
+    Anweisung;
+}
+\end{sourcecode}
+Wird nur eine Anweisung ausgefürt so können die Klammern in der Theorie weggelassen werden. Das macht es aber unnötig unübersichtlich.
+
+Soll etwas anderes passieren wenn die gleiche Bedingung nicht eingetreten ist, so wird ein \ilsourcecode{if else} genutzt.
+\begin{sourcecode}{java}
+if (bedingung) {
+    Anweisung1;
+} else {
+    Anweisung2;
+}
+\end{sourcecode}
+Manchmal muss eine andere Bedingung überprüft werden wenn die erste nicht erfüllt ist. Dafür können \ilsourcecode{else if} Verzweigungen genutzt werden. Dies ist eine \emph{Mehrfachverzweigung}.
+\begin{sourcecode}{java}
+if (bedingung1) {
+    Anweisung1;
+} else if (bedingung2) {
+    Anweisung2;
+}
+\ankinote{mehrfach}{Mehrfachverzweigung}{mehrere else if}
+\end{sourcecode}
+Offensichtlich können \ilsourcecode{if}-Anweisungen auch in andere \ilsourcecode{if}-Anweisungen geschrieben werden, für eine \emph{verschachtelte} Verzweigung.
+\begin{sourcecode}{java}
+if (bedingung1) {
+    if (bedingung2) {
+        Anweisung;
+    }
+}
+\end{sourcecode}
+\ankinote{verschachtelt}{Verschachtelt}{if in if}
+
+\subsection{\texttt{switch}}
+Gibt es mehrere konstante Optionen kann auch eine \ilsourcecode{switch}-Verzweigung sinnvoll sein. Hier wird sich ein Ausdruck angeguckt und zu der Marke der dazugehörigen Wertes gesprungen. Gibt es keine dazugehörige Marke, wird zur \ilsourcecode{default}-Marke gesprungen, wenn es sie gibt. Der \ilsourcecode{switch} wird mit einem \ilsourcecode{break} verlassen. 
+\begin{sourcecode}{java}
+switch(Ausdruck) {
+case Konsante 1:
+    Anweisung1;
+    break;
+case Konsante 2:
+    Anweisung2;
+    break;
+default:
+    dafaultAnweisung;
+    break;
+}
+\end{sourcecode}
+Ohne \ilsourcecode{break} würde das Programm nicht aufhören und die nächste Marke mit ausführen. Seit Java 12 kann auch statt des Doppelpunktes ein Pfeil (\ilsourcecode{->}) genutzt werden, dann wird kein \ilsourcecode{break} benötigt.
+\ankinote{switch12}{Switch Java 12}{Pfeil anstelle von Doppelpunkt, kein Break}
+
+\subsection{Der Konditionaloperator}
+Mit dem Konditionaloperator kann Anhand eines Ausdruckes zwischen einer von zwei Werten entscheiden werden, der als Wert zurückgegeben wird. Vor dem Fragezeichen steht der zu betrachtende Ausdruck. Ist dieser Wahr, so wird der erste Wert, vor dem Doppelpunkt, zurückgegeben. Ist der Ausdruck aber falsch, so wird der zweite Wert zurückgegeben.
+\begin{sourcecode}{java}
+System.out.println(1 == 1 ? "A" : "B") // A
+System.out.println(1 > 2 ? "A" : "B") // B
+\end{sourcecode}
+\ankinote{tertiary}{Tertiär}{Konditionaloperator a ? b : c}
+\end{document}

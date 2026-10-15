@@ -9,5 +9,6 @@ def main() {
     use_sec("datentypen")
     use_sec("wertzuweisungen")
     use_sec("operatoren")
+    use_sec("verzweigungen")
   }
 }
