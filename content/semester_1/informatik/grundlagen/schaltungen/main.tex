@@ -12,10 +12,11 @@
 \section{Schaltnetze}
 Schaltnetze sind logische Schaltungen die aus mehreren einfach Gattern bestehen. Sie haben eine Anzahl $n$ Eingänge und $m$ Ausgänge.
 
-Es gibt unterschiedliche Arten an Schaltnetzen, wie Dekoder ($n$ Eingänge, $2^n$ Ausgänge), Enkoder ($n^2$ Eingänge, $n$ Ausgänge), Multiplexer ($n$ Eingänge, $1$ Ausgang), Addierer, \usw.
+Es gibt unterschiedliche Arten an Schaltnetzen, wie Dekoder ($n$ Eingänge, $2^n$ Ausgänge), Enkoder ($2^n$ Eingänge, $n$ Ausgänge), Multiplexer ($n$ Eingänge, $1$ Ausgang), Addierer, \usw.
 \ankinote{arten}{Arten}{Dekoder (n, 2^n), Enkoder (2^n, n), Multiplexer (n, 1), Addierer}
 
 \subsection{Schaltnetze Entwerfen}
+\label{sec:normalform_bilden}
 Anhand einer gegebenen Wahrheitstabelle kann eine logische Formel gefunden in der DNF oder der KNF werden. Diese kann vereinfacht werden und als Schaltnetz aufgezeichnet werden.
 \begin{description}
  \item[DNF] Eine disjunktive
@@ -73,4 +74,19 @@ Wird dies aufgezeichnet, so muss ein zentrales AND gezeichnet werden, dessen zwe
 \ankinote{knf}{KNF Name}{Konjuntive Normalform}
 \ankinote{knf-b}{KNF Bauen}{Zeilen mit 0 finden, 0 darstellen durch ORs, verbinden mit UNDs}
 
+\subsection{NAND und NOR}
+Es ist üblich in echten Schaltungen fast ausschließlich NAND und NOR Schaltungen zu nutzen. Schaltungen die Gatter außer NAND und NOR benutzen können auf NANDs und NORs reduziert werden.
+
+Wird die gleiche Eingabe zwei mal an ein NAND oder ein NOR gegeben, so funktioniert dies wie ein NOT.
+\[
+ \neg A \iff \neg (A \land A) \iff \neg (A \lor A)
+\]
+Natürlich ist ein NOT NAND ein AND, und ein NOT NOR ein OR.
+\begin{align*}
+ A \land B \iff \neg (\neg (A \land B) \land \neg (A \land B)) \\
+ A \lor B \iff \neg (\neg (A \lor B) \lor \neg (A \lor B))
+\end{align*}
+Dies kann auch für alle anderen relevanten Gatter gemacht werden.
+\ankinote{reduktion}{NAND Reduktion}{gleiches Input in NAND und NOR als NOT}
+\ankinote{reduktion-and}{NAND Reduktion AND}{AND = NOT NAND}
 \end{document}

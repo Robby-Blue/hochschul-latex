@@ -65,6 +65,9 @@
 \def\inters(#1){
  \fill[fg] (#1) circle (0.075);
 }
+\def\intersp(#1)(#2){
+ \fill[fg] (#1 |- #2) circle (0.075);
+}
 \def\zlabel(#1)#2#3{
  \node[fg] at (#1) [#2]{#3};
 }
@@ -73,24 +76,89 @@
 \def\sgate(#1)#2#3{
  \begin{scope}[shift={(#1)}]
   \conn(0, 0)(-0.3, 0);
-  \draw[fg] (-0.3, -0.3) rectangle (-1,0.3);
-  \zlabel(-0.65,0){}{#2}
-  \conn(-1, 0)(-1.3, 0);
+  \draw[fg] (-0.3, -0.45) rectangle (-1.2,0.45);
+  \zlabel(-0.75,0){}{#2}
+  \conn(-1.2, 0)(-1.5, 0);
   \coordinate (#3output) at (0,0);
-  \coordinate (#3input) at (-1.3,0);
+  \coordinate (#3input) at (-1.5,0);
  \end{scope}
 }
 % Double input gate
 \def\dgate(#1)#2#3{
  \begin{scope}[shift={(#1)}]
   \conn(0, 0)(-0.3, 0);
-  \draw[fg] (-0.3, -0.3) rectangle (-1,0.3);
-  \zlabel(-0.65,0){}{#2}
-  \conn(-1, 0.1)(-1.3, 0.1);
-  \conn(-1, -0.1)(-1.3, -0.1);
+  \draw[fg] (-0.3, -0.45) rectangle (-1.2,0.45);
+  \zlabel(-0.75,0){}{#2}
+  \conn(-1.2, 0.15)(-1.5, 0.15);
+  \conn(-1.2, -0.15)(-1.5, -0.15);
   \coordinate (#3output) at (0,0);
-  \coordinate (#3input1) at (-1.3,0.1);
-  \coordinate (#3input2) at (-1.3,-0.1);
+  \coordinate (#3input1) at (-1.5,0.15);
+  \coordinate (#3inputm) at (-1.5,0);
+  \coordinate (#3input2) at (-1.5,-0.15);
+ \end{scope}
+}
+% Triple input gate
+\def\tgate(#1)#2#3{
+ \begin{scope}[shift={(#1)}]
+  \conn(0, 0)(-0.3, 0);
+  \draw[fg] (-0.3, -0.45) rectangle (-1.2,0.45);
+  \zlabel(-0.75,0){}{#2}
+  \conn(-1.2, 0.225)(-1.5, 0.225);
+  \conn(-1.2, 0)(-1.5, 0);
+  \conn(-1.2, -0.225)(-1.5, -0.225);
+  \coordinate (#3output) at (0,0);
+  \coordinate (#3input1) at (-1.5,0.225);
+  \coordinate (#3input2) at (-1.5,0);
+  \coordinate (#3input3) at (-1.5,-0.225);
+ \end{scope}
+}
+% Multiple inputs/output gate
+\def\mgate(#1)#2#3#4#5{
+ \begin{scope}[shift={(#1)}]
+  \draw[fg] (-0.3, -1) rectangle (-2,1);
+  \zlabel(-1.15,0){}{#4}
+  \foreach \i in {1,...,#3} {
+   \conn(0, {1-2/(#3+1)*\i})(-0.3, {1-2/(#3+1)*\i});
+   \coordinate (#5output\i) at (0,{1-2/(#3+1)*\i});
+  }
+  \foreach \i in {1,...,#2} {
+   \conn(-2, {1-2/(#2+1)*\i})(-2.3, {1-2/(#2+1)*\i});
+   \coordinate (#5input\i) at (-2.3,{1-2/(#2+1)*\i});
+  }
+ \end{scope}
+}
+% Multiple inputs/output gate small
+\def\mgates(#1)#2#3#4#5{
+ \begin{scope}[shift={(#1)}]
+  \draw[fg] (-0.3, -0.5) rectangle (-1.2,0.5);
+  \zlabel(-0.75,0){}{#4}
+  \foreach \i in {1,...,#3} {
+   \conn(0, {0.5-1/(#3+1)*\i})(-0.3, {0.5-1/(#3+1)*\i});
+   \coordinate (#5output\i) at (0,{0.5-1/(#3+1)*\i});
+  }
+  \foreach \i in {1,...,#2} {
+   \conn(-1.2, {0.5-1/(#2+1)*\i})(-1.5, {0.5-1/(#2+1)*\i});
+   \coordinate (#5input\i) at (-1.5,{0.5-1/(#2+1)*\i});
+  }
+ \end{scope}
+}
+% Multiple inputs/bottom/output gate
+\def\mbgate(#1)#2#3#4#5#6{
+ \begin{scope}[shift={(#1)}]
+  \draw[fg] (-0.3, -1) rectangle (-2,1);
+  \zlabel(-1.15,0){}{#5}
+  \foreach \i in {1,...,#4} {
+   \conn(0, {1-2/(#4+1)*\i})(-0.3, {1-2/(#4+1)*\i});
+   \coordinate (#6output\i) at (0,{1-2/(#4+1)*\i});
+  }
+  \foreach \i in {1,...,#3} {
+   \conn({-2+1.7/(#3+1)*\i},-1)({-2+1.7/(#3+1)*\i},-1.3);
+   \coordinate (#6bottom\i) at ({-2+1.7/(#3+1)*\i},-1.3);
+  }
+  \foreach \i in {1,...,#2} {
+   \conn(-2, {1-2/(#2+1)*\i})(-2.3, {1-2/(#2+1)*\i});
+   \coordinate (#6input\i) at (-2.3,{1-2/(#2+1)*\i});
+  }
  \end{scope}
 }
 
@@ -105,9 +173,19 @@
   \dgate(0,0){$\&$}{#2}
  \end{scope}
 }
+\def\tandg(#1)#2{
+ \begin{scope}[shift={(#1)}]
+  \tgate(0,0){$\&$}{#2}
+ \end{scope}
+}
 \def\org(#1)#2{
  \begin{scope}[shift={(#1)}]
   \dgate(0,0){$\ge 1$}{#2}
+ \end{scope}
+}
+\def\torg(#1)#2{
+ \begin{scope}[shift={(#1)}]
+  \tgate(0,0){$\ge 1$}{#2}
  \end{scope}
 }
 \def\xorg(#1)#2{
@@ -138,4 +216,8 @@
  \begin{scope}[shift={(#1)}]
   \coordinate (#3) at (#2);
  \end{scope}
+}
+% Define
+\def\defcord(#1)#2{%
+ \coordinate (#2) at (#1);
 }

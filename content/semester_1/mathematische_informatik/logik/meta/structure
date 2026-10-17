@@ -6,5 +6,6 @@ def main() {
   ) {
     use_sec("logik")
     use_sec("aussagenlogik")
+    use_sec("aussagenlogik_umformungen")
   }
 }

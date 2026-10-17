@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/diagrams}
+\usepackage{/globals/anki}
+\ankiprefix{besondere-schaltnetze}
+\ankitopic{Besondere Schaltnetze}
+\ankishow
+\begin{document}
+\section{Besondere Schaltnetze} 
+\subsection{Decoder}
+Ein Decoder hat $n$ Eingaben und $2^n$ Ausgaben. Werden die Eingaben als eine binäre Zahl $i$ angesehen, so ist der $i$te Ausgang 1, alle anderen 0.
+\ankinote{decoder}{Decoder}{\(n\) Eingaben, \(2^n\) Ausgaben. \(i\)te Ausgang 1}
+\ztikz{
+ \mgate(0,0){2}{4}{Decoder}{d}
+%
+ \zlabel(dinput1){left}{$x_0$}
+ \zlabel(dinput2){left}{$x_1$}
+%
+ \zlabel(doutput1){right}{$y_0$}
+ \zlabel(doutput2){right}{$y_1$}
+ \zlabel(doutput3){right}{$y_2$}
+ \zlabel(doutput4){right}{$y_3$}
+}
+Decoder können recht einfach realisiert werden; jeder Ausgang ist dann an wenn alle Eingänge einen bestimmten Wert haben. Dies ist einfach überprüfbar durch eine Konjunktion und ein paar Negationen.
+\ztikz{
+ \andg(0,0){y0}
+ \invi(y0input1)
+ \invi(y0input2)
+ \andg(0,-1.2){y1}
+ \invi(y1input1)
+ \andg(0,-2.4){y2}
+ \invi(y2input2)
+ \andg(0,-3.6){y3}
+ \zlabel(y0output){right}{$y_0$}
+ \zlabel(y1output){right}{$y_1$}
+ \zlabel(y2output){right}{$y_2$}
+ \zlabel(y3output){right}{$y_3$}
+%
+ \defcord(-2.5, 0.5){x0}
+ \defcord(-2, 0.5){x1}
+ \zlabel(x0){above}{$x_0$}
+ \zlabel(x1){above}{$x_1$}
+ \conns(x0)(y0input1)
+ \conns(x1)(y0input2)
+ \conns(x0)(y1input1)
+ \conns(x1)(y1input2)
+ \conns(x0)(y2input1)
+ \conns(x1)(y2input2)
+ \conns(x0)(y3input1)
+ \conns(x1)(y3input2)
+ \intersp(x0)(y0input1)
+ \intersp(x0)(y1input1)
+ \intersp(x0)(y2input1)
+ \intersp(x1)(y0input2)
+ \intersp(x1)(y1input2)
+ \intersp(x1)(y2input2)
+}
+
+\subsection{Encoder}
+Ein Encoder ist das Gegenstück eines Decoders. Encoder haben $2^n$ Eingänge und $n$ Ausgänge, so dass wenn der $i$te Eingang eine 1 ist die Ausgänge die $i_2$ encodieren.
+\ankinote{encoder}{Encoder}{\(2^n\) Eingänge, \(n\) Ausgänge, \(i\)te Eingang an -> Ausgänge codieren \(i\)}
+\ztikz{
+ \mgate(0,0){4}{2}{Encoder}{d}
+%
+ \zlabel(dinput1){left}{$x_0$}
+ \zlabel(dinput2){left}{$x_1$}
+ \zlabel(dinput3){left}{$x_2$}
+ \zlabel(dinput4){left}{$x_3$}
+%
+ \zlabel(doutput1){right}{$y_0$}
+ \zlabel(doutput2){right}{$y_1$}
+}
+
+\subsection{Multiplexer}
+Ein Multiplexer nimmt $2^n$ Dateneingänge und $n$ Steuerleitungen ein und gibt $1$ Ausgang aus. Werden die Steuerleitungen als Binärzahl $i$ gelesen, so hat der Ausgang den gleichen Wert die die $i$te Datenleitung.
+\ankinote{multiplexer}{Multiplexer}{\(2^n\) Dateneingänge, \(n\) Steuerleitungen, 1 Ausgang, Ausgang = \(i\)te Datenleitung}
+\ztikz{
+ \mbgate(0,0){4}{2}{1}{Mux}{m}
+%
+ \zlabel(minput1){left}{$x_0$}
+ \zlabel(minput2){left}{$x_1$}
+ \zlabel(minput3){left}{$x_2$}
+ \zlabel(minput4){left}{$x_3$}
+%
+ \zlabel(mbottom1){below}{$s_0$}
+ \zlabel(mbottom2){below}{$s_1$}
+%
+ \zlabel(moutput1){right}{$z$}
+}
+Dabei wird intern die Steuerleitung decodiert, so dass es intern eine Leitung mit einer 1 gibt, für die Eingabe die ausgegeben werden soll. Dann werden alle Eingaben mit ihren encodierten Leitungen AND genommen, so dass alle außer die ausgewählte Leitung zu einer 0 werden und die ausgewählte Leitung zum ausgewählten Wert wird. Diese Ergebnisse werden alle ODER genommen.
+
+\subsection{Demultiplexer}
+Ein Demultiplexer ist das Gegenstück eines Multiplexers; er hat einen Eingang, $n$ Steuerleitungen und $2^n$ Ausgänge. Wenn die Steuerleitungen die Binärzahl $i$ darstellen, so wird der Wert der Eingabe an die $i$te Ausgabe weitergeleitet.
+\ankinote{demultiplexer}{Demultiplexer}{1 Dateneingänge, \(n\) Steuerleitungen, \(2^n\) Ausgang,  \(i\) Ausgang = Eingang}
+\ztikz{
+ \mbgate(0,0){1}{2}{4}{DeMux}{m}
+%
+ \zlabel(minput1){left}{$x$}
+%
+ \zlabel(mbottom1){below}{$s_0$}
+ \zlabel(mbottom2){below}{$s_1$}
+%
+ \zlabel(moutput1){right}{$z_0$}
+ \zlabel(moutput2){right}{$z_1$}
+ \zlabel(moutput3){right}{$z_2$}
+ \zlabel(moutput4){right}{$z_3$}
+}
+
+\subsection{Halbaddierer}
+Ein Halbaddierer kann zwei Bits zusammenaddieren. Diese sind auch dessen zwei Eingänge. Die zwei Ausgänge stellen jeweils die Summe und den Übertrag der Addition dar.
+\ankinote{halbaddierer}{Halbaddierer}{Addiert 2 Bits, Summe und Übertrag}
+\ztikz{
+ \mgate(0,0){2}{2}{HA}{m}
+%
+ \zlabel(minput1){left}{$x_0$}
+ \zlabel(minput2){left}{$x_1$}
+%
+ \zlabel(moutput1){right}{$s$}
+ \zlabel(moutput2){right}{$\ddot{u}$}
+}
+Dabei gilt
+\[
+ s = x \oplus y \dtext{und} \ddot{u} = x \land y
+\]
+\ztikz{
+ \xorg(0, 0){s}
+ \andg(0, -1.2){ü}
+ \zlabel(soutput){right}{$s$}
+ \zlabel(üoutput){right}{$\ddot{u}$}
+%
+ \defcord(-2.5, 0.5){x0}
+ \defcord(-2, 0.5){x1}
+ \zlabel(x0){above}{$x_0$}
+ \zlabel(x1){above}{$x_1$}
+ \conns(x0)(sinput1)
+ \conns(x1)(sinput2)
+ \conns(x0)(üinput1)
+ \conns(x1)(üinput2)
+%
+ \intersp(x0)(sinput1)
+ \intersp(x1)(üinput1)
+}
+
+\subsection{Volladdierer}
+Ein Volladdierer kann zwei Bits und den Übertrag der letzten Ziffer zusammenaddieren. Dabei ist das Ergebnis wieder eine Summe und ein neuer Übertrag
+\ankinote{volladdierer}{Volladdierer}{Addiert 3 Bits (2 Zahlen + Übertrag), Summe und Übertrag}
+\ztikz{
+ \mgate(0,0){3}{2}{VA}{m}
+%
+ \zlabel(minput1){left}{$\ddot{u}\prime$}
+ \zlabel(minput2){left}{$x_0$}
+ \zlabel(minput3){left}{$x_1$}
+%
+ \zlabel(moutput1){right}{$s$}
+ \zlabel(moutput2){right}{$\ddot{u}$}
+}
+
+\subsection{Paralleladdierer}
+Ein Paralleladdierer kann eine $n$-stellige Binärzahl addieren, indem ein Halbaddierer und $n-1$ Volladdierer zusammengeschlossen werden.
+\ankinote{paralleladdierer}{Paralleladdierer}{Addiert $n$-stellige Zahl, 1 HA, n-1 VA}
+\ztikz{
+ \mgates(0,0){2}{2}{HA}{a1}
+ \mgates(1.5,-1.2){3}{2}{VA}{a2}
+ \mgates(3,-2.4){3}{2}{VA}{a3}
+ \mgates(4.5,-3.6){3}{2}{VA}{a4}
+%
+ \conn(a1output2)(a2input1)
+ \conn(a2output2)(a3input1)
+ \conn(a3output2)(a4input1)
+%
+ \zlabel(a1input1){left}{$x_0$}
+ \zlabel(a1input2){left}{$y_0$}
+ \zlabel(a2input2){left}{$x_1$}
+ \zlabel(a2input3){left}{$y_1$}
+ \zlabel(a3input2){left}{$x_2$}
+ \zlabel(a3input3){left}{$y_2$}
+ \zlabel(a4input2){left}{$x_3$}
+ \zlabel(a4input3){left}{$y_3$}
+%
+ \zlabel(a1output1){right}{$z_0$}
+ \zlabel(a2output1){right}{$z_1$}
+ \zlabel(a3output1){right}{$z_2$}
+ \zlabel(a4output1){right}{$z_3$}
+}
+
+\subsection{Parallelmultiplizierer}
+Ein Parallelmultiplizierer multipliziert zwei $n$-stellige Binärzahlen. Mit AND Gattern werden neue Binärzahlen gebaut, welche jeweils die Multiplikation einer Zahl mit einer Ziffer der anderen Zahl darstellen. Diese werden dann mit Paralleladdierern zusammenaddiert.
+\ankinote{parallelmultiplizierer}{Parallelmultiplizierer}{Multipliziert zwei Zahlen; erstellt versetzt Zahlen (Zahl mal Ziffer anderer Zahl), addiert}
+\end{document}

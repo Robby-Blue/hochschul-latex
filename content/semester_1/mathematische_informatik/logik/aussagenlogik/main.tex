@@ -3,6 +3,7 @@
 \usepackage{/globals/de}
 \usepackage{/globals/math}
 \usepackage{/globals/anki}
+\usepackage{hyperref}
 \ankiprefix{aussagenlogik}
 \ankitopic{Aussagenlogik}
 \ankishow
@@ -28,6 +29,19 @@ Aussagen können zusammensetzungen aus mehreren anderen Aussagen sein, oder sie 
 \ankinote{xor}{\(A \oplus B\)}{Kontravalenz, A xor B}
 \ankinote{implies}{\(A \implies B\)}{Implikation, wenn A dann B}
 \ankinote{iff}{\(A \iff B\)}{Äquivalenz, A genau dann wenn B}
+
+\subsection{Sprache Formalisieren}
+Unsere menschliche Sprache ist nicht formal und oftmals auch ohne weiterem Vorwissen sehr ungenau und missverständlich.
+
+Sie kann aber formalisiert werden indem alle atomaren Aussagensymbole einer Aussage gefunden werden, gemäß des Satzes zu Teilaussagen kombiniert werden, die dann zu einer Gesamtaussage kombiniert werden können.
+
+\subsection{Normalformen}
+Eine Aussage ist ein der Normalform wenn sie nur aus Konjunktionen, Disjunktionen und Negationen besteht. Genauer gibt es zwei Arten an Normalformen.
+\begin{description}
+ \item[DNF] Eine disjunktive Normalform (DNF) besteht nur aus Disjunktionen von Konjunktionen.
+ \item[KNF] Eine konjunktive Normalform (DNF) besteht nur aus Konjunktionen von Disjunktionen.
+\end{description}
+Wie DNFs und KNFs gebildet werden können ist weiter in \hyperref[sec:normalform_bilden]{Einführung Informatik} beschrieben.
 
 \subsection{Wahrheitstabellen}
 Eine Wahrheitstabelle ist eine tabellarische Darstellung aller möglichen Kombinationen der atomaren Formeln einer Formeln und den dazugehörigen Werten der Formel.

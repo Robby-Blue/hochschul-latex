@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/anki}
+\ankiprefix{aussagenlogik-umformungen}
+\ankitopic{Aussagenlogik Umformungen}
+\ankishow
+\newcommand{\feq}{\quad &= \quad}
+\begin{document}
+\section{Äquivalenzumformungen der Aussagenlogik} 
+Genau so wie mathematische Formeln umgeformt werden können, können auch Formeln der Aussagenlogik umgeformt werden.
+
+\subsection{Gesetze}
+Es gibt viele Gesetze um mit logischen Formel zu arbeiten. Viele sind recht offensichtlich, vorallem wenn sich das equivalente Gesetz der Mathematik angesehen wird. 
+\begin{description}
+ \item[Kommutativität] Konjunktionen, Disjunktionen und Kontravalenzen sind kommutativ. Die Reihenfolge der Operanten ist egal.
+\begin{align*}
+ A \land B \feq B \land A \\
+ A \lor B \feq B \lor A \\
+ A \oplus B \feq B \oplus A
+\end{align*}
+ \item[Assoziativität] Konjunktionen, Disjunktionen und Kontravalenzen sind assoziativ. Die Reihenfolge der Operationen ist egal.
+\begin{align*}
+ (A \land B) \land C \feq A \land (B \land C) \\
+ (A \lor B) \lor C \feq A \lor (B \lor C) \\
+ (A \oplus B) \oplus C \feq A \oplus (B \oplus C)
+\end{align*}
+ \item[Distributivität] Konjunktionen und Disjunktionen sind distributiv. Die Klammern können aufgelöst werden, indem die äußere Operation auf beide inneren Operanten angewendet wird, verbunden mit dem inneren Operator.
+\begin{align*}
+ A \land (B \lor C) \feq (A \land B) \lor (A \land B) \\
+ A \lor (B \land C) \feq (A \lor B) \land (A \lor B)
+\end{align*}
+\ankinote{distributiv}{Distributivität}{\[A \land (B \lor C) \feq (A \land B) \lor (A \land B)\]}
+ \item[DeMorgan] Die Negation einer Konjunktionen oder einer Disjunktionen kann aufgelöst werden indem die innere Operator gewechselt wird und die Negation auf beide Operanten angewand wird.
+\begin{align*}
+ \neg (A \land B) \feq \neg A \lor \neg B \\
+ \neg (A \lor B) \feq \neg A \land \neg B
+\end{align*}
+\ankinote{demorgan}{DeMorgan}{\[\neg (A \land B) \feq \neg A \lor \neg B\]}
+ \item[Äquivalenzauflösung] Eine Äquivalenz kann ihrer Definition nach aufgelöst werden
+\begin{align*}
+ A \iff B \feq (A \land B) \lor (\neg A \land \neg B) \\
+ \feq (A \implies B) \land (B \implies A) 
+\end{align*}
+ \item[Implikationsauflösung] Eine Implikation kann ihrer Definition nach aufgelöst werden
+\begin{align*}
+ A \implies B \feq \neg A \lor B
+\end{align*}
+\ankinote{implikation}{Implikation}{\[A \implies B \feq \neg A \lor B\]}
+ \item[Kontraposition] Für eine Implikation kann die eigene Kontraposition gebildet werden
+\begin{align*}
+ A \implies B \feq \neg B \implies \neq A
+\end{align*}
+\ankinote{kontraposition}{Kontraposition}{\[A \implies B \feq \neg B \implies \neq A\]}
+ \item[Kontravalenzauflösung] Eine Kontravalenz kann ihrer Definition nach aufgelöst werden
+\begin{align*}
+ A \oplus B \feq (A \land \neg B) \lor (\neg A \land B)
+\end{align*}
+ \item[Doppelnegation] Zwei Negationen hintereinander streichen sich gegenseitig weg
+\begin{align*}
+ \neg \neg A \feq A
+\end{align*}
+ \item[Idempotenz] Wird eine Konjunktion oder eine Disjunktion auf zwei mal den selben Operanten angewendet ist das Ergebnis der Operant 
+\begin{align*}
+ A \land A \feq A \\
+ A \lor A \feq A
+\end{align*}
+ \item[Absorption] Wird eine Konjunktion oder eine Disjunktion auf einen Operanten und der gegenteiligen Operation von demselben Operanten und einem anderen Operanten angewendet, so ist das Ergebnis der Operant selbst
+\begin{align*}
+ A \land (A \lor B) \feq A \\
+ A \lor (A \land B) \feq A
+\end{align*}
+\ankinote{absorption}{Absorption}{\[A \land (A \lor B) \feq A\]}
+ \item[Komplemente] Wird eine Konjunktion oder eine Disjunktion auf einen Operanten und das Gegenteil des Operanten angewendet, so ist das Ergebnis vom Wert des Operanten unabhängig
+\begin{align*}
+ A \land \neg A \feq 0 \\
+ A \lor \neg A \feq 1
+\end{align*}
+ \item[Neutralität] Operationen mit manchen Operatoren und Operanten haben keine Auswirkung
+\begin{align*}
+ A \land 1 \feq A \\
+ A \lor 0 \feq A
+\end{align*}
+ \item[Elimination] Operationen mit manchen Operatoren und Operanten sind unabhängig vom Wert des Operanten
+\begin{align*}
+ A \land 0 \feq 0 \\
+ A \lor 1 \feq 1
+\end{align*}
+\end{description}
+\end{document}

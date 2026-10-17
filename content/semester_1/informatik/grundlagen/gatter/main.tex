@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{/globals/de}
 \usepackage{/globals/math}
 \usepackage{/globals/diagrams}
 \usepackage{/globals/anki}
@@ -20,12 +21,28 @@ Das Gatter stellt somit $z = a \land b$ dar.
  \zlabel(Ainput2){left}{$b$}
  \zlabel(Aoutput){right}{$z$}
 }
+Es kann auch als Gatter mir mehr als zwei Eingaben gezeichnet werden. Hier ist \zb $z = a \land b \land c$ dar.
+\ztikz{
+ \tandg(0,0){A}
+ \zlabel(Ainput1){left}{$a$}
+ \zlabel(Ainput2){left}{$b$}
+ \zlabel(Ainput3){left}{$c$}
+ \zlabel(Aoutput){right}{$z$}
+}
  \item[OR-Gatter] Mit einem $\ge 1$-Symbol nimmt es zwei Eingaben an und gibt aus ob mindestens eine der beiden wahr ist.
 Das Gatter stellt somit $z = a \lor b$ dar.
 \ztikz{
  \org(0,0){A}
  \zlabel(Ainput1){left}{$a$}
  \zlabel(Ainput2){left}{$b$}
+ \zlabel(Aoutput){right}{$z$}
+}
+Es kann auch als Gatter mir mehr als zwei Eingaben gezeichnet werden. Hier ist \zb $z = a \lor b \lor c$ dar.
+\ztikz{
+ \torg(0,0){A}
+ \zlabel(Ainput1){left}{$a$}
+ \zlabel(Ainput2){left}{$b$}
+ \zlabel(Ainput3){left}{$c$}
  \zlabel(Aoutput){right}{$z$}
 }
  \item[NOT-Gatter] Mit einem $1$-Symbol und einem Invertierpunkt nimmt es eine Eingabe an und gibt dessen Gegenteil aus.

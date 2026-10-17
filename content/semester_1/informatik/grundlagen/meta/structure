@@ -11,5 +11,6 @@ def main() {
     use_sec("transistoren")
     use_sec("gatter")
     use_sec("schaltungen")
+    use_sec("spezielle")
   }
 }
