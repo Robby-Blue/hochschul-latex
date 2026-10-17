@@ -26,16 +26,16 @@ Es gibt viele Gesetze um mit logischen Formel zu arbeiten. Viele sind recht offe
 \end{align*}
  \item[Distributivität] Konjunktionen und Disjunktionen sind distributiv. Die Klammern können aufgelöst werden, indem die äußere Operation auf beide inneren Operanten angewendet wird, verbunden mit dem inneren Operator.
 \begin{align*}
- A \land (B \lor C) \feq (A \land B) \lor (A \land B) \\
- A \lor (B \land C) \feq (A \lor B) \land (A \lor B)
+ A \land (B \lor C) \feq (A \land B) \lor (A \land C) \\
+ A \lor (B \land C) \feq (A \lor B) \land (A \lor C)
 \end{align*}
-\ankinote{distributiv}{Distributivität}{\[A \land (B \lor C) \feq (A \land B) \lor (A \land B)\]}
+\ankinote{distributiv}{Distributivität}{\[A \land (B \lor C) = (A \land B) \lor (A \land C)\]}
  \item[DeMorgan] Die Negation einer Konjunktionen oder einer Disjunktionen kann aufgelöst werden indem die innere Operator gewechselt wird und die Negation auf beide Operanten angewand wird.
 \begin{align*}
  \neg (A \land B) \feq \neg A \lor \neg B \\
  \neg (A \lor B) \feq \neg A \land \neg B
 \end{align*}
-\ankinote{demorgan}{DeMorgan}{\[\neg (A \land B) \feq \neg A \lor \neg B\]}
+\ankinote{demorgan}{DeMorgan}{\[\neg (A \land B) = \neg A \lor \neg B\]}
  \item[Äquivalenzauflösung] Eine Äquivalenz kann ihrer Definition nach aufgelöst werden
 \begin{align*}
  A \iff B \feq (A \land B) \lor (\neg A \land \neg B) \\
@@ -45,12 +45,12 @@ Es gibt viele Gesetze um mit logischen Formel zu arbeiten. Viele sind recht offe
 \begin{align*}
  A \implies B \feq \neg A \lor B
 \end{align*}
-\ankinote{implikation}{Implikation}{\[A \implies B \feq \neg A \lor B\]}
+\ankinote{implikation}{Implikation}{\[A \implies B = \neg A \lor B\]}
  \item[Kontraposition] Für eine Implikation kann die eigene Kontraposition gebildet werden
 \begin{align*}
- A \implies B \feq \neg B \implies \neq A
+ A \implies B \feq \neg B \implies \neg A
 \end{align*}
-\ankinote{kontraposition}{Kontraposition}{\[A \implies B \feq \neg B \implies \neq A\]}
+\ankinote{kontraposition}{Kontraposition}{\[A \implies B = \neg B \implies \neg A\]}
  \item[Kontravalenzauflösung] Eine Kontravalenz kann ihrer Definition nach aufgelöst werden
 \begin{align*}
  A \oplus B \feq (A \land \neg B) \lor (\neg A \land B)
@@ -69,7 +69,7 @@ Es gibt viele Gesetze um mit logischen Formel zu arbeiten. Viele sind recht offe
  A \land (A \lor B) \feq A \\
  A \lor (A \land B) \feq A
 \end{align*}
-\ankinote{absorption}{Absorption}{\[A \land (A \lor B) \feq A\]}
+\ankinote{absorption}{Absorption}{\[A \land (A \lor B) = A\]}
  \item[Komplemente] Wird eine Konjunktion oder eine Disjunktion auf einen Operanten und das Gegenteil des Operanten angewendet, so ist das Ergebnis vom Wert des Operanten unabhängig
 \begin{align*}
  A \land \neg A \feq 0 \\

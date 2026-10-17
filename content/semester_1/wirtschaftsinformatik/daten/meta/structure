@@ -6,7 +6,7 @@ def main() {
   ) {
     use_sec("daten")
     use_sec("datenintegration")
-    use_sec("datenbank")
+    use_sec("datenbanken")
     use_sec("er-model")
   }
 }
