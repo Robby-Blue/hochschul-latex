@@ -1,0 +1,11 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Verwaltungshandeln",
+      subtitle="",
+      id="VIF-102"
+    )
+  ) {
+    use_doc(path="grundlagen")
+  }
+}
