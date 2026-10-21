@@ -1,18 +1,24 @@
 \documentclass{article}
+\usepackage{/globals/boxes}
 \usepackage{/globals/anki}
 \ankiprefix{datenbanken}
 \ankitopic{Datenbanken}
 \ankishow
+\usepackage{/globals/de}
+\usepackage{hyperref}
 \begin{document}
 \section{Datenbanken}
-Datenbanken bestehen aus Tabellen, Dateien genannt. Jede Tabelle hat Spalten (Datenfelder/Attribute) und Zeilen (Datensätze), so dass in jeder Zelle ein Attribut eines bestimmten Datensatzes gespeichert ist.
-\ankinote{aufbau}{Aufbau}{Tabellen, Spalten, Zeilen}
+Datenbanken bestehen aus zweidimensionalen Tabellen, Dateien genannt. Jede Tabelle hat Spalten (Datenfelder/Attribute) und Zeilen (Datensätze), so dass in jeder Zelle ein Attribut eines bestimmten Datensatzes gespeichert ist.
+\ankinote{aufbau}{Aufbau}{Tabellen (Dateien), Spalten (Datenfelder/Attribute), Zeilen (Datensätze/Tupeln)}
 \ankinote{spalten}{Spalten}{Datenfelder/Attribute}
 \ankinote{zeilen}{Zeilen}{Datensätze}
 
-Datensätze können mit Primärschlüsseln eindeutig identifiziert werden. Datensätze können mit Sekundärschlüsseln auf andere Datensätzen aus anderen Tabellen zeigen.
+Datensätze können mit Primärschlüsseln eindeutig identifiziert werden. Zudem können sie mit Sekundärschlüsseln auf andere Datensätzen aus anderen Tabellen zeigen.
 \ankinote{schlüssel}{Schlüssel}{Primärschlüssel Datensatz eindeutige identifikation, Sekundärschlüssel zeigt auf anderen Datensatz}
 
+Die Reihenfolge in der die Spalten definiert und Datensätze gespeichert werden ist nicht wichtig. Eigentlich sollte jedes Attribut atomar sein; es sollte nur einen Wert speichern.
+\ankinote{reihenfolge}{Reihenfolge}{Irrelevant}
+\ankinote{attribute}{Attribute}{Atomar, einelementig}
 \subsection{DBMS}
 Datenbankmanagementsysteme sitzen vor der Datenbank um bei Bedarf die Daten für andere Programm auszulesen oder einzuschreiben. Sie können auf drei Ebenen aufgeteilt werden.
 \begin{description}
@@ -25,4 +31,16 @@ Datenbankmanagementsysteme sitzen vor der Datenbank um bei Bedarf die Daten für
 \ankinote{schema}{Schemabeschreibung}{Date Definition Language, Schema beschrieben}
 \ankinote{speicher}{Speicherbeschreibung}{Data Storage Description Language, physische Speicherung}
 
+\subsection{Datenspeicherung}
+Datenbanken werden vermehrt im RAM gespeichert. Dies ist Stelle, sowohl im Lesen als auch im Schreiben von Daten. Andererseits ist RAM teurer als Festplatten und zudem nicht permanent. Bei Stromverlust kann es schnell zu Datenverlust kommen.
+\zreference{\href{https://www.youtube.com/watch?v=b2F-DItXtZs}{Mongo DB Is Web Scale}}
+
+Bei der Datenspeicherung kann zudem darin unterschieden werden ob die Daten Zeilenbasiert (Zeile für Zeile) oder Spaltenbasiert (Spalte für Spalte) gespeichert werden. Davon abhängig sind unterschiedliche Daten näher aneinander und somit schneller verarbbeitbar.
+\ankinote{datenspeicher}{Datenspeicher}{Festplatte, RAM, Zeilenweise, Spaltenweise}
+
+\subsection{Verteile Datenbanken}
+Datenbanken können aus Gründen der Latenz und der Redundanz auf mehrere Server und geografische Orte aufgeteilt werden. Dabei bleibt die obige 3-Ebenen Architektur erhalten.
+
+Lokal können einzelne Datenbanken aber unterschiedliche Schema- oder Speicherbeschreibungen genutzt werden, \zb wenn manche Daten auf manchen Servern nicht gespeichert werden müssen oder dürfen.
+\ankinote{verteilt}{Verteilt}{Latenz, Geografie, Redundanz; unterschiedliche Schema}
 \end{document}

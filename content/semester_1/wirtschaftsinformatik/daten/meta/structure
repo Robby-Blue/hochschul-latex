@@ -8,5 +8,7 @@ def main() {
     use_sec("datenintegration")
     use_sec("datenbanken")
     use_sec("er-model")
+    use_sec("datenanalyse")
+    use_sec("wissensmanagement")
   }
 }

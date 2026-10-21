@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/boxes}
+\usepackage{/globals/anki}
+\ankiprefix{datenanalyse}
+\ankitopic{Datenanalyse}
+\ankishow
+\begin{document}
+\section{Datenanalyse}
+\subsection{Data Warehouses}
+Data Warehouses werden genutzt um quellenübergreifend Daten zu analysieren. Dabei gibt es drei Schritte.
+\begin{description}
+ \item[Datenmanagement] Daten werden gesammelt und auf ein gemeinsames Schema transformiert.
+ \item[Datenorganisation] Daten werden gemäß des Modells gespeichert, aktualisiert und gewartet.
+ \item[Datenauswertung] Daten werden gemined, visualisiert und ausgewertet.
+\end{description}
+\ankinote{datawarehouses}{Data Warehouses}{Quellenübergreifen komprimiert wichtigste Daten speichern}
+\ankinote{datawarehouses-management}{Data Warehouses Management}{Sammelung, Transformation}
+\ankinote{datawarehouses-org}{Data Warehouses Organsiation}{Speicherung, Aktualisierung, Wartung}
+\ankinote{datawarehouses-auswertung}{Data Warehouses Auswertung}{Datamining, Visualisierung}
+Hier werden in der Regel nicht alle Daten jeder Datenbank gespeichert; das wären zu viele Daten und die Details sind im nachhinein oft auch nicht so wichtig wie das größere Bild.
+\begin{zexample}
+Wenn eine Datenbank alle Einkäufe eines Ladens speichert, zusammen mit der KäuferIn, der Transaktionszeit, den Preisen, \etc speichert müsste ein Data Warehouse eventuell nur speichern wie viele Produkte innerhalb eines Monats verkauft wurden.
+\end{zexample}
+
+\subsection{Datenvisualisierung}
+Mit \emph{OLAP} (\emph{Online Analytical Processing}) können Daten mehrdimensional (dreidimensional oder höher) analysiert werden.
+\ankinote{visualisierung}{Visualisierung}{OLAP (Online Analytical Processing), 3D Darstellung}
+
+\subsection{Datenmengen}
+Die steigende Menge an Daten kann mit den 5 \texttt{V}s analysiert werden.
+\begin{description}
+ \item[Volume] Die Datenmenge.
+ \item[Velocity] Die Geschwindigkeit der Datenanalysen.
+ \item[Variety] Die Heterogenität der Datentypen (Text, Bild, Audio, Robotersensoren, \etc).
+ \item[Veracity] Die geforderte Genauigkeit der Datenanalyse.
+ \item[Value] Die Möglichkeit aus den Daten einen wirtschaftlichen Nutzen zu ziehen. 
+\end{description}
+\ankinote{datenmengen}{5 Vs}{Volume, Velocity, Variety, Veracity, Value}
+\ankinote{datenmengen-vol}{Volume}{Datenmenge}
+\ankinote{datenmengen-vel}{Velocity}{Geschwindigkeit Datenanalyse}
+\ankinote{datenmengen-var}{Variety}{Heterogenität Datentypen}
+\ankinote{datenmengen-ver}{Veracity}{Geforderte Genauigkeit der Analyse}
+\ankinote{datenmengen-val}{Value}{Wirtschaftlicher Nutzen}
+
+\subsection{Suchmaschinen}
+Das Internet selbst kann als riesige, unorganisierte Datenbank gesehen werden, welche analysiert und durchsucht werden muss wenn sie Sinnvoll sein soll.
+\begin{description}
+ \item[Crawler] Crawler, oder auch Spider genannt, sind Programme die das Internet regelmäßig nach neuen Seiten durchsuchen und dessen Daten sammeln.
+ \item[Indexe] Ein Index, oder auch ein Katatalog, speichert die Daten der gefundenden Seiten. Das sind zum Beispiel die URL, die genutzten Schlagwörter, die Relevant, \etc.
+ \item[Suchsoftware] Software die eine Suchanfrage annimmt, die wichtigsten Schlagwörter dieser findet, und den Index nach den passendesten und relevantesten Siten durchsucht.
+\end{description}
+Natürlich können auch Suchmaschinen entwickelt werden die nicht das ganze Internet durchsuchen, sondern vielleicht nur interne Intranets oder Wikis. Dann wird oftmals kein Crawler benötigt.
+\ankinote{suchmaschine}{Suchmaschine}{Crawler, Index, Suchsoftware}
+\ankinote{suchmaschine-crawler}{Suchmaschine Crawler}{Findet Seiten, Metadaten}
+\ankinote{suchmaschine-index}{Suchmaschine Index}{Speichert Seiten, Metadaten, Schlüsselwörter}
+\ankinote{suchmaschine-software}{Suchmaschine Suchsoftware}{Durchsucht Index nach Suchanfrage}
+
+\end{document}
