@@ -10,5 +10,6 @@ def main() {
     use_sec("wertzuweisungen")
     use_sec("operatoren")
     use_sec("verzweigungen")
+    use_sec("schleifen")
   }
 }

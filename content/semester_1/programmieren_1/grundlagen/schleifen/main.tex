@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankishow
+\ankiprefix{schleifen}
+\ankitopic{Schleifen}
+\begin{document}
+\section{Schleifen} 
+Schleifen werden genutzt um bei Bedarf Abschnitte eines Programms zu wiederholen solange eine bestimmte Bedingung erfüllt ist.
+
+\subsection{\texttt{while}}
+Eine \ilsourcecode{while}-Schleife wiederholt bestimmte Anweisungen solange eine gegebene Bedingung \ilsourcecode{true} ist.
+\begin{sourcecode}{java}
+while (bedingung) {
+    Anweisungen;
+}
+\end{sourcecode}
+Sie ist eine abweisende Schleife; wenn die Bedingung bei dem ersten Durchgang bereits \ilsourcecode{false} ist werden die Anweisungen kein einziges mal durchgeführt.
+\ankinote{syntaxe}{Syntaxe}{while, do while, for}
+\ankinote{arten}{Arten}{abweisend (while), annehmend (do)}
+
+\subsection{\texttt{do while}}
+Eine \ilsourcecode{do while}-Schleife ist der \ilsourcecode{while}-Schleife sehr ähnlich.
+\begin{sourcecode}{java}
+do {
+    Anweisungen;
+} while (bedingung)
+\end{sourcecode}
+Sie ist aber annehmend. Auch wenn die Bedingung von Anfang an \ilsourcecode{false} ist werden die Anweisungen mindestens ein mal ausgeführt.
+
+\subsection{\texttt{for}}
+Eine \ilsourcecode{for}-Schleife ist letztendlich eine \ilsourcecode{while}-Schleife; sie wird wiederholt solange die Bedingung \ilsourcecode{true} ist, aber sie bietet extra Syntax um eine Anweisung beim ersten Schleifenbeginn und eine Anweisung nach jedem Durchlauf auszuführen.
+\begin{sourcecode}{java}
+for(Initialisierung; bedingung; Aktualisierung) {
+    Anweisungen;
+}
+\end{sourcecode}
+So kann sehr einfach hochgezählt werden
+\begin{sourcecode}{java}
+for(int i = 0; i < 10; i++) {
+    Anweisungen;
+}
+\end{sourcecode}
+\ankinote{for}{for}{Initialisierung; bedingung; Aktualisierung, Aktualisierung nach jedem Durchgang}
+
+\subsection{Äquivalenzen}
+Alle Schleifenarten machen letztendlich das Gleiche. Jede \ilsourcecode{while} kann auch als \ilsourcecode{do while} geschrieben werden; wenn vorher bereits bekannt ist dass in jedem Fall die Bedingung mindestens beim ersten mal \ilsourcecode{true} sein wird, wird das \ilsourcecode{if} garnicht mal benötigt.
+\begin{sourcecode}{java}
+while (bedingung) {
+    Anweisungen;
+}
+// ist äquivalent zu
+if (bedingung) {
+    do {
+        Anweisungen;
+    } while (bedingung)
+}
+\end{sourcecode}
+Andersherum können \ilsourcecode{do while}s auch als \ilsourcecode{while}s geschrieben werden. 
+\begin{sourcecode}{java}
+do {
+    Anweisungen;
+} while (bedingung)
+// ist äquivalent zu
+Anweisungen;
+while (bedingung) {
+    Anweisungen;
+}
+\end{sourcecode}
+Ein \ilsourcecode{for} ist nur eine kompakteres \ilsourcecode{while}.
+\begin{sourcecode}{java}
+for(Initialisierung; bedingung; Aktualisierung) {
+    Anweisungen;
+}
+// ist äquivalent zu
+{
+    Initialisierung; 
+    while(bedingung) {
+        Anweisungen;
+        Aktualisierung;
+    }
+}
+\end{sourcecode}
+
+\subsection{\texttt{break;} und \texttt{continue;}}
+Ein \ilsourcecode{break;} bricht die zurzeitige Schleife ab, auch wenn die Bedingung noch \ilsourcecode{true} sein mag.
+
+Mit einem \ilsourcecode{continue;} wird der Rest des zurzeitigen Durchgangs übersprungen, die Schleife kann aber noch weiter laufen, wenn die Bedingung \ilsourcecode{true} ist.
+
+\subsection{Endlosschleifen}
+Eine Schleife die kein Ende hat und sich für immer weiter und weiter wiederholt ist eine Endlosschleife. Sie terminiert nicht.
+\begin{sourcecode}{java}
+while (true) {
+   ;
+}
+\end{sourcecode}
+\ankinote{endlos}{Endlosschleife}{Terminiert nicht}
+\end{document}
