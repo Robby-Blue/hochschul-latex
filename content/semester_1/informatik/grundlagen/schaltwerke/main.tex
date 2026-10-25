@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{/globals/boxes}
+\usepackage{/globals/tables}
+\usepackage{/globals/anki}
+\ankiprefix{schaltwerke}
+\ankitopic{Schaltwerke}
+\ankishow
+\begin{document}
+\section{Schaltwerke} 
+Ein Schaltwerk ist ein Schaltnetz mit eine Rückkopplung; ein Ausgang ist gleichzeitig auch ein Eingang.
+\ankinote{def}{Definition}{Schaltnetz mit Rückkopplung}
+\begin{description}
+ \item[Asynchron] Der Zustand des Schaltwerks kann sich konstant und unabhängig von allem anderen verändern.
+ \item[Synchron] Der Zustand aller Schaltwerke verändern sich synchron, zentral gesteuert durch einen Takt. 
+ \begin{description}
+  \item[Pegelsteuerung] Der Zustand kann sich verändern wenn das Taktsignal einen bestimmten Wert hat. 
+  \item[Flankensteuerung] Der Zustand kann sich das Taktsignal (zu einem bestimmten Wert) verändert.
+ \end{description}
+\end{description}
+\ankinote{arten}{Arten}{Asynchron (immer veränderbar), Synchron (Takt)}
+\ankinote{sync-arten}{Synchron Arten}{Pegelgesteuert (Wert), Flankensteuerung (Veränderung)}
+
+\subsection{Flip-flops}
+Ein Flip-flops kann jeweils ein Bit an Information speichern.
+\begin{description}
+\item[RS-flip-flop] Ein RS-flip-flop hat zwei Eingänge; dem Namen nach $R$ (Reset) und $S$ (Set), welche auch genau dies mit dem gespeicherten Wert tun.
+\begin{ztable}{cc|c}{$R$ & $S$ & $Q$}
+ 0 & 0 & unverändert \\
+ 0 & 1 & 1 \\
+ 1 & 0 & 0 \\
+ 1 & 1 & ungültig \\
+\end{ztable}
+\ztodo{tikz}
+\ankinote{rs-ff}{RS-flip-flop}{Reset, Set den Wert}
+
+\item[Pegelgesteuerter D-flip-flop] Ein pegelgesteuerter D-flip-flop hat zwei eingänge; das Signal $D$ und und den Takt (die clock) $C$. Wenn $C=1$ wird $D$ gespeichert.
+\begin{ztable}{cc|c}{$C$ & $D$ & $Q$}
+ 0 & 0 & unverändert \\
+ 0 & 1 & unverändert \\
+ 1 & 0 & 0 \\
+ 1 & 1 & 1 \\
+\end{ztable}
+\ztodo{tikz}
+\ankinote{peg-d-ff}{Pegelgesteuerter D-flip-flop}{Wenn C=1, Wert=D}
+
+\item[Flankengesteuerter D-flip-flop] Ein flankengesteuerter D-flip-flop hat die gleichen Eingänge wie ein pegelgesteuerter D-flip-flop, speichert aber den Wert von $D$ wenn $C$ von 1 zu 0 springt.
+\begin{ztable}{cc|c}{$C$ & $D$ & $Q$}
+ $1 \rightarrow{} 0$ & 0 & unverändert \\
+ $1 \rightarrow{} 0$ & 1 & unverändert \\
+ $0 \rightarrow{} 1$ & 0 & 0 \\
+ $0 \rightarrow{} 1$ & 1 & 1 \\
+\end{ztable}
+\ztodo{tikz}
+\ankinote{flank-d-ff}{Flankengesteuerter D-flip-flop}{Wenn C 0->1, Wert=D}
+\end{description}
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{/globals/anki}
+\ankiprefix{prädikatenlogik}
+\ankitopic{Prädikatenlogik}
+\ankishow
+\begin{document}
+\section{Prädikatenlogik} 
+Die Prädikatenlogik ist die Erweiterung der Aussagenlogik um Prädikaten, Variablen, Funktoren und Quantoren.
+
+\subsection{Prädikaten}
+Werden die Variablen eines Prädikates durch echte Werte ersetzt, so wird das Prädikat zu einer sinnvollen Aussage. Ein Prädikat mit $k$ Variablen ist $k$-stellig.
+\[
+ A(x)
+\]
+\ankinote{prädikaten}{Prädikaten}{Variablen ersetzen zu Aussage, Variablenzahl als Stelligkeit}
+
+\subsection{Quantoren}
+Damit ein Prädikat semantisch sinnvoll ist muss jede Variable gebunden sein. Dies tun die Quantoren. Sie geben an für welche Werte der Variable das Prädikat wahr sein muss damit die Gesamtaussage stimmt und benennen bei Bedarf den Wertebereich der Variable.
+\begin{description}
+ \item[Allquantor] Mit dem Allquantor $\forall$ wird angegeben dass das nachfolgende Prädikat für alle möglichen Werte der gebundenden Variable wahr sein muss damit die Gesamtaussage wahr ist.
+\[
+ \forall x \in \text{Menge} (A(x))
+\]
+\textquote{Für alle Werte von $x$ ist $A(x)$ wahr}
+ \item[Existenzquantor] Mit dem Existenzquantor $\exists$ wird angegeben dass das nachfolgende Prädikat für mindestens einen Wert der gebundenden Variable wahr ist.
+\[
+ \exists x \in \text{Menge} (A(x))
+\]
+\textquote{Es gibt mindestens einen Wert $x$ für den $A(x)$ wahr ist}
+\end{description}
+\ankinote{quantoren}{Quantoren}{Allquantor, Existenzquantor}
+\ankinote{allquantor}{Allquantor}{\(\forall\) Für Alle}
+\ankinote{existenzquantor}{Existenzquantor}{\(\exists\) Es existiert min ein}
+Stehen mehrere Quantoren gleicher Art hintereinander, so können diese zusammegefasst werden.
+\[
+ \forall x \forall y A(x) =
+ \forall x, y A(x)
+\]
+Stehen mehrere Quantoren nicht gleicher Art hintereinander, so darf dessen Reihenfolge nicht verändert werden.
+
+\subsection{Negationen}
+Wird ein Quantor negiert so kann die Negation vor das Prädikat gezogen werden und der Quantor vertauscht werden. Dies ist das DeMorgansche Gesetz.
+\[
+ \lnot \forall A(x) = \exists \lnot A(x)
+\]
+Dies ist sehr intuitiv; wenn $A(x)$ nicht für alle $x$ gilt, muss es einen $x$ geben für den $A(x)$ nicht gilt.
+\[
+ \lnot \exists A(x) = \forall \lnot A(x)
+\]
+Wenn es keinen Fall gibt für den $A(x)$ gilt dann gilt es für alle Fälle nicht.
+\ankinote{negation}{Negation}{\[\lnot \forall A(x) = \exists \lnot A(x)\]}
+
+\subsection{Verbinden}
+Mehrere gleiche Quantoren für die gleiche Variable können zu einem Verbunden werden. Dies gilt für den Allquantor und Konjunktionen.
+\[
+ \forall x A(x) \land \forall x B(y) = \forall x A(x) \land B(x)
+\]
+Und mit dem Existenzquantor und Disjunktionen.
+\[
+ \exists x A(x) \lor \exists x B(y) = \exists x A(x) \lor B(x)
+\]
+\ankinote{verbindungen}{Verbindungen}{Allquantor und Konjunktionen, Existenzquantor und Disjunktionen}
+
+\end{document}

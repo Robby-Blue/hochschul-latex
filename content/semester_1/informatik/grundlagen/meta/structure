@@ -12,5 +12,7 @@ def main() {
     use_sec("gatter")
     use_sec("schaltungen")
     use_sec("spezielle")
+    use_sec("schaltwerke")
+    use_sec("assembler")
   }
 }
