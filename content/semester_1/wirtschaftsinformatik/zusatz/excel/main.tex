@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankiprefix{excel}
+\ankitopic{Excel}
+\ankishow
+\NewDocumentCommand{\vb}{}{\ilsourcecode|vbnet|}
+\begin{document}
+\section{Excel}
+\subsection{Formeln}
+Wenn eine Zelle mit einem Gleichheitszeichen anfängt wird dessen Wert dynamisch basierend auf den Werten anderer Zellen berechnet. Dies kann eine einfache mathematische Formel sein, oder die von Excel eingebauten befehle nutzen.
+\begin{description}
+ \item[WENN] \ilsourcecode{WENN(Bedingung;Wert1;Wert2)} gibt Wert1 zurück wenn die Bedingung erfüllt ist, ansonsten wird Wert2 zurückgegeben
+ \item[UND] \ilsourcecode{UND(Bedingung1;Bedingung2;...)} gibt einen Boolean zurück; ob alle Bedingungen erfüllt sind.
+ \item[ODER] \ilsourcecode{ODER(Bedingung1;Bedingung2;...)} gibt einen Boolean zurück; ob mindestens einer der Bedingungen erfüllt sind.
+ \item[SUMME] \ilsourcecode{SUMME(Bereich)} gibt die Summe aller Zahlen im angegebenen Bereich zurück.
+ \item[SUMMEWENN] \ilsourcecode{SUMMEWENN(Bereich;Suchkriterium;SummandenBereich)} gibt die Summe der Summanden dessen Zellen im Bereich die Bedingung erfüllen zurück. Dies kann mit \ilsourcecode{SUMMEWENNS(SummandenBereich;Bereich1;Suchkriterium1;Bereich2;Suchkriterium2)} auf mehrere Bereiche und Kriterien erweitert werden.
+ \item[MITTELWERT] \ilsourcecode{MITTELWERT(Bereich)} gibt den Mittelwert der Zahlen im Bereich zurück.
+ \item[SVERWEIS] \ilsourcecode{SVERWEIS(Inputzelle;Lookupmatrix;Outputspalte)} gibt, wenn möglich, den Wert zurück der in der Outputspalte von der Zeile der Lookupmatrix in der der Wert von der Inputzelle gefunden wurde zurück.
+ \item[Zählenwenn] \ilsourcecode{ZÄHLENWENN(Bereich;Kriterium)} zählt wie viele Zellen im Bereichdas Kriterium erfüllen. Dies kann mit \ilsourcecode{ZÄHLENWENNS(Bereich1;Kriterium1;Bereich2;Kriterium2;...)} auf mehrere Bereiche erweitert werden.
+\end{description}
+\ankinote{wenn}{Wenn}{WENN(Bedingung;Wert1;Wert2)}
+\ankinote{summwenn}{SummWenn}{SUMMEWENN(Bereich;Suchkriterium;SummandenBereich)}
+\ankinote{summwenns}{SummWenns}{SUMMEWENNS(SummandenBereich;Bereich1;Suchkriterium1;Bereich2;Suchkriterium2)}
+\ankinote{sverweis}{SVerweis}{SVERWEIS(Inputzelle;Lookupmatrix;Outputspalte)}
+\ankinote{zählewenn}{ZähleWenn}{ZÄHLENWENN(Bereich;Kriterium)}
+\ankinote{zählewenns}{ZähleWenns}{ZÄHLENWENNS(Bereich1;Kriterium1;Bereich2;Kriterium2;...)}
+
+\subsection{Pivottabellen}
+Mit Pivottabellen können sehr einfach Daten gefiltert und sortiert werden. Wird eine Pivottabelle erstellt gibt es vier Felder.
+\begin{description}
+ \item[Zeilen] Es kann Zeilenweise nach den Werten einer Zeile sortiert werden.
+ \item[Spalten] Es kann Spaltenweise nach den Werten einer Zeile sortiert werden.
+ \item[Werte] Jeder Zelle kann können Werte basierend auf einer Berechnung zu einer anderen Spalte hinzugefügt werden.
+ \item[Filter] Die genutzten Zeilen können aussortiert werden.
+\end{description}
+\ankinote{pivot-zeilen-spalten}{Pivot Zeilen, Spalte}{Werte Sortieren}
+\ankinote{pivot-werrte}{Pivot Werte}{Werte der Zellen}
+
+\subsection{Visual Basic Makros}
+Mit Visual Basic können Makros programmiert werden. Visual Basic's Syntax ist unnötig kompliziert und unnötig, aber in den meisten fällen auch intuitiv lesbar.
+
+Mit \vb{MsgBox("HelloWorld!")} kann ein Popupfenster angezeigt werden.
+
+Mit \vb{Dim variablenName As Datentyp} können Variablen deklariert werden, müssen sie aber auch nicht, außer wenn \vb{Option Explicit} genutzt wurde.
+
+Operaten können englische Wörter sein, \ua \vb{Xor} und \vb{Eqv}. Ungleichheit wird mit \vb{<>} überprüft. Ganzzahldivision folgt aus einem Backslash. Mit \vb{Like} können Strings verglichen werden, wobei ein Sternchen eine Wildcard für beliebige Zeichen ist, ein Fragezeichen eine Wildcard für ein Zeichen ist, ein Hashtag eine Wildcard für eine Ziffer ist, und \vb{[...]} nach den Zeichen in der Klammer sucht.
+\ankinote{ops-en}{Operatoren En}{Xor, Eqv, }
+\ankinote{ops-like}{Operatoren Like}{*, ?, #, [...]}
+\ankinote{ops-uneq}{Operatoren Ungleich}{<>}
+
+\subsection{Visualisierung}
+Daten können als Diagramme unterschiedlicher Art dargstellt werden.
+
+\end{document}

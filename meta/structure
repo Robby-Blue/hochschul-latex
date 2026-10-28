@@ -3,7 +3,7 @@ def main() {
     globals=globals(author="Zoe"),
     titlepage=titlepage(
       title="Studium Verwaltungsinformatik",
-      subtitle="Eine kurze Zusammenfassung des Inhalts der Studiums Verwaltungsinformatik",
+      subtitle="Eine kurze Zusammenfassung des Inhalts vom Studium Verwaltungsinformatik",
     ),
     auto_add_docs=false
   ) {

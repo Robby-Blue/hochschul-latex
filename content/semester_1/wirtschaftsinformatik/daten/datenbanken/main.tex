@@ -22,14 +22,14 @@ Die Reihenfolge in der die Spalten definiert und Datensätze gespeichert werden 
 \subsection{DBMS}
 Datenbankmanagementsysteme sitzen vor der Datenbank um bei Bedarf die Daten für andere Programm auszulesen oder einzuschreiben. Sie können auf drei Ebenen aufgeteilt werden.
 \begin{description}
- \item[Abfrage] Mit der Query Language werden Anfragen an das DBMS gesendet.
- \item[Schemabeschreibung] Die der Data Definition Language wird das Schema beschrieben, welche Tabellen, mit welchen Attributen existieren soll.
- \item[Speicherbeschreibung] Mit der Data Storage Description Language wird die physische Speicherung der Daten beschrieben.
+ \item[Abfrage] Mit der Query Language werden externe Anfragen an das DBMS gesendet.
+ \item[Schemabeschreibung] Die der Data Definition Language wird das konzeptionelle Schema beschrieben, welche Tabellen, mit welchen Attributen existieren soll.
+ \item[Speicherbeschreibung] Mit der Data Storage Description Language wird die interne physische Speicherung der Daten beschrieben.
 \end{description}
 \ankinote{ebenen}{Ebenen}{Abfrage, Schemabeschreibung, Speicherbeschreibung}
-\ankinote{abfrage}{Abfrage}{Query Language, Anfragen}
-\ankinote{schema}{Schemabeschreibung}{Date Definition Language, Schema beschrieben}
-\ankinote{speicher}{Speicherbeschreibung}{Data Storage Description Language, physische Speicherung}
+\ankinote{abfrage}{Abfrage}{Query Language, externe Anfragen}
+\ankinote{schema}{Schemabeschreibung}{Date Definition Language, konzeptionell Schema beschrieben}
+\ankinote{speicher}{Speicherbeschreibung}{Data Storage Description Language, interne physische Speicherung}
 
 \subsection{Datenspeicherung}
 Datenbanken werden vermehrt im RAM gespeichert. Dies ist Stelle, sowohl im Lesen als auch im Schreiben von Daten. Andererseits ist RAM teurer als Festplatten und zudem nicht permanent. Bei Stromverlust kann es schnell zu Datenverlust kommen.

@@ -12,8 +12,12 @@
 
 \newcommand{\ankishow}{}
 
-\newcommand{\ankiprefix}[1]{
- \def\ankiprefixvar{#1}
+\newcommand{\ankiprefix}[1]{%
+  \ifcsname prevankiprefix#1\endcsname%
+   \errmessage{Reused Anki prefix: #1}
+  \fi%
+  \expandafter\def\csname prevankiprefix#1\endcsname{true}%
+  \def\ankiprefixvar{#1}%
 }
 
 \newcommand{\ankitopic}[1]{

@@ -4,6 +4,11 @@
 \usemintedstyle{github-dark}
 \definecolor{mintedbg}{HTML}{0d1117}
 
+\setmintedinline{
+  style=one-dark,
+  bgcolor=mintedbg,
+  breaklines
+}
 \newtcblisting{sourcecode}[1]{
   enhanced, breakable,
   listing engine=minted,
@@ -27,6 +32,6 @@
   before skip=0.25cm, after skip=0.25cm
 }
 
-\newcommand{\ilsourcecode}[1]{%
- \texttt{#1}%
+\NewDocumentCommand{\ilsourcecode}{O{text} v}{%
+ \mintinline{#1}{#2}%
 }

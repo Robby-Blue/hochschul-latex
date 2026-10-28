@@ -5,5 +5,9 @@ def main() {
     )
   ) {
     use_sec("definition_verwaltungshandeln")
+    use_sec("gesellschaft")
+    use_sec("politik")
+    use_sec("staat")
+    use_sec("art20")
   }
 }
