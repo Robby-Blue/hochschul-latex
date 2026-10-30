@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankiprefix{arrays}
+\ankitopic{Arrays}
+\ankishow
+\begin{document}
+\section{Arrays}
+Ein Array ist eine Liste an Werten eines Datentyps. Die einzelnen Elemente können unabhängig voneinander beschrieben und ausgelesen werden, anhand eines Index. Arrays fangen in Java, und anderen normalen Programmiersprachen auch, bei 0 an.
+
+Arrays sind Referenztypen.
+\ankinote{typen}{Typen}{Referenztypen}
+
+\subsection{Erzeugung}
+\begin{sourcecode}{java}
+Datentyp[] arrayName;
+\end{sourcecode}
+Bei Arrays kann nach der Deklaration noch zwischen der Erzeugung des Arrays und der Initialisierung des Arrays unterschieden werden.
+\begin{sourcecode}{java}
+Datentyp[] arrayName; // Deklaration
+arrayName = new Datentype[länge]; // Erzeugung
+arrayName[0] = wert; // Initialisierung
+\end{sourcecode}{java}
+Ansonsten können diese Schritte auch zusammengefasst werden.
+\begin{sourcecode}{java}
+Datentyp[] arrayName = new Datentyp[] {wert1, wert2, ...}; // oder
+Datentyp[] arrayName2 = {wert1, wert2, ...};
+\end{sourcecode}
+\ankinote{erzeugung}{Erzeugung}{atentyp[] arrayName;}
+\ankinote{initialisierng-voll}{Initialisierng Voll}{Datentyp[] arrayName = new Datentyp[] {wert1, wert2, ...};}
+\ankinote{initialisierng-kurz}{Initialisierng Kurz}{Datentyp[] arrayName2 = {wert1, wert2, ...};}
+
+\subsection{Mehrdimensionale Arrays}
+Der Datentype hinter einem Array kann selbst ein Array sein. So kommt es zu mehrdimensionalen Arrays.
+\begin{sourcecode}{java}
+Datentyp[][] arrayName = new Datentyp[länge1][länge2]; // oder
+Datentyp[][] arrayName2 = {{wert1, wert2}, {wert3, wert4}};
+
+arrayName[0][0] = wert;
+\end{sourcecode}
+\ankinote{mehrdim-init}{Mehrdimensional Initialisierung}{Datentyp[][] arrayName2 = {{wert1, wert2}, {wert3, wert4}};}
+
+Soll ein zweidimensionales Array als Tabelle dargestellt werden so entspricht \idr die erste Dimension den Zeilen, die zwei Dimension die Spalten. Somit sind die Werte der $n$ten Zeile den Werten von \ilsourcecode{arr[n][...]} gleich.
+\ankinote{mehrdim-order}{Mehrdimensional Reihenfolge}{n-te Zeile ist arr[n][...]}
+
+\end{document}

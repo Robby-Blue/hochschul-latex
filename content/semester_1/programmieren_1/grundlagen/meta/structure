@@ -11,5 +11,7 @@ def main() {
     use_sec("operatoren")
     use_sec("verzweigungen")
     use_sec("schleifen")
+    use_sec("arrays")
+    use_sec("referenztypen")
   }
 }

@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage{csquotes}
+\usepackage{/globals/de}
 \usepackage{/globals/code}
 \usepackage{/globals/anki}
 \ankishow
@@ -24,7 +26,7 @@ Eine \ilsourcecode{do while}-Schleife ist der \ilsourcecode{while}-Schleife sehr
 \begin{sourcecode}{java}
 do {
     Anweisungen;
-} while (bedingung)
+} while (bedingung);
 \end{sourcecode}
 Sie ist aber annehmend. Auch wenn die Bedingung von Anfang an \ilsourcecode{false} ist werden die Anweisungen mindestens ein mal ausgeführt.
 
@@ -43,6 +45,14 @@ for(int i = 0; i < 10; i++) {
 \end{sourcecode}
 \ankinote{for}{for}{Initialisierung; bedingung; Aktualisierung, Aktualisierung nach jedem Durchgang}
 
+\subsection{\texttt{foreach}}
+Mit einer \sog \textquote{foreach} Schleife, welche aber auch das \ilsourcecode{for}-Keyword nutzt, kann alle Elementen eines iterierbaren Objektes wie einem Array durchgegangen werden,
+\begin{sourcecode}{java}
+for (Datentyp variable : array) {
+    Anweisungen;
+}
+\end{sourcecode}
+
 \subsection{Äquivalenzen}
 Alle Schleifenarten machen letztendlich das Gleiche. Jede \ilsourcecode{while} kann auch als \ilsourcecode{do while} geschrieben werden; wenn vorher bereits bekannt ist dass in jedem Fall die Bedingung mindestens beim ersten mal \ilsourcecode{true} sein wird, wird das \ilsourcecode{if} garnicht mal benötigt.
 \begin{sourcecode}{java}
@@ -53,14 +63,14 @@ while (bedingung) {
 if (bedingung) {
     do {
         Anweisungen;
-    } while (bedingung)
+    } while (bedingung);
 }
 \end{sourcecode}
 Andersherum können \ilsourcecode{do while}s auch als \ilsourcecode{while}s geschrieben werden. 
 \begin{sourcecode}{java}
 do {
     Anweisungen;
-} while (bedingung)
+} while (bedingung);
 // ist äquivalent zu
 Anweisungen;
 while (bedingung) {

@@ -9,5 +9,6 @@ def main() {
     use_sec("bundesrat")
     use_sec("bundesregierung")
     use_sec("bundespräsident")
+    use_sec("bundesverfassungsgericht")
   }
 }
