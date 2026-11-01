@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/anki}
+\ankiprefix{programmiersprachen}
+\ankitopic{Programmiersprachen}
+\ankishow
+\begin{document}
+\section{Programmiersprachen} 
+Höhere Programmiersprachen haben komplexere Konstrukte um das Programmieren zu erleichtern, und den Quellcode des Programms weiter von den Funktionen der CPU zu entfernen. So haben sie komplexere Funktionen wie Variablen, Datentypen, Schleifen, Methoden, \usw.
+\ankinote{def}{Höhere Konstrukte}{Haben Datentypen, Schleifen, Methoden, etc}
+
+Programmiersprachen können in Generationen kategorisiert werden.
+
+\subsection{Paradigmen}
+Es kann darin unterschieden werden wie die Anweisungen gegeben werden.
+\begin{description}
+ \item[Imperativ] Bei der imperativen Programmieren werden direkte Befehle gegeben die beschrieben wie ein Ergebnis berechnet wird.
+ \item[Deklarativ] Es wird deklariert was das Programm tun soll.
+\end{description}
+Zudem kann darin unterschieden werden wie mit dem Status umgegangen wird.
+\begin{description}
+ \item[Objektorientierte Programmieren] Es gibt Objekte die sowohl Daten als auch Methoden besitzen.
+ \item[Prozedurale Programmieren] Daten werden an Funktionen weitergegeben.
+\end{description}
+\ankinote{diff-anweisungen}{Unterschied Anweisungen}{Imperativ (Wie) vs Deklarativ (Was)}
+\ankinote{diff-daten}{Unterschied Daten}{OOP (Objekte mit Daten und Methoden) vs Prozedural (Daten an Funktionen)}
+
+\subsection{Ausführung}
+Es gibt drei hauptsächliche Wege Programme auszuführen
+\begin{description}
+ \item[Kompilierung] Bevor das Programm ausgeführt werden kann wird es von einem Kompiler zu Maschinencode kompiliert. Dieser kann dann direkt von der CPU ausgeführt werden. Dabei kann das Programm analysiert und optimiert werden.
+ \item[Interpretation] Die Befehle des Programms werden von einem Interpreter Schritt für Schritt durchgegangen, während der Ausführung des Programms interpretiert, also verstanden, und dann ausgeführt.
+ \item[Virtual Machines] Programme werden in ein Bytecode kompiliert, welcher dann von eine Virtuellen Maschine interpretiert werden kann.
+\end{description}
+\ankinote{ausführung}{Ausführung}{Kompilierung, Interpretation, Virtuelle Maschine}
+
+\end{document}

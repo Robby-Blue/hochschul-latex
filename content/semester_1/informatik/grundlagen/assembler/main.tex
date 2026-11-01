@@ -10,10 +10,11 @@ Die Assemblersprache ist die niedrigste generelle Programmiersprache; dessen Anw
 
 Befehle sind kurze Abkürzungen, die für ganze Worte stehen. Die Operanten sind entweder Zahlen, oder wenn sie in eckigen Klammern stehen, die Adresse einer Zahl. Der Text hinter einem Semicolon ist ein Kommentar.
 \begin{slsourcecode}{asm}
-00 LDA [0]
+00 LDA 0 ; Kommentar
 01 ADD 1
 02 STA [0]
-03 HLT
+03 OUT [0]
+04 HLT
 \end{slsourcecode}
 \ankinote{syntax}{Syntax}{Befehle, Zahl, [Adresse]}
 Es gibt hier keine höheren Konzepte wie eingebaute Schleifen; Schleifen müssen selbst entwickelt werden, indem ein konditionaler Jump-Befehl genutzt wird um Befehle zu wiederholen.
@@ -24,5 +25,8 @@ Der Akkumulator speichert zwischenzeitig Daten, wie Operanten oder Ergebnisse. D
 
 \subsection{Ausführung}
 Zuerst wird der bevorstehende Befehl aus dem Arbeitsspeicher geladen und dekodiert, bei Bedarf werden noch Operanten geladen. Der Befehl wird ausgeführt. Das Befehlszählregister wird um eine erhöht und der Prozess fängt von vorne an, mit dem nächsten Befehl.
+
+\subsection{Echte CPUs}
+Echte CPUs haben mehrere Register, nicht nur einen Akkumulator, bei weitem mehr und komplexere Befehle und andere hilfreiche Funktionen.
 
 \end{document}

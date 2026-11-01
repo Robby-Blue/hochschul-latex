@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{/globals/math}
+\usepackage{/globals/de}
+\usepackage{/globals/anki}
+\ankiprefix{beweise}
+\ankitopic{Beweise}
+\ankishow
+\begin{document}
+\section{Beweise} 
+Ein \emph{Beweis} ist eine Herleitung welche formal zeigt dass eine bestimmte Aussage korrekt sein muss, wenn davon ausgegangen wird dass andere Aussagen wahr sind.
+\ankinote{def}{Definition}{Herleitung zeigt dass Aussage stimmt}
+
+Die zu beweisene Aussage ist ein \emph{Theorem}, manchmal auch ein Satz \emph{genannt}. Es kann Hilfsätze (\emph{Lemma}s) und unmittelbar Folgende Aussagen (\emph{Korollar}s) geben.
+
+\subsection{Beweismethoden}
+Es gibt mehrere Methoden einen Beweis $A \implies B$ aufzustellen.
+
+\begin{description}
+ \item[Direkter Beweis] Mithilfe von ein bisschen Logik und Regeln wird direkt $A \implies B$ bewiesen. Dabei kann es auch zwischenschritte geben, \zb
+\[
+ A \implies X
+ \dtext{und}
+ A \implies Y
+ \dtext{und}
+ (X \land Y) \implies B
+\]
+\ankinote{direkter-beweis}{Direkter Beweis}{A zu B}
+ \item[Beweis durch Kontraposition] Es wird die Kontraposition $\lnot B \implies \lnot A$ bewiesen. 
+\ankinote{kontraposition}{Kontraposition}{\(\lnot B \implies \lnot A\)}
+ \item[Beweis durch Widerspruch] Es wird davon ausgegangen dass $A \land \lnot B$ wahr ist und es wird gezeigt dass dies zu einem Widerspruch führt. Deshalb, solange bereits sicher ist dass $A$ wahr ist, kann $\lnot B$ nicht wahr sein, heißt $B$ muss wahr sein.
+\ankinote{widerspruch}{Widerspruch}{Angenommen A und B führt zu Widerspruch}
+ \item[Vollständige Fallunterscheidung] Es werden alle Möglichkeiten herausgearbeitet inwiefern $A$ wahr sein kann. Es wird gezeigt dass in all diesen Fällen $B$ wahr sein muss.
+\ankinote{fallunterscheidung}{Fallunterscheidung}{Alle Fälle wie A wahr sein kann führen zu B}
+ \item[Vollstände Induktion] Soll ein Prädikat hinter einem Allquantor bewiesen werden, wie ein $\forall x \in \N A(x)$ bewiesen werden, kann bewiesen werden dass $A(0)$ wahr ist, und dass $\forall x \in \N A(x) \implies A(x+1)$
+\ankinote{induktion}{Induktion}{\(\forall x \in \N A(x) \implies A(x+1)\)}
+\end{description}
+\ankinote{methoden}{Beweismethoden}{Direkter Beweis, Kontraposition, Widerspruch, Fallunterscheidung, Induktion}
+\end{document}

@@ -14,5 +14,6 @@ def main() {
     use_sec("spezielle")
     use_sec("schaltwerke")
     use_sec("assembler")
+    use_sec("programmiersprachen")
   }
 }
