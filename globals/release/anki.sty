@@ -17,6 +17,10 @@
    \errmessage{Reused Anki prefix: #1}
   \fi%
   \expandafter\def\csname prevankiprefix#1\endcsname{true}%
+  \ankiprefixskipcheck{#1}%
+}
+
+\newcommand{\ankiprefixskipcheck}[1]{%
   \def\ankiprefixvar{#1}%
 }
 
