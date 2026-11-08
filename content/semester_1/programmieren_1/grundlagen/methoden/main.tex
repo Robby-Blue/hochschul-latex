@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankiprefix{methoden}
+\ankitopic{Methoden}
+\ankishow
+\begin{document}
+\section{Methoden} 
+Eine Methode ist ein Abschnitt eines Programms welcher von anderswo aufgerufen werden kann.
+
+Es kann zwischen Prozeduren (geben keinen Wert zurück) und Funktionen (geben einen Wert zurück) unterschieden werden.
+\ankinote{unt}{Unterschiede}{Prozeduren (ohne Rückgabewert), Funktionen (Rückgabewert)}
+
+\subsection{Deklaration}
+Methoden haben einen Namen, einen Rückgabewert (oder \ilsourcecode{void}), und eine Anzahl an Parametern. Diese werden alle im Methodenkopf definiert. Darauf folgt der Methodenrumpf, mit den Anweisungen der Methode.
+\begin{sourcecode}{java}
+public static RückgabeDatentyp methodenName(ParameterDatentyp parameterName) {
+    Anweisungen;
+}
+\ankinote{deklaration}{Deklaration}{public static RückgabeDatentyp methodenName(ParameterDatentyp parameterName)}
+\end{sourcecode}
+Als syntaktischer Zucker können Varargs genutzt werden; der Datentyp des letzten Parameters kann von drei Punkten gefolgt sein damit mehrere Werte des Typs eingesetzt und als Array übergeben werden können.
+\begin{sourcecode}{java}
+public static RückgabeDatentyp methodenName(ParameterDatentyp... parameterName) {
+    Anweisungen;
+}
+\end{sourcecode}
+\ankinote{varargs}{Varargs}{ParameterDatentyp...}
+
+\subsection{\ilsourcecode{return;}}
+Mit der \ilsourcecode{return;} Anweisung kann eine Methode verlassen werden.
+
+Mit \ilsourcecode{return wert;} kann dabei noch ein Wert zurückgegeben werden.
+
+\subsection{Aufruf}
+Methoden können aufgerufen werden indem deren Name, gefolgt von runden Klammern, geschrieben wird.
+\begin{slsourcecode}{java}
+methodenName();
+\end{slsourcecode}
+Ist es eine Methode einer anderen Klasse, so wird der Name der Klasse vorgestellt, mit einem Punkt getrennt von dem Namen der Methode.
+\begin{slsourcecode}{java}
+KlassenName.methodenName();
+\end{slsourcecode}
+Parameter werden Kommagetrennt in die Klammern geschrieben.
+\begin{slsourcecode}{java}
+methodenName(wert1, wert2);
+\end{slsourcecode}
+\end{document}

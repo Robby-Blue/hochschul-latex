@@ -13,5 +13,6 @@ def main() {
     use_sec("schleifen")
     use_sec("arrays")
     use_sec("referenztypen")
+    use_sec("methoden")
   }
 }

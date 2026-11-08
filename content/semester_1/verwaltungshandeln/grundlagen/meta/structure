@@ -9,5 +9,6 @@ def main() {
     use_sec("politik")
     use_sec("staat")
     use_sec("art20")
+    use_sec("bürokratie")
   }
 }

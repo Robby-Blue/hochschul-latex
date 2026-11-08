@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{/globals/boxes}
+\usepackage{/globals/de}
+\usepackage{/globals/anki}
+\ankiprefix{epks}
+\ankitopic{EPKs}
+\ankishow
+\begin{document}
+\section{Ereignisgesteuerte Prozessketten} 
+\emph{Ereignisgesteuerte Prozessketten} (\emph{EPK}s) modellieren Geschäftsprozesse.
+\ankinote{name}{Name}{Ereignisgesteuerte Prozessketten}
+
+Hier werden zeitlich hintereinander die auszuführenden Funktionen eines Prozesses dargestellt, dazwischen die Ereignisse die aus den Funktionen folgen oder sie auslösen.
+Funktionen und Ereignisse wechseln sich immer ab.
+\ankinote{aufbau}{Aufbau}{Ereignis -> Funktion -> Ereignis}
+
+Mit Operatoren können mehrere Verzweigungen des Prozesses parallel oder alternativ ausgeführt werden.
+
+\subsection{Symbole}
+\begin{description}
+ \item[Ereignis] Ein Ereignis, dargestellt durch ein längliches Sechseck, beschreibt einen Zustand der eingetreten ist.
+\ztodo{tikz}
+\ankinote{symbol-ereignis}{Symbol Ereignis}{längliches Sechseck, Zustand}
+ \item[Funktion] Eine Funktion wird durch ein abgerundetes Rechteck dargestellt.
+\ztodo{tikz}
+\ankinote{symbol-funk}{Symbol Funktion}{Abgerundetes Rechteck}
+ \item[Operatoren] Operatoren wird durch einen Kreis mit den $\land$- und $\lor$-Symbolen oder dem Wort \texttt{xor} dargestellt.
+\ztodo{tikz}
+\ankinote{symbol-op}{Symbol Operatoren}{Symbol in Kreis}
+ \item[Prozesswegweiser] Ein Prozesswegweiser verweist auf einen anderen Prozess welcher nun gestartet werden kann. Er wird durch eine Funktion vor einem leicht versetzten Ereignis dargestellt.  
+\ztodo{tikz}
+\ankinote{symbol-prwgws}{Symbol Prozesswegweiser}{Funktion vor Ereignis, zeigt auf Prozess}
+ \item[Organisationseinheit] Eine Organisationseinheit ist ein Oval mit einer vertikalen Linie auf der linken Seite.
+\ztodo{tikz}
+\ankinote{symbol-org}{Symbol Organisationseinheit}{Oval mit vertikaler Linie}
+ \item[Dokument, Objekt] Eine Dokument ist ein Rechteck mit einer welligen Unterseite.
+\ztodo{tikz}
+\ankinote{symbol-doc}{Symbol Dokument}{Rechteck, wellige Linie}
+ \item[Anwendungssystem] Ein Anwendungssystem ist ein Rechteck mit zwei vertikalen Linien, eine auf beiden Seiten.
+\ztodo{tikz}
+\ankinote{symbol-system}{Symbol Anwendungssystem}{Rechteck, Linien}
+ \item[Datenbank] Eine Datenbank wird durch eine Skizze eines Zylinders dargestellt.
+\ztodo{tikz}
+\ankinote{symbol-datenbank}{Symbol Datenbank}{Zylinder}
+\end{description}
+Pfeile bei denen Informationen fließt, \zb aus oder in ein Dokument oder einer Datenbank, zeigen in die Richtung des Informationsflusses.
+\ankinote{info}{Informationsfluss}{Pfeil Richtung Infofluss}
+\end{document}

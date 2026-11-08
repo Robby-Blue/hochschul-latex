@@ -1,6 +1,18 @@
 \documentclass{article}
-\usepackage{/globals/boxes}
+\usepackage{/globals/de}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankiprefix{referenztypen}
+\ankitopic{Referenztypen}
+\ankishow
 \begin{document}
 \section{Referenztypen} 
-\ztodo{Referenztypen}
+Datentypen können primitive Datentypen oder Referenztypen sein.
+
+Primitive Datentypen (\ilsourcecode{int}, \ilsourcecode{double}, \ilsourcecode{boolean}, \ilsourcecode{char}, \etc) speichern direkt einen Wert. Der Wert der Variable, der auch im RAM gespeichert wird, ist der Inhalt.
+
+Referenztypen hingegen (Klassen, \zb \ilsourcecode{String}, Arrays, \etc) speichern eine Referenz zu dem Wert. Der Wert der Variable der im RAM gespeichert wird ist der Speicherort des echten Inhaltes der Variable.
+\ankinote{funktionsweise}{Funktionsweise}{Speichert Speicheradresse des Wertes, nicht Wert}
+
+Deshalb können zwei Variablen von Referenztypen den gleichen Inhalt speicher aber nicht als gleich anerkannt werden, wenn sie auf zwei unterschiedliche Speicheradressen mit dem gleichen Inhalt zeigen. Andersherum könnten auch zwei Variablen auf die gleiche Speicheradresse zeigen, so dass wenn der Inhalt der einen verändert wird sich der Inhalt der anderen auch verändert.
 \end{document}

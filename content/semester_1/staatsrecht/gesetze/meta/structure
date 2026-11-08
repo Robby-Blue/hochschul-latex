@@ -1,0 +1,9 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Gesetze",
+    )
+  ) {
+    use_sec("überregulierung")
+  }
+}

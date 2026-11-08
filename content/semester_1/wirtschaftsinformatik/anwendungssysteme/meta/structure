@@ -1,0 +1,13 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Integrierte Anwendungssysteme",
+    )
+  ) {
+    use_sec("integration")
+    use_sec("epk")
+    use_sec("geschäftsprozesse")
+    use_sec("transaktionen")
+    use_sec("wirtschaft")
+  }
+}

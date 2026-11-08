@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/math}
+\usepackage{/globals/anki}
+\ankiprefix{mengen}
+\ankitopic{Mengen}
+\ankishow
+\begin{document}
+\section{Mengen}
+Eine Menge ist eine Liste an Objekten, sogenannten Elementen. Dabei kann einzig und allein darin Unterschieden werden ob ein Element Teil der Menge ist oder nicht. Wie oft das Element in der Menge ist oder wo in der Menge es ist wird vollständig vernachlässigt.
+
+Dass ein Element $x$ Teil der Menge $M$ mit dem Elementzeichen dargestellt, wenn ein Element nicht Teil einer Menge ist wird das Zeichen durchgestrichen.
+\[
+ x \in M
+ \dtext{oder}
+ x \notin M
+\]
+\ankinote{definition}{Definition}{Liste an Elementen, entweder Teil von oder Nicht}
+
+\subsection{Definitionen}
+Elemente können definiert werden indem
+\begin{enumerate}
+ \item alle Elemente der Menge aufgelistet werden.
+\[
+ M = \{\text{Wert 1, Wert 2, Wert 3}\}
+\]
+ \item ein Prädikat benannt wird das für alle Elemente wahr ist.
+\[
+ M = \{x \dvert P(x)\}
+\]
+\end{enumerate}
+\ankinote{definieren}{Definieren}{\[M = \{\text{Werte}\} \{x \dvert P(x)\}\]}
+
+\subsection{Leere Menge}
+Die \emph{leere Menge} ist eine Menge die leer ist. Sie enthält keine Elemente. Sie ist keine nichtleere Menge.
+\[
+ \varnothing = \{\,\}
+\]
+\ankinote{leer}{Leere Menge}{\[\varnothing = \{\,\}\]}
+
+\subsection{Gleichheit}
+Zwei Mengen $A$ und $B$ sind gleich ($A=B$) wenn sie die genau gleichen Elemente enthalten.
+\[
+ \forall x (x \in A \leqv x \in B)
+\]
+\ankinote{gleichheit}{Gleichheit}{Genau gleiche Elemente}
+
+\subsection{Teilmenge}
+Eine Menge $B$ ist die \emph{Teilemenge} von der Menge $A$ wenn jedes Element welches in $B$ ist auch Teil von $A$ ist.
+\[
+ B \subseteq A =
+ \forall x (x \in B \implies x \in A)
+\]
+Bei einer \emph{echten Teilmenge} dürfen beide Mengen nicht identisch sein.
+\[
+ B \subset A = B \subset A \land A \neq B
+\]
+\ankinote{teilmenge}{Teilmenge}{\(B \subseteq A\) Alle aus B auch in A}
+\ankinote{echteteilmenge}{Echte Teilmenge}{\(B \subset A\) B Teilmenge von A, aber A != B}
+
+\subsection{Durchschnitt}
+Der Durchschnitt von zwei Mengen $A$ und $B$ ist eine neue Menge; sie besteht aus den Elementen die sowohl Teil von $A$ als auch Teil von $B$ sind. 
+\[
+ A \cap B = \{x \dvert x \in A \land x \in B\}
+\]
+\ankinote{durchschnitt}{Durchschnitt}{\(A \cap B\) Elemente die in beiden Mengen sind}
+
+\subsection{Vereinigung}
+Die Vereinigung von zwei Mengen $A$ und $B$ ist eine Menge die alle Elemente die in $A$ oder $B$ enthalten sind enthält.
+\[
+ A \cup B = \{x \dvert x \in A \lor x \in B\}
+\]
+\ankinote{vereinigung}{Vereinigung}{\(A \cup B\) Elemente die in mind einem sind}
+
+\subsection{Differenz}
+Die Differenz zwischen Zwei Mengen $A$ und $B$, $A \backslash B$, enthält alle Elemente die in $A$ enthalten sind aber nicht Teil von $B$ sind.
+\[
+ A \backslash B = \{x \dvert x \in A \land x \notin B\}
+\]
+\ankinote{diff}{Differenz}{\(A \backslash B\) Alle Elemente aus A, aber nicht in B}
+
+\subsection{Komplement}
+Das Komplement einer Menge $M$, $\overline{M}$, ist die Menge aller Elemente die nicht Teil von $M$ sind. \textquote{Alle Elemente} muss sich auf eine Grundmenge $G$ beziehen. 
+\[
+ \overline{M} = G \backslash M
+\]
+\ankinote{komp}{Komplement}{\[\overline{M} = G \backslash M\]}
+\end{document}

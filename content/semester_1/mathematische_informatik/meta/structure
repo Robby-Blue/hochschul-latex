@@ -8,5 +8,6 @@ def main() {
   ) {
     use_doc(path="zahlen")
     use_doc(path="logik")
+    use_doc(path="mengen")
   }
 }

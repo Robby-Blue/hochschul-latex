@@ -10,5 +10,8 @@ def main() {
     use_sec("bundesregierung")
     use_sec("bundespräsident")
     use_sec("bundesverfassungsgericht")
+    use_sec("gemeinsamer_ausschuss")
+    use_sec("vermittlungsausschuss")
+    use_sec("bundesversammlung")
   }
 }

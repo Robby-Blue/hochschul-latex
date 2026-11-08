@@ -1,0 +1,9 @@
+def main() {
+  document(
+    titlepage=titlepage(
+      title="Mengenlehre",
+    )
+  ) {
+    use_sec("mengen")
+  }
+}
