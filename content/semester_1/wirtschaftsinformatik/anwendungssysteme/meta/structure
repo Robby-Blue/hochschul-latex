@@ -9,5 +9,7 @@ def main() {
     use_sec("geschäftsprozesse")
     use_sec("transaktionen")
     use_sec("wirtschaft")
+    use_sec("branchen")
+    use_sec("querschnitt")
   }
 }
