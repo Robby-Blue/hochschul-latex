@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{/globals/tables}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\usepackage{/globals/de}
+\ankiprefix{std}
+\ankitopic{STD}
+\begin{document}
+\section{STD} 
+Java hat eine ausführliche Standardlibrary; Klassen und Methoden für nützliche, häufig genutzte Aufgaben, die bereits eingebaut sind.
+
+\begin{ztable}{llX}{Klasse & Methode & Rückgabe}
+\ilsourcecode|Math| & \ilsourcecode|abs(x)| & Den absoluten Wert von x, $\vert x \vert$ \\
+& \ilsourcecode|min(x)| & Den kleineren von zwei Werten \\
+& \ilsourcecode|max(x)| & Den größeren von zwei Werten \\
+& \ilsourcecode|floor(x)| & Die abgerundete Zahl \\
+& \ilsourcecode|ceil(x)| & Die aufgerundete Zahl \\
+& \ilsourcecode|round(x)| & Die kaufmännisch gerundete Zahl \\
+& \ilsourcecode|sqrt(x)| & Die Quadratwurzel \\
+& \ilsourcecode|pow(b,a)| & Die Potenz $b^a$ \\
+& \ilsourcecode|log(x)| & Den natürlichen Logarithmus $\log_e{x}$ \\
+& \ilsourcecode|log10(x)| & Den dekadischen Logarithmus $\log_{10}{x}$ \\
+& \ilsourcecode|random()| & Eine pseudozufallige Dezimalzahl, $[0;1[$ \\
+& \ilsourcecode|sin(x)| & Den Sinus, $x$ in Rad \\
+& \ilsourcecode|cos(x)| & Den Cosinus, $x$ in Rad \\
+& \ilsourcecode|tan(x)| & Den Tangents, $x$ in Rad \\
+& \ilsourcecode|asin(x)| & Den Arkussinus, $x$ in Rad \\
+& \ilsourcecode|acos(x)| & Den Arkuscosinus, $x$ in Rad \\
+& \ilsourcecode|atan(x)| & Den Arkustangents, $x$ in Rad \\
+& \ilsourcecode|toRadians(x)| & Rechnet den Deg-Winkel $x$ in Rad um \\
+& \ilsourcecode|toDegrees(x)| & Rechnet den Rad-Winkel $x$ in Deg um \\
+\hline
+\ilsourcecode|Integer| & \ilsourcecode|parseInt(s)| & Verwandelt einen String in ein int \\
+\ilsourcecode|Double| & \ilsourcecode|parseDouble(s)| & Verwandelt einen String in ein double \\
+\ilsourcecode|Boolean| & \ilsourcecode|parseBool(s)| & Verwandelt einen String in ein bool \\
+\hline
+\ilsourcecode|Arrays| & \ilsourcecode|toString(arr)| & Verwandelt ein Array in eine menschlich lesbare Darstellung \\
+ & \ilsourcecode|equals(arr1,arr2)| & Überprüft ob zwei Arrays identisch sind \\
+ & \ilsourcecode|copyOf(arr,n)| & Kopiert ein Array, $[n;]$ \\
+ & \ilsourcecode|sort(arr)| & Sortiert ein Array \\
+\end{ztable}
+\ankinote{arc}{Arkus-}{a}
+\ankinote{arreq}{Arrays sind gleich}{Arrays.equals(arr1,arr2)}
+\ankinote{arrcopy}{Array kopieren}{Arrays.copyOf(arr,n)}
+\ankinote{arrsort}{Array sortieren}{Arrays.sort(arr)}
+
+\end{document}

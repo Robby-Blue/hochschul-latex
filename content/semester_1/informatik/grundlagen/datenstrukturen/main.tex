@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankiprefix{datenstrukturen}
+\ankitopic{Datenstrukturen}
+\ankishow
+\begin{document}
+\section{Datenstrukturen} 
+Eine Datenstruktur ist ein Datentyp der aus mehreren unterschiedlichen Datentypen und Operationen besteht.
+
+\subsection{Verkettete Listen} 
+Eine verkettete Liste stellt eine Liste an Werten dar, ähnlich wie ein Array, ist aber, im Gegensatz zum Array, in der Länge dynamisch.
+
+In der Datenstruktur wird ein Verweis auf das erste Element der Liste gespeichert. Dieses speichert der eigenen Wert und einen Verweis auf das nachfolgende Element, wenn es einen Nachfolger gibt.
+
+Ansonsten können head/tail Pseudoelemente hinzugefügt werden.
+
+Somit können vereinfacht Elemente hinzugefügt oder entfernt werden.
+
+Zudem gibt es doppelte Verkettungen; hier zeigt jedes Element auch auf das vorherige Element.
+\ankinote{linkedlist}{Verkettete Liste}{Element speichert Wert, Verweis auf nächstes}
+
+\subsection{Stapel}
+Ein Stapel speichert auch eine Liste an Elementen. Die Besonderheit liegt aber darin, dass nur das letzte (oberste) Element verändert werden kann; es kann ein Element auf den Stapel drauf gelegt werden (\ilsourcecode{push()}), oder das oberste Element vom Stapel heruntergenommen werden (\ilsourcecode{pop()}). Somit folgt es dem \emph{LIFO} (\emph{Last in, first out}) Prinzip.
+\ankinote{stack}{Stapel}{LIFO; nur push, pop das oberste Element}
+
+Es gibt mehrere Wege sie zu implementieren
+\begin{description}
+ \item[Arrays] Stapel bestimmter maximalen größen können einfach mit Arrays implementiert werden; ein Positionszeiger speichert den Index des zurzeitigen Elements, dieser wird bei einem \ilsourcecode{push()} inkrementiert und bei einem \ilsourcecode{pop()} dekrementiert, wobei jeweils der Wert geschrieben oder gelesen wird.
+\ankinote{stack-arr}{Stapel durch Array}{Zeiger, inkrementieren, dekrementieren}
+ \item[Verkette Listen] Stapel können auch als verkettete Listen implementiert werden, hier wird immer der Wert als neues erstes Element hinzugefügt oder entfernt.
+\ankinote{stack-linked}{Stapel durch verkettete Listen}{Erstes Element hinzufügen/entfernen}
+\end{description} 
+
+\subsection{Schlangen}
+Auch in Schlangen werden Listen an Elementen gespeichert, dem \emph{FIFO} (\emph{First in, first out}) Prinzip nach. Der Wert der als erstes hinzugefügt (\ilsourcecode{put()}) wurde, ist auch der Wert der als erstes ausgelesen (\ilsourcecode{get()}) wird.
+\ankinote{queue}{Schlangen}{FIFO; nur put, get ältestes}
+
+Es gibt mehrere Wege sie zu implementieren
+\begin{description}
+ \item[Arrays] Es gibt zwei Positionszweiger; für den Beginn und das Ende der Schlange. Wird ein Element hinzugefügt, so wird der Endzeiger inkrementiert, wird ein Element ausgelesen, wird der Startzeiger inkrementiert. Damit das Array nicht unendlich lang sein muss wird ein \emph{Ringbuffer} verwendet; mit einem Module wird sichergestellt dass \ilsourcecode{array[len] == array[0]}.
+\ankinote{queue-arr}{Schlange durch Array}{Zwei Zeiger, Ringbuffer}
+ \item[Verkette Listen] Es wird eine verkettete Liste erzeugt, neue Elemente werden am Ende hinzugefügt, alte Elemente werden am Anfang gelesen und entfernt.
+\ankinote{queue-linked}{Schlange durch verkettete Liste}{Am Ende hinzufügen, am Anfang lesen}
+\end{description} 
+\end{document}

@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{/globals/code}
 \usepackage{/globals/anki}
+\usepackage{/globals/de}
 \ankiprefix{methoden}
 \ankitopic{Methoden}
 \ankishow
@@ -45,4 +46,11 @@ Parameter werden Kommagetrennt in die Klammern geschrieben.
 \begin{slsourcecode}{java}
 methodenName(wert1, wert2);
 \end{slsourcecode}
+
+\subsection{Überladen}
+Mehrere Methoden können den gleichen Namen tragen, solange sie anhand ihrer Parametertypen unterschieden werden können.
+
+Dies wird \idr genutzt um Methoden default-Werte zu geben.
+\ankinote{überladen}{Überladen}{Gleicher Name, andere Parametertypen}
+
 \end{document}

@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{/globals/boxes}
 \usepackage{/globals/de}
 \usepackage{/globals/math}
 \usepackage{/globals/anki}
@@ -85,4 +86,28 @@ Das Komplement einer Menge $M$, $\overline{M}$, ist die Menge aller Elemente die
  \overline{M} = G \backslash M
 \]
 \ankinote{komp}{Komplement}{\[\overline{M} = G \backslash M\]}
+
+\subsection{Mächtigkeit}
+Die Mächtigkeit einer Menge gibt an wie viele Elemente die Menge enthält. Sie wird durch Betragsstriche dargestellt.
+\[
+ \setc{M}
+\]
+Natürlich ist
+\[
+ \setc{A \cap B} = \setc{A} + \setc{B} - \setc{A \cap B}
+\]
+\ankinote{mächtigkeit}{Mächtigkeit}{Anzahl an Elementen in Menge, |M|}
+\ankinote{mächtigkeit-union}{Mächtigkeit Vereinigung}{Einzeln plus, minus Schnittmenge}
+
+\subsection{Potenzmengen}
+Die Potenzmenge $2^M$ der Menge $M$ ist eine Menge die alle möglichen Teilmengen von $M$ enthält.
+\ankinote{potenzmengen}{Potenzmengen}{Potenz \(2^M\), Menge an allen möglichen Teilmengen von M}
+\begin{zexample}
+Wenn $M = \{a,b\}$, dann ist
+\[
+ 2^M = \{\{\},\{a\},\{b\},\{a,b\}\}
+\]
+\end{zexample}
+Natürlich ist $\setc{2^M} = 2^\setc{M}$.
+\ankinote{potenzmenge-mächtigkeit}{\(\vert2^M\vert\)}{\(2^{\vert M\vert}\)}
 \end{document}
