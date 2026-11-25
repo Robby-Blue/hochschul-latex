@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{/globals/de}
+\usepackage{/globals/code}
+\usepackage{/globals/anki}
+\ankiprefix{sql}
+\ankitopic{SQL}
+\ankishow
+\begin{document}
+\section{SQL} 
+Mit SQL, der Structured Query Language, werden Datenbanken verwaltet.
+
+Befehle enden mit einem Semikolon, Keywörter werden groß geschrieben. Namen mit Leerzeichen werden in eckigen Klammern geschrieben.
+\ankinote{leerzeichen}{Namen mit Leerzeichen}{Eckige Klammern}
+
+\subsection{\ilsourcecode[sql]|CREATE|}
+Mit \ilsourcecode[sql]|CREATE| können Datenbanken, Tabellen, Indexe, \etc erstellt werden.
+\begin{sourcecode}{sql}
+CREATE DATABASE Datenbankname;
+\end{sourcecode}
+\begin{sourcecode}{sql}
+CREATE TABLE Tabellenname;
+\end{sourcecode}
+Bei der Erstellung von Tabellen können auch direkt die Spalten angegeben werden.
+\begin{sourcecode}{sql}
+CREATE DATABASE Tabellenname (
+    Spaltenname1 datenwert1,
+    Spaltenname2 datenwert2
+);
+\end{sourcecode}
+\ankinote{erstellen}{Create}{CREATE DATABASE Tabellenname (Spaltenname1 datenwert1, Spaltenname2 datenwert2);}
+
+\subsection{\ilsourcecode[sql]|INSERT|}
+Mit \ilsourcecode[sql]|INSERT| können neue Datensätze hinzugefügt werden. Dabei werden die zu füllenden Spalten genannt, dann, in der gleichen Reihenfolge, dessen Werte.
+\begin{sourcecode}{sql}
+INSERT INTO Tabellenname (Spaltenname1, Spaltenname2) VALUES (wert1, wert2);
+\end{sourcecode}
+Wenn alle Spalten Werte haben müssen die Spaltennamen nicht wiederholt werden.
+\begin{sourcecode}{sql}
+INSERT INTO Tabellenname VALUES (wert1, wert2);
+\end{sourcecode}
+\ankinote{insert-short}{Insert kurz}{INSERT INTO Tabellenname VALUES (wert1, wert2);}
+\ankinote{insert-full}{Insert voll}{INSERT INTO Tabellenname (Spaltenname1, Spaltenname2) VALUES (wert1, wert2);}
+
+\subsection{\ilsourcecode[sql]|SELECT|}
+Mit \ilsourcecode[sql]|SELECT| können Daten ausgelesen werden. Ein \ilsourcecode[sql]|*| steht für alle Spalten.
+\begin{sourcecode}{sql}
+SELECT * FROM Tabellenname;
+\end{sourcecode}
+Ansonsten können auch einzelne Spalten namentlich angegeben werden.
+\begin{sourcecode}{sql}
+SELECT Spaltenname1, Spaltenname2 FROM Tabellenname;
+\end{sourcecode}
+Es kann nach Datensätzen die bestimmte Konditionen erfüllen gesucht werden.
+\begin{sourcecode}{sql}
+SELECT * FROM Tabellenname WHERE Spaltenname=wert;
+\end{sourcecode}
+Datensätze können anhand von einem Wert sotiert werden, aufsteigend (\ilsourcecode[sql]|ASC|) oder absinkend (\ilsourcecode[sql]|DESC|).
+\begin{sourcecode}{sql}
+SELECT * FROM Tabellenname ORDER BY Spaltenname ASC;
+\end{sourcecode}
+\ankinote{order}{Oder}{aufsteigend ASC, absinkend DESC}
+Es können auch Funktionen über ganze Datensätze laufen.
+\begin{sourcecode}{sql}
+SELECT COUNT(*) FROM Tabellenname;
+\end{sourcecode}
+Gleiches gilt für \ilsourcecode[sql]{AVG(Spaltenname)}, \ilsourcecode[sql]{SUM(Spaltenname)}, \ilsourcecode[sql]{MIN(Spaltenname)} und \ilsourcecode[sql]{MAX(Spaltenname)}.
+\ankinote{funktionen}{Funktionen}{COUNT, AVG, SUM, MIN, MAX}
+\end{document}

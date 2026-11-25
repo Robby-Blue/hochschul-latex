@@ -11,5 +11,8 @@ def main() {
     use_sec("wirtschaft")
     use_sec("branchen")
     use_sec("querschnitt")
+    use_sec("pk")
+    use_sec("crm")
+    use_sec("supplychain")
   }
 }

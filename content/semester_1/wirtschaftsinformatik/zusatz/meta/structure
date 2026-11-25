@@ -5,5 +5,7 @@ def main() {
     )
   ) {
     use_sec("beratung")
+    use_sec("excel")
+    use_sec("sql")
   }
 }
