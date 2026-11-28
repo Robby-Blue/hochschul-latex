@@ -5,7 +5,8 @@ def main() {
     )
   ) {
     use_sec("überregulierung")
-    use_sec("kompetenzen")
+    use_sec("gesetzgebungskompetenzen")
     use_sec("verfahren")
+    use_sec("verwaltungskompetenzen")
   }
 }
